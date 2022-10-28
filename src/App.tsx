@@ -5,6 +5,7 @@ import { AboutPage } from "./components/AboutPage/index";
 import { NewsPage } from "./components/NewsPage/index";
 import MainPage from "./components/MainPage/MainPage";
 import { useTheme } from "./Theme/useTheme";
+import { classNames } from "./helpers/classNames/classNames";
 import './styles/index.scss';
 
 export const App: FC = () => {
@@ -12,7 +13,7 @@ export const App: FC = () => {
     const { theme, toggleTheme } = useTheme();
 
     return (
-        <div className={`App ${theme}`}>
+        <div className={classNames('App', {}, [theme])}>
             <button onClick={toggleTheme}>
                 togle
             </button>
