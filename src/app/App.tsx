@@ -1,11 +1,11 @@
 import { FC, Suspense } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 
-import { AboutPage } from "./components/AboutPage/index";
-import { NewsPage } from "./components/NewsPage/index";
-import MainPage from "./components/MainPage/MainPage";
-import { useTheme } from "./Theme/useTheme";
-import { classNames } from "./helpers/classNames/classNames";
+import { MainPage } from "pages/MainPage";
+import { AboutPage } from "pages/AboutPage";
+import { NewsPage } from "pages/NewsPage";
+import { useTheme } from 'app/provider/themeProvider';
+import { classNames } from "shared/lib/classNames/classNames";
 import './styles/index.scss';
 
 export const App: FC = () => {
