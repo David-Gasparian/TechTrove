@@ -5,29 +5,29 @@ import { MainPage } from "pages/MainPage";
 import { NewsPage } from "pages/NewsPage";
 
 
-export enum AppRoutesNames {
+export enum AppRouteNames {
     ABOUT = 'about',
     NEWS = 'news',
     MAIN = 'main',
 }
 
-export const appRoutesPaths: Record<AppRoutesNames, string> = {
-    [AppRoutesNames.ABOUT]: '/about',
-    [AppRoutesNames.NEWS]: '/news',
-    [AppRoutesNames.MAIN]: '/'
+export const appRoutePaths: Record<AppRouteNames, string> = {
+    [AppRouteNames.ABOUT]: '/about',
+    [AppRouteNames.NEWS]: '/news',
+    [AppRouteNames.MAIN]: '/'
 }
 
-export const appRoutesConfig: Record<AppRoutesNames, RouteProps> = {
-    [AppRoutesNames.ABOUT]: {
-        path: appRoutesPaths.about,
+export const appRoutesConfig: Record<AppRouteNames, RouteProps> = {
+    [AppRouteNames.ABOUT]: {
+        path: appRoutePaths.about,
         element: <AboutPage />
     },
-    [AppRoutesNames.NEWS]: {
-        path: appRoutesPaths.news,
+    [AppRouteNames.NEWS]: {
+        path: appRoutePaths.news,
         element: <NewsPage />
     },
-    [AppRoutesNames.MAIN]: {
-        path: appRoutesPaths.main,
+    [AppRouteNames.MAIN]: {
+        path: appRoutePaths.main,
         element: <MainPage />
     }
 }

@@ -1,9 +1,9 @@
 import { FC } from "react";
-import { Link } from "react-router-dom";
 
 import { useTheme } from 'app/provider/themeProvider';
 import { classNames } from "shared/lib/classNames/classNames";
 import { AppRoute } from "./provider/route";
+import { Navbar } from "widgets/Navbar";
 import './styles/index.scss';
 
 export const App: FC = () => {
@@ -12,12 +12,10 @@ export const App: FC = () => {
 
     return (
         <div className={classNames('App', {}, [theme])}>
+            <Navbar />
             <button onClick={toggleTheme}>
                 togle
             </button>
-            <Link to="/">Main</Link>
-            <Link to="/about">About</Link>
-            <Link to="/news">News</Link>
             <AppRoute />
         </div>
     )

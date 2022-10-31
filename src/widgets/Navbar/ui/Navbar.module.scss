@@ -1,0 +1,17 @@
+.navbar {
+    width: 100%;
+    height: var(--navbar-height);
+    background: var(--inverted-bg-color);
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .links {
+        position: absolute;
+        right: 0;
+        margin-right: 10px;
+        .aboutLink {
+            margin: 5px;
+        }
+    }
+}
