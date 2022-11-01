@@ -6,6 +6,10 @@
     display: flex;
     align-items: center;
 
+    .themeSwitcher {
+        margin-left: 10px;
+    }
+
     .links {
         position: absolute;
         right: 0;
