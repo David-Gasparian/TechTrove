@@ -1,14 +1,10 @@
-.navbar {
+.Navbar {
     width: 100%;
     height: var(--navbar-height);
     background: var(--inverted-bg-color);
     position: relative;
     display: flex;
     align-items: center;
-
-    .themeSwitcher {
-        margin-left: 10px;
-    }
 
     .links {
         position: absolute;

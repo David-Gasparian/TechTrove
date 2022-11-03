@@ -11,3 +11,13 @@
 
     height: 100vh;
 }
+
+
+.main-content {
+    display: flex;
+}
+
+.page-wrapper {
+    flex-grow: 1;
+    padding: 20px;
+}
