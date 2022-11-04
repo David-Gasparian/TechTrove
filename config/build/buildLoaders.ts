@@ -5,7 +5,30 @@ import { buildOptions } from "./config";
 
 export const buildLoaders = ({ isDev }: buildOptions): RuleSetRule[] => {
 
-  const svgLoader =  {
+  const babelLoader = {
+    test: /\.(js|ts|jsx|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: "babel-loader",
+      options: {
+        presets: ['@babel/preset-env'],
+        plugins: [
+          [
+            "i18next-extract",
+            {
+              locales: [
+                "en",
+                "ru"
+              ],
+              keyAsDefaultValue: true
+            }
+          ]
+        ]
+      }
+    }
+  }
+
+  const svgLoader = {
     test: /\.svg$/i,
     use: ['@svgr/webpack'],
   }
@@ -43,6 +66,7 @@ export const buildLoaders = ({ isDev }: buildOptions): RuleSetRule[] => {
   }
 
   return [
+    babelLoader,
     tsLoader,
     cssLoader,
     svgLoader,
