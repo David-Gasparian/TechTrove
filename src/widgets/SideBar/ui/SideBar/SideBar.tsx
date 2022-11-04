@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
 
 import { classNames } from "shared/lib/classNames/classNames";
+import { LangSwitcher } from "widgets/LangSwitcher";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 import cln from './SideBar.module.scss';
 
@@ -25,6 +26,7 @@ export const SideBar: FC<SideBarProps> = (props) => {
             </button>
             <div className={cln.switchers}>
                 <ThemeSwitcher />
+                <LangSwitcher className={cln.langSwitcher}/>
             </div>
         </div>
     )
