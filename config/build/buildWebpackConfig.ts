@@ -6,9 +6,7 @@ import { buildPlugins } from './buildPlugins';
 import { buildResolves } from './buildResolves';
 import { buildOptions } from './config';
 
-
-export const buildWebpackConfig = (options: buildOptions): Configuration  => {
-
+export const buildWebpackConfig = (options: buildOptions): Configuration => {
     const { paths, mode, isDev } = options;
 
     return {
@@ -17,7 +15,7 @@ export const buildWebpackConfig = (options: buildOptions): Configuration  => {
         output: {
             path: paths.outputPath,
             filename: '[name].[contenthash].js',
-            clean: true
+            clean: true,
         },
         plugins: buildPlugins(options),
         module: {
@@ -25,6 +23,6 @@ export const buildWebpackConfig = (options: buildOptions): Configuration  => {
         },
         resolve: buildResolves(options),
         devtool: isDev ? 'inline-source-map' : undefined,
-        devServer: isDev ? buildDevServer(options) : undefined
-    }
-}
+        devServer: isDev ? buildDevServer(options) : undefined,
+    };
+};

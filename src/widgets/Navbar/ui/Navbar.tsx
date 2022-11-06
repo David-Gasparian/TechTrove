@@ -1,7 +1,7 @@
-import { FC } from "react";
+import { FC } from 'react';
 
-import { classNames } from "shared/lib/classNames/classNames";
-import { AppLink } from "shared/ui/AppLink/AppLink";
+import { classNames } from 'shared/lib/classNames/classNames';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
 import cln from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -9,7 +9,6 @@ interface NavbarProps {
 }
 
 export const Navbar: FC<NavbarProps> = (props) => {
-
     const { className } = props;
 
     return (
@@ -20,6 +19,5 @@ export const Navbar: FC<NavbarProps> = (props) => {
                 <AppLink to="/news">News</AppLink>
             </div>
         </div>
-    )
-}
-
+    );
+};
