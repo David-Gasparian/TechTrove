@@ -1,17 +1,14 @@
-@import './normalize.scss';
-@import './variables/global.scss';
-@import './theme/dark.scss';
-@import './theme/light.scss';
+@import "./normalize";
+@import "./variables/global";
+@import "./theme/dark";
+@import "./theme/light";
 
 .App {
     font: var(--font-m);
-
     background-color: var(--bg-color);
     color: var(--primary-color);
-
     height: 100vh;
 }
-
 
 .main-content {
     display: flex;
