@@ -5,7 +5,9 @@ import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 
 import { buildOptions } from './config';
 
-export const buildPlugins = ({ paths, isDev }: buildOptions): webpack.WebpackPluginInstance[] => {
+export const buildPlugins = ({
+    paths, isDev,
+}: buildOptions): webpack.WebpackPluginInstance[] => {
     const plugins = [
         new HtmlWebpackPlugin({
             template: paths.htmlPath,
