@@ -3,5 +3,6 @@
   "about": "about",
   "language": "language",
   "main": "main",
-  "news": "news"
+  "news": "news",
+  "not_found": "not_found"
 }
