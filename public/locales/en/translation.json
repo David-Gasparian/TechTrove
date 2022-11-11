@@ -1,3 +1,6 @@
 {
-  "language": "english"
+  "language": "english",
+  "something_went_wrong": "Something went wrong",
+  "refresh_page": "Refresh page",
+  "throw_error": "Throw error"
 }
