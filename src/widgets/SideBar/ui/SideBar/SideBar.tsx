@@ -1,4 +1,5 @@
 import { FC, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppButton } from 'shared/ui/AppButton/AppButton';
@@ -13,6 +14,8 @@ interface SideBarProps {
 export const SideBar: FC<SideBarProps> = (props) => {
     const { className } = props;
 
+    const { t } = useTranslation('');
+
     const [collapsed, setCollapsed] = useState(false);
 
     const toggleCollapsed = () => {
@@ -20,14 +23,20 @@ export const SideBar: FC<SideBarProps> = (props) => {
     };
 
     return (
-        <div className={classNames(
-            cln.SideBar,
-            { [cln.collapsed]: collapsed },
-            [className],
-        )}
+        <div
+            className={classNames(
+                cln.SideBar,
+                { [cln.collapsed]: collapsed },
+                [className],
+            )}
+            data-testid='sideBar'
         >
-            <AppButton type="button" onClick={toggleCollapsed}>
-                toggle
+            <AppButton
+                data-testid='toggleButton'
+                type="button"
+                onClick={toggleCollapsed}
+            >
+                {t('toggle')}
             </AppButton>
             <div className={cln.switchers}>
                 <ThemeSwitcher />
