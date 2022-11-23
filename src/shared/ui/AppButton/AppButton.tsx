@@ -4,7 +4,8 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import cln from './AppButton.module.scss';
 
 export enum AppButtonTheme {
-    CLEAR = 'clear'
+    CLEAR = 'clear',
+    OUTLINED = 'outlined',
 }
 
 interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

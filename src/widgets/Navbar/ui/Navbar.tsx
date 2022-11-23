@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { BugButton } from 'app/provider/ErrorBoundaries';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -12,13 +13,15 @@ interface NavbarProps {
 export const Navbar: FC<NavbarProps> = (props) => {
     const { className } = props;
 
+    const { t } = useTranslation('');
+
     return (
         <div className={classNames(cln.Navbar, {}, [className])}>
             <BugButton />
             <div className={cln.links}>
-                <AppLink to="/">Main</AppLink>
-                <AppLink className={cln.aboutLink} to="/about">About</AppLink>
-                <AppLink to="/news">News</AppLink>
+                <AppLink to="/">{t('Main')}</AppLink>
+                <AppLink className={cln.aboutLink} to="/about">{t('About')}</AppLink>
+                <AppLink to="/news">{t('News')}</AppLink>
             </div>
         </div>
     );
