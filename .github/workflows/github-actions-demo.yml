@@ -14,21 +14,18 @@ jobs:
         node-version: [17.x]
 
     steps:
-     -uses: actions/checkout@v2
-     -name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-
-     -name: install modules
-      run: npm install
-     -name: build project
-      run: npm run build:prod
-     -name: start project
-      run: npm run start
-     -name: check unit tests
-      run: npm run test:unit
-     -name: check eslint
-      run: npm run lint:ts
-     -name: check stylelint
-      run: npm run lint:scss
+     - uses: actions/checkout@v2
+     - name: Use Node.js ${{ matrix.node-version }}
+       uses: actions/setup-node@v1
+       with:
+         node-version: ${{ matrix.node-version }}
+     - name: install modules
+       run: npm install
+     - name: build project
+       run: npm run build:prod
+     - name: check unit tests
+       run: npm run test:unit
+     - name: check eslint
+       run: npm run lint:ts
+     - name: check stylelint
+       run: npm run lint:scss
