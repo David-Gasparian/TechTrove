@@ -23,9 +23,11 @@ jobs:
        run: npm install
      - name: build project
        run: npm run build:prod
-     - name: check unit tests
+     - name: unit testing
        run: npm run test:unit
      - name: check eslint
        run: npm run lint:ts
      - name: check stylelint
        run: npm run lint:scss
+     - name: screenshot testing
+       run: npm run test:ui:ci
