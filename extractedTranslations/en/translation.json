@@ -11,10 +11,13 @@
   "news": "news",
   "not_found": "not_found",
   "refresh_page": "refresh_page",
+  "short_language": "short_language",
   "something_went_wrong": "something_went_wrong",
   "throw_error": "throw_error",
   "toggle": "toggle",
   "toggle_button": "toggle_button",
   "upload": "upload",
-  "upload_page": "upload_page"
+  "upload_page": "upload_page",
+  "аbout": "аbout",
+  "нews": "нews"
 }

@@ -1,8 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from 'app/provider/themeProvider';
 
-import { ThemeDecorator } from '../../config/storybook/ThemeDecorator';
-import { AppButton, AppButtonTheme } from './AppButton';
+import { AppButton, AppButtonSize, AppButtonTheme } from './AppButton';
 
 export default {
     title: 'shared/AppButton',
@@ -31,9 +29,35 @@ Outlined.args = {
     theme: AppButtonTheme.OUTLINED,
 };
 
-export const OutlinedDark = Template.bind({});
-OutlinedDark.decorators = [ThemeDecorator(Theme.Dark)];
-OutlinedDark.args = {
+export const Background = Template.bind({});
+Background.args = {
     children: 'text',
-    theme: AppButtonTheme.OUTLINED,
+    theme: AppButtonTheme.BACKGROUND,
+};
+
+export const InvertedBackground = Template.bind({});
+InvertedBackground.args = {
+    children: 'text',
+    theme: AppButtonTheme.INVERTED_BACKGROUND,
+};
+
+export const ButtonSizeM = Template.bind({});
+ButtonSizeM.args = {
+    children: 'text',
+    theme: AppButtonTheme.INVERTED_BACKGROUND,
+    size: AppButtonSize.M,
+};
+
+export const ButtonSizeL = Template.bind({});
+ButtonSizeL.args = {
+    children: 'text',
+    theme: AppButtonTheme.INVERTED_BACKGROUND,
+    size: AppButtonSize.L,
+};
+
+export const ButtonSizeXL = Template.bind({});
+ButtonSizeXL.args = {
+    children: 'text',
+    theme: AppButtonTheme.INVERTED_BACKGROUND,
+    size: AppButtonSize.XL,
 };
