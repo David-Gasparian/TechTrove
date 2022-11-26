@@ -41,23 +41,47 @@ InvertedBackground.args = {
     theme: AppButtonTheme.INVERTED_BACKGROUND,
 };
 
-export const ButtonSizeM = Template.bind({});
-ButtonSizeM.args = {
+export const OutlinedSizeM = Template.bind({});
+OutlinedSizeM.args = {
     children: 'text',
-    theme: AppButtonTheme.INVERTED_BACKGROUND,
+    theme: AppButtonTheme.OUTLINED,
     size: AppButtonSize.M,
 };
 
-export const ButtonSizeL = Template.bind({});
-ButtonSizeL.args = {
+export const OutlinedSizeL = Template.bind({});
+OutlinedSizeL.args = {
     children: 'text',
-    theme: AppButtonTheme.INVERTED_BACKGROUND,
+    theme: AppButtonTheme.OUTLINED,
     size: AppButtonSize.L,
 };
 
-export const ButtonSizeXL = Template.bind({});
-ButtonSizeXL.args = {
+export const OutlinedSizeXL = Template.bind({});
+OutlinedSizeXL.args = {
     children: 'text',
+    theme: AppButtonTheme.OUTLINED,
+    size: AppButtonSize.XL,
+};
+
+export const SquareSizeM = Template.bind({});
+SquareSizeM.args = {
+    children: '>',
     theme: AppButtonTheme.INVERTED_BACKGROUND,
+    square: true,
+    size: AppButtonSize.M,
+};
+
+export const SquareSizeL = Template.bind({});
+SquareSizeL.args = {
+    children: '>',
+    theme: AppButtonTheme.INVERTED_BACKGROUND,
+    square: true,
+    size: AppButtonSize.L,
+};
+
+export const SquareSizeXL = Template.bind({});
+SquareSizeXL.args = {
+    children: '>',
+    theme: AppButtonTheme.INVERTED_BACKGROUND,
+    square: true,
     size: AppButtonSize.XL,
 };
