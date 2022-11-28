@@ -2,4 +2,12 @@
     width: 100%;
     height: var(--navbar-height);
     background: var(--inverted-bg-color);
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .loginBtn {
+        position: absolute;
+        right: 20px;
+    }
 }

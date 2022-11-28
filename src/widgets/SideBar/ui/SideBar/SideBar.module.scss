@@ -3,7 +3,7 @@
     width: var(--sidebar-width);
     background: var(--inverted-bg-color);
     position: relative;
-    transition: 0.3s;
+    transition: 0.3s width;
 
     .items {
         display: flex;

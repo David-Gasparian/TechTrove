@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1669633464299" clover="3.2.0">
+  <project timestamp="1669633464299" name="All files">
+    <metrics statements="89" coveredstatements="73" conditionals="25" coveredconditionals="15" methods="30" coveredmethods="20" elements="144" coveredelements="108" complexity="0" loc="89" ncloc="89" packages="26" files="27" classes="27"/>
+    <package name="config.jest">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="SvgMockComponent.tsx" path="C:\Users\User\Documents\projects\react-production\config\jest\SvgMockComponent.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="20" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.provider.themeProvider">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="C:\Users\User\Documents\projects\react-production\src\app\provider\themeProvider\index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.app.provider.themeProvider.lib">
+      <metrics statements="9" coveredstatements="6" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <file name="ThemeContext.tsx" path="C:\Users\User\Documents\projects\react-production\src\app\provider\themeProvider\lib\ThemeContext.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+      </file>
+      <file name="useTheme.ts" path="C:\Users\User\Documents\projects\react-production\src\app\provider\themeProvider\lib\useTheme.ts">
+        <metrics statements="7" coveredstatements="4" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="17" type="stmt"/>
+        <line num="12" count="17" type="stmt"/>
+        <line num="13" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="17" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.app.provider.themeProvider.ui">
+      <metrics statements="6" coveredstatements="2" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="0"/>
+      <file name="ThemeProvider.tsx" path="C:\Users\User\Documents\projects\react-production\src\app\provider\themeProvider\ui\ThemeProvider.tsx">
+        <metrics statements="6" coveredstatements="2" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="0"/>
+        <line num="4" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="17" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pages.AboutPage">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="C:\Users\User\Documents\projects\react-production\src\pages\AboutPage\index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.pages.AboutPage.ui">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="AboutPageAsync.ts" path="C:\Users\User\Documents\projects\react-production\src\pages\AboutPage\ui\AboutPageAsync.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pages.MainPage">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="C:\Users\User\Documents\projects\react-production\src\pages\MainPage\index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.pages.MainPage.ui">
+      <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="MainPage.tsx" path="C:\Users\User\Documents\projects\react-production\src\pages\MainPage\ui\MainPage.tsx">
+        <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pages.NewsPage">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="C:\Users\User\Documents\projects\react-production\src\pages\NewsPage\index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.pages.NewsPage.ui">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="NewsPageAsync.tsx" path="C:\Users\User\Documents\projects\react-production\src\pages\NewsPage\ui\NewsPageAsync.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pages.NotFound">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="C:\Users\User\Documents\projects\react-production\src\pages\NotFound\index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.pages.NotFound.ui">
+      <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="NotFound.tsx" path="C:\Users\User\Documents\projects\react-production\src\pages\NotFound\ui\NotFound.tsx">
+        <metrics statements="4" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.shared.config.configRoute.tsx">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="configRoute.tsx" path="C:\Users\User\Documents\projects\react-production\src\shared\config\configRoute.tsx\configRoute.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.shared.config.i18n">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="testI18n.ts" path="C:\Users\User\Documents\projects\react-production\src\shared\config\i18n\testI18n.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.shared.lib.classNames">
+      <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <file name="classNames.tsx" path="C:\Users\User\Documents\projects\react-production\src\shared\lib\classNames\classNames.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="7" count="87" type="stmt"/>
+        <line num="11" count="58" type="stmt"/>
+        <line num="12" count="15" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.shared.lib.componentRender">
+      <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="componentRender.tsx" path="C:\Users\User\Documents\projects\react-production\src\shared\lib\componentRender\componentRender.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="11" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="14" type="stmt"/>
+        <line num="16" count="14" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.shared.ui.AppButton">
+      <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="AppButton.tsx" path="C:\Users\User\Documents\projects\react-production\src\shared\ui\AppButton\AppButton.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="27" count="3" type="stmt"/>
+        <line num="35" count="27" type="stmt"/>
+        <line num="37" count="27" type="stmt"/>
+        <line num="41" count="27" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.shared.ui.AppLink">
+      <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="AppLink.tsx" path="C:\Users\User\Documents\projects\react-production\src\shared\ui\AppLink\AppLink.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="24" count="20" type="stmt"/>
+        <line num="26" count="20" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.shared.ui.Loader">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Loader.tsx" path="C:\Users\User\Documents\projects\react-production\src\shared\ui\Loader\Loader.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.shared.ui.Modal">
+      <metrics statements="24" coveredstatements="21" conditionals="4" coveredconditionals="1" methods="7" coveredmethods="5"/>
+      <file name="Modal.tsx" path="C:\Users\User\Documents\projects\react-production\src\shared\ui\Modal\Modal.tsx">
+        <metrics statements="24" coveredstatements="21" conditionals="4" coveredconditionals="1" methods="7" coveredmethods="5"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="24" count="13" type="stmt"/>
+        <line num="26" count="12" type="stmt"/>
+        <line num="27" count="12" type="stmt"/>
+        <line num="28" count="12" type="stmt"/>
+        <line num="30" count="12" type="stmt"/>
+        <line num="35" count="12" type="stmt"/>
+        <line num="36" count="8" type="stmt"/>
+        <line num="37" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="42" count="8" type="stmt"/>
+        <line num="43" count="8" type="stmt"/>
+        <line num="44" count="8" type="stmt"/>
+        <line num="45" count="8" type="stmt"/>
+        <line num="49" count="12" type="stmt"/>
+        <line num="50" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="51" count="2" type="stmt"/>
+        <line num="52" count="2" type="stmt"/>
+        <line num="53" count="2" type="stmt"/>
+        <line num="54" count="2" type="stmt"/>
+        <line num="59" count="12" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="63" count="12" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.shared.ui.Portal">
+      <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="Portal.tsx" path="C:\Users\User\Documents\projects\react-production\src\shared\ui\Portal\Portal.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="13" count="12" type="stmt"/>
+        <line num="15" count="12" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.widgets.LangSwitcher">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="C:\Users\User\Documents\projects\react-production\src\widgets\LangSwitcher\index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.widgets.LangSwitcher.ui">
+      <metrics statements="6" coveredstatements="5" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="1"/>
+      <file name="LangSwitcher.tsx" path="C:\Users\User\Documents\projects\react-production\src\widgets\LangSwitcher\ui\LangSwitcher.tsx">
+        <metrics statements="6" coveredstatements="5" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="1"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="10" type="stmt"/>
+        <line num="15" count="10" type="stmt"/>
+        <line num="17" count="10" type="stmt"/>
+        <line num="18" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="21" count="10" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.widgets.SideBar.ui.SideBar">
+      <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <file name="SideBar.tsx" path="C:\Users\User\Documents\projects\react-production\src\widgets\SideBar\ui\SideBar\SideBar.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="5" type="stmt"/>
+        <line num="21" count="5" type="stmt"/>
+        <line num="23" count="5" type="stmt"/>
+        <line num="25" count="5" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="29" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.widgets.ThemeSwitcher">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="C:\Users\User\Documents\projects\react-production\src\widgets\ThemeSwitcher\index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.widgets.ThemeSwitcher.ui">
+      <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="ThemeSwitcher.tsx" path="C:\Users\User\Documents\projects\react-production\src\widgets\ThemeSwitcher\ui\ThemeSwitcher.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="5" type="stmt"/>
+        <line num="16" count="5" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

@@ -3,8 +3,12 @@
 @import "./theme/dark";
 @import "./theme/light";
 
-.App {
+body {
     font: var(--font-m);
+    color: var(--primary-color);
+}
+
+.App {
     background-color: var(--bg-color);
     color: var(--primary-color);
     height: 100vh;

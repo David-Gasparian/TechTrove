@@ -1,6 +1,11 @@
 {
   "About": "About",
   "Loading": "Loading",
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit": {
+    " Tempore, totam provident minima ipsa saepe voluptates, laudantium veniam at quis odit aspernatur repellendus accusamus culpa impedit nam et quisquam maiores corrupti": {
+      "": ""
+    }
+  },
   "Main": "Main",
   "News": "News",
   "Something went wrong": "Something went wrong",
@@ -12,6 +17,7 @@
   "not_found": "not_found",
   "refresh_page": "refresh_page",
   "short_language": "short_language",
+  "signIn": "signIn",
   "something_went_wrong": "something_went_wrong",
   "throw_error": "throw_error",
   "toggle": "toggle",

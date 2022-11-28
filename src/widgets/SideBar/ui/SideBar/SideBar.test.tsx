@@ -19,4 +19,20 @@ describe('SideBar', () => {
 
         expect(sideBar).toHaveClass('collapsed');
     });
+
+    test('check prop className', () => {
+        const className = 'className';
+        componentRender(<SideBar className={className} />);
+        expect(screen.getByTestId('sideBar')).toHaveClass(className);
+    });
+
+    test('check unmount', () => {
+        const wrapper = componentRender(<SideBar />);
+
+        expect(screen.getByTestId('sideBar')).toBeInTheDocument();
+
+        wrapper.unmount();
+
+        expect(screen.queryByTestId('sideBar')).toBeNull();
+    });
 });

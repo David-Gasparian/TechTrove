@@ -5,7 +5,6 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widgets/Navbar';
 import { SideBar } from 'widgets/SideBar';
 import { AppRoute } from './provider/route';
-import './styles/index.scss';
 
 export const App: FC = () => {
     const { theme } = useTheme();

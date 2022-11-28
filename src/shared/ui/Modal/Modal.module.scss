@@ -1,0 +1,55 @@
+.Modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+    color: var(--primary-color);
+
+    .overlay {
+        width: 100%;
+        height: 100%;
+        background: var(--overlay-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .content {
+            padding: 20px;
+            border-radius: 10px;
+            background: var(--bg-color);
+            max-width: 50%;
+            transition: 0.2s transform;
+            transform: scale(0.5);
+        }
+    }
+}
+
+.Modal.opened {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: var(--modal-z-index);
+
+    .content {
+        transform: scale(1);
+    }
+}
+
+.Modal.closing {
+    .content {
+        transform: scale(0);
+    }
+}
+
+.Modal.dark {
+    --bg-color: rgb(10 10 142);
+    --primary-color: rgb(31 255 31);
+}
+
+.Modal.light {
+    --bg-color: rgb(247 247 248);
+    --primary-color: rgb(52 52 245);
+}

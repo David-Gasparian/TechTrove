@@ -20,6 +20,7 @@ export const LangSwitcher: FC<LangSwitcherProps> = (props) => {
 
     return (
         <AppButton
+            data-testid='langSwitcher'
             theme={AppButtonTheme.CLEAR}
             onClick={toggleLanguage}
             className={classNames('', {}, [className])}

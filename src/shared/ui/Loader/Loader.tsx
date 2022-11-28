@@ -13,7 +13,10 @@ export const Loader: FC<LoaderProps> = (props) => {
     } = props;
 
     return (
-        <div className={classNames('lds-roller', {}, [className])}>
+        <div
+            data-testid='loader'
+            className={classNames('lds-roller', {}, [className])}
+        >
             <div />
             <div />
             <div />
