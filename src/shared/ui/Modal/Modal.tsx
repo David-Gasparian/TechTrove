@@ -1,4 +1,3 @@
-import { useTheme } from 'app/provider/themeProvider';
 import {
     FC, MouseEvent, useEffect, useRef, useState,
 } from 'react';
@@ -23,7 +22,6 @@ export const Modal: FC<ModalProps> = (props) => {
         onClose,
     } = props;
 
-    const { theme } = useTheme();
     const ref = useRef<ReturnType<typeof setTimeout>>(null);
     const [isClosing, setIsClosing] = useState(false);
 
@@ -64,7 +62,7 @@ export const Modal: FC<ModalProps> = (props) => {
         <Portal>
             <div
                 data-testid='modal'
-                className={classNames(cln.Modal, mode, [className, cln[theme]])}
+                className={classNames(cln.Modal, mode, [className])}
             >
                 <div
                     data-testid='overlay'
