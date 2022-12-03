@@ -4,5 +4,9 @@
       "": ""
     }
   },
-  "signIn": ""
+  "login": "",
+  "password": "",
+  "signIn": "",
+  "userName": "",
+  "username": ""
 }

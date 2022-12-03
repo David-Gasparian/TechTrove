@@ -1,4 +1,6 @@
 {
-    "signIn": "Sign In"
+    "login": "Login",
+    "password": "Password",
+    "username": "Username"
 }
   

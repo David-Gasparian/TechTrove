@@ -1,0 +1,50 @@
+.inputWrapper {
+    display: flex;
+
+    .placeholder {
+        margin-right: 10px;
+    }
+
+    .curetWrapper {
+        position: relative;
+        flex-grow: 1;
+
+        input {
+            font: var(--font-m);
+            border: none;
+            background: transparent;
+            outline: none;
+            width: 100%;
+            color: transparent;
+            text-shadow: 0 0 0 var(--primary-color);
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .curet {
+            background: var(--primary-color);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 9px;
+            height: 3px;
+            animation: blink 0.7s forwards infinite;
+        }
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

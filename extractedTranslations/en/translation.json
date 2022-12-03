@@ -10,13 +10,17 @@
   "News": "News",
   "Something went wrong": "Something went wrong",
   "Something_went_wrong": "Something_went_wrong",
+  "User": "User",
   "about": "about",
+  "click": "click",
   "decrement": "decrement",
   "increment": "increment",
   "language": "language",
+  "login": "login",
   "main": "main",
   "news": "news",
   "not_found": "not_found",
+  "password": "password",
   "refresh_page": "refresh_page",
   "short_language": "short_language",
   "signIn": "signIn",
@@ -25,5 +29,7 @@
   "toggle": "toggle",
   "toggle_button": "toggle_button",
   "upload": "upload",
-  "upload_page": "upload_page"
+  "upload_page": "upload_page",
+  "userName": "userName",
+  "username": "username"
 }

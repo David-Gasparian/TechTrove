@@ -4,7 +4,7 @@ import {
 import { Modal } from './Modal';
 
 describe('Modal', () => {
-    test('check Modal', () => {
+    test('this elements should be in the document', () => {
         render(<Modal>Test</Modal>);
         expect(screen.getByTestId('modal')).toBeInTheDocument();
         expect(screen.getByTestId('overlay')).toBeInTheDocument();
@@ -27,7 +27,7 @@ describe('Modal', () => {
         expect(screen.getByTestId('modal')).not.toHaveClass('opened');
     });
 
-    test('check onClose props', () => {
+    test('check onClose prop', () => {
         jest.useFakeTimers();
         const mockFunc = jest.fn();
 
@@ -67,6 +67,11 @@ describe('Modal', () => {
         const content = screen.getByText(children);
 
         expect(content).toBeTruthy();
+    });
+
+    test('check lazy prop', () => {
+        render(<Modal isOpen={false} lazy>text</Modal>);
+        expect(screen.queryByTestId('modal')).toBeNull();
     });
 
     test('check modal unmount', () => {

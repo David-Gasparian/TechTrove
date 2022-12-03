@@ -10,6 +10,7 @@ interface ModalProps {
     className?: string;
     isOpen?: boolean;
     onClose?: () => void;
+    lazy?: boolean;
 }
 
 const ANIMATION_DELAY = 300;
@@ -20,15 +21,23 @@ export const Modal: FC<ModalProps> = (props) => {
         children,
         isOpen,
         onClose,
+        lazy,
     } = props;
 
     const ref = useRef<ReturnType<typeof setTimeout>>(null);
     const [isClosing, setIsClosing] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
 
     const mode: Record<string, boolean> = {
         [cln.opened]: isOpen,
         [cln.closing]: isClosing,
     };
+
+    useEffect(() => {
+        if (isOpen) {
+            setIsMounted(true);
+        }
+    }, [isOpen]);
 
     useEffect(() => {
         const onKeyDown = (e: KeyboardEvent) => {
@@ -57,6 +66,10 @@ export const Modal: FC<ModalProps> = (props) => {
     const onHandleContentClick = (e: MouseEvent<HTMLDivElement>) => {
         e.stopPropagation();
     };
+
+    if (lazy && !isMounted) {
+        return null;
+    }
 
     return (
         <Portal>
