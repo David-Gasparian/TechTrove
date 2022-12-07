@@ -2,6 +2,7 @@ import { addDecorator } from '@storybook/react';
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator';
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator';
 import { RouteDecorator } from '../../src/shared/config/storybook/RouteDecorator';
+import { StoreDecorator } from '../../src/shared/config/storybook/StoreDecorator';
 import { Theme } from '../../src/app/provider/themeProvider/lib/ThemeContext';
 
 export const parameters = {
@@ -17,3 +18,4 @@ export const parameters = {
 addDecorator(StyleDecorator);
 addDecorator(ThemeDecorator(Theme.LIGHT));
 addDecorator(RouteDecorator);
+addDecorator(StoreDecorator({}));

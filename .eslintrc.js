@@ -53,7 +53,7 @@ module.exports = {
                 ignoreAttribute: ['to', 'data-testid'],
             },
         ],
-        'max-len': ['error', { ignoreComments: true, code: 100 }],
+        'max-len': ['error', { ignoreComments: true, code: 120 }],
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'warn',
         'jsx-a11y/click-events-have-key-events': 'off',

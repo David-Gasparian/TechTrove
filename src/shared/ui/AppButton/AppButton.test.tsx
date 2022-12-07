@@ -33,6 +33,12 @@ describe('AppButton', () => {
         expect(screen.getByText('Test')).toHaveClass(AppButtonSize.XL);
     });
 
+    test('check prop disabled', () => {
+        render(<AppButton disabled>Test</AppButton>);
+        expect(screen.getByText('Test')).toHaveAttribute('disabled');
+        expect(screen.getByText('Test')).toHaveClass('disabled');
+    });
+
     test('check unmount', () => {
         const wrapper = render(<AppButton>Test</AppButton>);
         const button = screen.getByText('Test');
