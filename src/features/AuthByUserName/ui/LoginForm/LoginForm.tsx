@@ -1,4 +1,4 @@
-import { FC, useCallback } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -6,25 +6,36 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { AppButton, AppButtonTheme } from 'shared/ui/AppButton/AppButton';
 import { AppInput } from 'shared/ui/AppInput/AppInput';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { AsyncReducersList, useAsyncReducer } from 'shared/lib/hooks/useAsyncReducer';
+import { selectUserPassword } from '../../model/selectors/selectUserPassword/selectUserPassword';
+import { selectUserName } from '../../model/selectors/selectUserPassword/selectUserPassword.test';
+import { selectLoginError } from '../../model/selectors/selectLoginError/selectLoginError';
+import { selectIsLoading } from '../../model/selectors/selectIsLoading/selectIsLoading';
 import { authByUserName } from '../../model/services/AuthByUserName/AuthByUserName';
-import { selectLoginFormData } from '../../model/selectors/selectLoginFormData/selectLoginFormData';
-import { loginActions } from '../../model/slice/loginSlice';
+import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import cln from './LoginForm.module.scss';
 
-interface LoginFormProps {
+export interface LoginFormProps {
     className?: string;
 }
 
-export const LoginForm: FC<LoginFormProps> = (props) => {
-    const { t } = useTranslation('navbar');
-    const dispatch = useDispatch();
-    const {
-        password, username, error, isLoading,
-    } = useSelector(selectLoginFormData);
+const asyncReducersList: AsyncReducersList = {
+    loginForm: loginReducer,
+};
 
+const LoginForm = memo((props: LoginFormProps) => {
     const {
         className,
     } = props;
+
+    const { t } = useTranslation('navbar');
+    const dispatch = useDispatch();
+    const password = useSelector(selectUserPassword);
+    const username = useSelector(selectUserName);
+    const error = useSelector(selectLoginError);
+    const isLoading = useSelector(selectIsLoading);
+
+    useAsyncReducer(asyncReducersList);
 
     const onHandleChangeUserName = useCallback((value: string) => {
         dispatch(loginActions.setUserName(value));
@@ -79,4 +90,6 @@ export const LoginForm: FC<LoginFormProps> = (props) => {
             </AppButton>
         </div>
     );
-};
+});
+
+export default LoginForm;

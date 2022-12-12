@@ -1,1 +1,1 @@
-export { NewsPageAsync as NewsPage } from './ui/NewsPageAsync';
+export { NewsPageAsync as NewsPage } from './ui/NewsPage.async';

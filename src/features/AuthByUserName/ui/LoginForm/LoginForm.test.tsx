@@ -2,7 +2,7 @@ import {
     fireEvent, screen,
 } from '@testing-library/react';
 import { componentRender } from 'shared/lib/componentRender/componentRender';
-import { LoginForm } from './LoginForm';
+import LoginForm from './LoginForm';
 
 describe('LoginForm', () => {
     test('this elements should be in the document', () => {
