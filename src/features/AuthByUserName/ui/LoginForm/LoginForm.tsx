@@ -8,7 +8,7 @@ import { AppInput } from 'shared/ui/AppInput/AppInput';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { AsyncReducersList, useAsyncReducer } from 'shared/lib/hooks/useAsyncReducer';
 import { selectUserPassword } from '../../model/selectors/selectUserPassword/selectUserPassword';
-import { selectUserName } from '../../model/selectors/selectUserPassword/selectUserPassword.test';
+import { selectUserName } from '../../model/selectors/selectUserName/selectUserName';
 import { selectLoginError } from '../../model/selectors/selectLoginError/selectLoginError';
 import { selectIsLoading } from '../../model/selectors/selectIsLoading/selectIsLoading';
 import { authByUserName } from '../../model/services/AuthByUserName/AuthByUserName';
