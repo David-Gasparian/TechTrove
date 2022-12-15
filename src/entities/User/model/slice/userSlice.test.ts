@@ -1,4 +1,5 @@
 import { USER_LOCAL_STORAGE_KEY } from 'shared/consts/localStorage';
+import { userStorage } from 'shared/lib/storage/adapters/userAdapter';
 import { User, UserSchema } from '../types/userSchema';
 import { userActions, userReducer } from './userSlice';
 
@@ -24,7 +25,7 @@ describe('userSlice', () => {
             authData: user,
         };
 
-        localStorage.setItem(USER_LOCAL_STORAGE_KEY, JSON.stringify(user));
+        userStorage.setUser(USER_LOCAL_STORAGE_KEY, JSON.stringify(user));
 
         expect(userReducer({ authData: null }, userActions.initAuthUser())).toEqual(result);
     });

@@ -1,3 +1,3 @@
-export { userActions, userReducer } from './modal/slice/userSlice';
-export { UserSchema } from './modal/types/userSchema';
-export { selectAuthData } from './modal/selectors/selectAuthData/selectAuthData';
+export { userActions, userReducer } from './model/slice/userSlice';
+export { UserSchema, User } from './model/types/userSchema';
+export { selectAuthData } from './model/selectors/selectAuthData/selectAuthData';
