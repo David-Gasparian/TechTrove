@@ -6,8 +6,8 @@ import { userActions, userReducer } from './userSlice';
 describe('userSlice', () => {
     test('set authData', () => {
         const user: User = {
-            id: 1,
-            name: 'username',
+            id: '1',
+            username: 'username',
         };
         const returnResult: UserSchema = {
             authData: user,
@@ -18,8 +18,8 @@ describe('userSlice', () => {
 
     test('init auth user', () => {
         const user: User = {
-            id: 1,
-            name: 'username',
+            id: '1',
+            username: 'username',
         };
         const result: UserSchema = {
             authData: user,
@@ -33,8 +33,8 @@ describe('userSlice', () => {
     test('logout', () => {
         const state: UserSchema = {
             authData: {
-                id: 1,
-                name: 'username',
+                id: '1',
+                username: 'username',
             },
         };
 

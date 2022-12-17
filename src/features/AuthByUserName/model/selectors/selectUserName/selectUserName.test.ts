@@ -27,4 +27,9 @@ describe('selectUserName', () => {
         };
         expect(selectUserName(state as StateSchema)).toEqual(name);
     });
+
+    test('if state is empty', () => {
+        const state: DeepPartial<StateSchema> = {};
+        expect(selectUserName(state as StateSchema)).toBe('');
+    });
 });

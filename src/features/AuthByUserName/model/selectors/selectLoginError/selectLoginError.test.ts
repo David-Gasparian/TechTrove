@@ -27,4 +27,9 @@ describe('selectLoginError', () => {
         };
         expect(selectLoginError(state as StateSchema)).toEqual(error);
     });
+
+    test('if state is empty', () => {
+        const state: DeepPartial<StateSchema> = {};
+        expect(selectLoginError(state as StateSchema)).toBe('');
+    });
 });

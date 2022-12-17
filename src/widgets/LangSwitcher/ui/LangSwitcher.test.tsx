@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 
-import { componentRender } from 'shared/lib/componentRender/componentRender';
+import { componentRender } from 'shared/lib/test/componentRender/componentRender';
 import { LangSwitcher } from './LangSwitcher';
 
 describe('LangSwitcher', () => {

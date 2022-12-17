@@ -1,7 +1,7 @@
 import {
     fireEvent, screen,
 } from '@testing-library/react';
-import { componentRender } from 'shared/lib/componentRender/componentRender';
+import { componentRender } from 'shared/lib/test/componentRender/componentRender';
 import LoginForm from './LoginForm';
 
 describe('LoginForm', () => {

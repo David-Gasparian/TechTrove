@@ -15,8 +15,8 @@ describe('selectAuthData', () => {
 
     test('if user is authorized', () => {
         const user = {
-            name: 'userName',
-            id: 1,
+            username: 'userName',
+            id: '1',
         };
         const state: DeepPartial<StateSchema> = {
             user: {

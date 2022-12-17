@@ -27,4 +27,9 @@ describe('selectUserPassword', () => {
         };
         expect(selectUserPassword(state as StateSchema)).toEqual(password);
     });
+
+    test('if state is empty', () => {
+        const state: DeepPartial<StateSchema> = {};
+        expect(selectUserPassword(state as StateSchema)).toBe('');
+    });
 });

@@ -11,7 +11,7 @@ import { selectUserPassword } from '../../model/selectors/selectUserPassword/sel
 import { selectUserName } from '../../model/selectors/selectUserName/selectUserName';
 import { selectLoginError } from '../../model/selectors/selectLoginError/selectLoginError';
 import { selectIsLoading } from '../../model/selectors/selectIsLoading/selectIsLoading';
-import { authByUserName } from '../../model/services/AuthByUserName/AuthByUserName';
+import { authByUserName } from '../../model/services/authByUserName/authByUserName';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import cln from './LoginForm.module.scss';
 

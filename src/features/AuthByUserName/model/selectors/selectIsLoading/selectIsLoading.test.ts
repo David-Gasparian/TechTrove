@@ -25,4 +25,9 @@ describe('selectIsLoading', () => {
         };
         expect(selectIsLoading(state as StateSchema)).toEqual(true);
     });
+
+    test('if state is empty', () => {
+        const state: DeepPartial<StateSchema> = {};
+        expect(selectIsLoading(state as StateSchema)).toBe(false);
+    });
 });
