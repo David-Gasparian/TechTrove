@@ -1,6 +1,5 @@
 import {
     ChangeEvent,
-    FC,
     InputHTMLAttributes,
     memo,
     SyntheticEvent,
@@ -23,7 +22,7 @@ interface AppInputProps extends HTMLInputProps {
     autoFocus?: boolean;
 }
 
-export const AppInput: FC<AppInputProps> = memo((props: AppInputProps) => {
+export const AppInput = memo((props: AppInputProps) => {
     const {
         className,
         type = 'text',

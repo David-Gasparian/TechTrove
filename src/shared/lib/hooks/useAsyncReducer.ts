@@ -9,7 +9,11 @@ export type AsyncReducersList = {
 
 type ReducerLineEntity = [StateSchemaKeys, Reducer];
 
-export const useAsyncReducer = (reducers: AsyncReducersList) => {
+interface Options {
+    removeAfterUnmount?: boolean;
+}
+
+export const useAsyncReducer = (reducers: AsyncReducersList, options?: Options) => {
     const dispatch = useDispatch();
     const store = useStore() as ReduxStoreWithManager;
 
@@ -20,10 +24,12 @@ export const useAsyncReducer = (reducers: AsyncReducersList) => {
         });
 
         return () => {
-            Object.entries(reducers).forEach(([name]: ReducerLineEntity) => {
-                store.reducerManager.remove(name);
-                dispatch({ type: `@DESTROY-${name}-REDUCER` });
-            });
+            if (options.removeAfterUnmount) {
+                Object.entries(reducers).forEach(([name]: ReducerLineEntity) => {
+                    store.reducerManager.remove(name);
+                    dispatch({ type: `@DESTROY-${name}-REDUCER` });
+                });
+            }
         };
 
         // eslint-disable-next-line react-hooks/exhaustive-deps

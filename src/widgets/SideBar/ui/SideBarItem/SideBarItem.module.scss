@@ -1,0 +1,17 @@
+.item {
+    color: var(--inverted-primary-color);
+
+    .icon {
+        fill: var(--inverted-primary-color);
+    }
+
+    span {
+        margin: 0 0 0 10px;
+    }
+}
+
+.collapsed {
+    span {
+        opacity: 0;
+    }
+}

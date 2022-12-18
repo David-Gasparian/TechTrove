@@ -1,12 +1,13 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppButton, AppButtonTheme } from 'shared/ui/AppButton/AppButton';
 import { AppInput } from 'shared/ui/AppInput/AppInput';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { AsyncReducersList, useAsyncReducer } from 'shared/lib/hooks/useAsyncReducer';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { selectUserPassword } from '../../model/selectors/selectUserPassword/selectUserPassword';
 import { selectUserName } from '../../model/selectors/selectUserName/selectUserName';
 import { selectLoginError } from '../../model/selectors/selectLoginError/selectLoginError';
@@ -17,6 +18,7 @@ import cln from './LoginForm.module.scss';
 
 export interface LoginFormProps {
     className?: string;
+    onCloseModal?: () => void;
 }
 
 const asyncReducersList: AsyncReducersList = {
@@ -26,16 +28,17 @@ const asyncReducersList: AsyncReducersList = {
 const LoginForm = memo((props: LoginFormProps) => {
     const {
         className,
+        onCloseModal,
     } = props;
 
     const { t } = useTranslation('navbar');
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const password = useSelector(selectUserPassword);
     const username = useSelector(selectUserName);
     const error = useSelector(selectLoginError);
     const isLoading = useSelector(selectIsLoading);
 
-    useAsyncReducer(asyncReducersList);
+    useAsyncReducer(asyncReducersList, { removeAfterUnmount: true });
 
     const onHandleChangeUserName = useCallback((value: string) => {
         dispatch(loginActions.setUserName(value));
@@ -45,9 +48,12 @@ const LoginForm = memo((props: LoginFormProps) => {
         dispatch(loginActions.setUserPassword(value));
     }, [dispatch]);
 
-    const onHandleLoginClick = useCallback(() => {
-        dispatch(authByUserName({ password, username }));
-    }, [username, password, dispatch]);
+    const onHandleLoginClick = useCallback(async () => {
+        const result = await dispatch(authByUserName({ password, username }));
+        if (result.meta.requestStatus === 'fulfilled') {
+            onCloseModal();
+        }
+    }, [onCloseModal, username, password, dispatch]);
 
     return (
         <div

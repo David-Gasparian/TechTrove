@@ -1,5 +1,5 @@
 import {
-    FC, useCallback, useState,
+    FC, memo, useCallback, useState,
 } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -14,7 +14,7 @@ interface NavbarProps {
     className?: string;
 }
 
-export const Navbar: FC<NavbarProps> = (props) => {
+export const Navbar = memo((props: NavbarProps) => {
     const { className } = props;
     const { t } = useTranslation('navbar');
     const dispatch = useDispatch();
@@ -69,4 +69,4 @@ export const Navbar: FC<NavbarProps> = (props) => {
             )}
         </div>
     );
-};
+});

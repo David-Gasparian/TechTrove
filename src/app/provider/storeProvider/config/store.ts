@@ -4,7 +4,7 @@ import {
 
 import { userReducer } from 'entities/User';
 import { createReducerManager } from './reducerManager';
-import { ReduxStoreWithManager, StateSchema } from './stateSchema';
+import { StateSchema } from './stateSchema';
 
 export const createReduxStore = (
     initialState?: StateSchema,
@@ -21,9 +21,12 @@ export const createReduxStore = (
         reducer: reducerManager.reduce,
         devTools: __IS_DEV__,
         preloadedState: initialState,
-    }) as ReduxStoreWithManager;
+    });
 
+    // @ts-ignore
     store.reducerManager = reducerManager;
 
     return store;
 };
+
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];

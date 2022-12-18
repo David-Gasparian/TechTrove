@@ -9,7 +9,7 @@ const initialState: UserSchema = {
 };
 
 const userSlice = createSlice({
-    name: 'User',
+    name: 'user',
     initialState,
     reducers: {
         setAuthUser: (state, action: PayloadAction<User>) => {
