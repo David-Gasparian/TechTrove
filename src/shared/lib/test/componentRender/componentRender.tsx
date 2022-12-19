@@ -19,13 +19,13 @@ export const componentRender = (omponent: ReactNode, options: ComponentRenderOpt
 
     return (
         render(
-            <StoreProvider initialValue={initialValue}>
-                <MemoryRouter initialEntries={[path]}>
+            <MemoryRouter initialEntries={[path]}>
+                <StoreProvider initialValue={initialValue}>
                     <I18nextProvider i18n={i18n}>
                         {omponent}
                     </I18nextProvider>
-                </MemoryRouter>
-            </StoreProvider>,
+                </StoreProvider>
+            </MemoryRouter>,
         )
     );
 };
