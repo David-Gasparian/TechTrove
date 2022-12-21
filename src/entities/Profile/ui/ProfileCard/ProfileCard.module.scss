@@ -1,0 +1,10 @@
+.ProfileCard {
+    border: 2px solid var(--inverted-bg-color);
+    position: relative;
+    padding: 20px;
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+    }
+}

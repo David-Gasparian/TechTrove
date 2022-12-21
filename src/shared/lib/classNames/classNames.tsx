@@ -3,7 +3,7 @@ type Mode = Record<string, string | boolean>;
 export const classNames = (
     cln: string,
     mod: Mode = {},
-    additional: string[] = [],
+    additional: Array<string | undefined> = [],
 ): string => [
     cln,
     ...additional.filter(Boolean),
