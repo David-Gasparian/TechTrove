@@ -1,7 +1,4 @@
-import { DeepPartial } from '@reduxjs/toolkit';
-
 import { StateSchema } from 'app/provider/storeProvider';
-import { Country, Currency } from 'shared/consts/common';
 import { Profile } from '../../types/profileSchema';
 import { selectProfileData } from './selectProfileData';
 
@@ -11,11 +8,6 @@ describe('selectProfileData', () => {
             first: 'first',
             lastname: 'lastname',
             age: 22,
-            currency: Currency.DOL,
-            country: Country.AMERICA,
-            city: 'city',
-            username: 'username',
-            avatar: 'avatar',
         };
 
         const state: DeepPartial<StateSchema> = {

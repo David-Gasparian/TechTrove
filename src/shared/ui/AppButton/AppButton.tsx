@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, memo } from 'react';
 
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mode } from 'shared/lib/classNames/classNames';
 import cln from './AppButton.module.scss';
 
 export enum AppButtonTheme {
@@ -29,14 +29,14 @@ export const AppButton = memo((props: AppButtonProps) => {
     const {
         children,
         className,
-        theme,
+        theme = AppButtonTheme.OUTLINED,
         square,
         disabled,
         size = AppButtonSize.M,
         ...otherProps
     } = props;
 
-    const mode: Record<string, boolean> = {
+    const mode: Mode = {
         [cln.square]: square,
         [cln.disabled]: disabled,
     };

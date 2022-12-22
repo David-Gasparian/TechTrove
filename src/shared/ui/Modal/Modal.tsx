@@ -2,7 +2,7 @@ import {
     FC, MouseEvent, useEffect, useRef, useState,
 } from 'react';
 
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mode } from 'shared/lib/classNames/classNames';
 import { Portal } from '../Portal/Portal';
 import cln from './Modal.module.scss';
 
@@ -24,11 +24,11 @@ export const Modal: FC<ModalProps> = (props) => {
         lazy,
     } = props;
 
-    const ref = useRef<ReturnType<typeof setTimeout>>(null);
+    const timerId = useRef<ReturnType<typeof setTimeout>>();
     const [isClosing, setIsClosing] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
 
-    const mode: Record<string, boolean> = {
+    const mode: Mode = {
         [cln.opened]: isOpen,
         [cln.closing]: isClosing,
     };
@@ -48,7 +48,7 @@ export const Modal: FC<ModalProps> = (props) => {
 
         document.addEventListener('keydown', onKeyDown);
         return () => {
-            clearTimeout(ref.current);
+            clearTimeout(timerId.current);
             document.removeEventListener('keydown', onKeyDown);
         };
     }, [isOpen]);
@@ -56,7 +56,7 @@ export const Modal: FC<ModalProps> = (props) => {
     const onHandleClose = () => {
         if (onClose) {
             setIsClosing(true);
-            ref.current = setTimeout(() => {
+            timerId.current = setTimeout(() => {
                 onClose();
                 setIsClosing(false);
             }, ANIMATION_DELAY);

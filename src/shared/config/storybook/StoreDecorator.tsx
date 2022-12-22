@@ -1,4 +1,4 @@
-import { DeepPartial, ReducersMapObject } from '@reduxjs/toolkit';
+import { ReducersMapObject } from '@reduxjs/toolkit';
 import { Story } from '@storybook/react';
 
 import { StateSchema, StoreProvider } from 'app/provider/storeProvider';

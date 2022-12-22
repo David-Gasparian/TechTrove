@@ -5,7 +5,7 @@ import { userStorage } from 'shared/lib/storage/adapters/userAdapter';
 import { User, UserSchema } from '../types/userSchema';
 
 const initialState: UserSchema = {
-    authData: null,
+    authData: undefined,
 };
 
 const userSlice = createSlice({
@@ -22,7 +22,7 @@ const userSlice = createSlice({
             }
         },
         logout: (state) => {
-            state.authData = null;
+            state.authData = undefined;
             userStorage.removeUser(USER_LOCAL_STORAGE_KEY);
         },
     },

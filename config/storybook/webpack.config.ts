@@ -12,9 +12,9 @@ export default ({ config }: { config: Configuration }) => {
         src: path.relative(__dirname, '../../src'),
     };
 
-    config.resolve?.modules?.push(paths.src);
-    config.resolve?.extensions?.push('.ts', '.tsx');
-    config.module?.rules?.push(getCssLoader(true));
+    config.resolve!.modules!.push(paths.src);
+    config.resolve!.extensions!.push('.ts', '.tsx');
+    config.module!.rules!.push(getCssLoader(true));
 
     if (config.module?.rules) {
         const { rules } = config.module as { rules: RuleSetRule[] };
@@ -29,12 +29,12 @@ export default ({ config }: { config: Configuration }) => {
         });
     }
 
-    config.module?.rules?.push({
+    config.module!.rules!.push({
         test: /\.svg$/i,
         use: ['@svgr/webpack'],
     });
 
-    config.plugins?.push(
+    config.plugins!.push(
         new DefinePlugin({
             __IS_DEV__: true,
             __API__: '',

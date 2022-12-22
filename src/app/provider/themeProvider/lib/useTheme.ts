@@ -13,14 +13,14 @@ export const useTheme = (): UseThemeResult => {
 
     const toggleTheme = () => {
         const newTheme = theme === Theme.LIGHT ? Theme.Dark : Theme.LIGHT;
-        setTheme(newTheme);
+        setTheme?.(newTheme);
         themeStorage.setTheme(THEME_LOCAL_STORAGE_KEY, newTheme);
     };
 
-    document.body.className = theme;
+    document.body.className = theme || Theme.LIGHT;
 
     return {
-        theme,
+        theme: theme || Theme.LIGHT,
         toggleTheme,
     };
 };

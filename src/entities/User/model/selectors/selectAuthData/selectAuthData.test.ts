@@ -1,5 +1,3 @@
-import { DeepPartial } from '@reduxjs/toolkit';
-
 import { StateSchema } from 'app/provider/storeProvider';
 import { selectAuthData } from './selectAuthData';
 
@@ -7,10 +5,10 @@ describe('selectAuthData', () => {
     test('if user is not authorized', () => {
         const state: DeepPartial<StateSchema> = {
             user: {
-                authData: null,
+                authData: undefined,
             },
         };
-        expect(selectAuthData(state as StateSchema)).toEqual(null);
+        expect(selectAuthData(state as StateSchema)).toEqual(undefined);
     });
 
     test('if user is authorized', () => {

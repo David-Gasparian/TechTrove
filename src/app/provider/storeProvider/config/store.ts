@@ -1,5 +1,6 @@
 import {
-    configureStore, ReducersMapObject,
+    CombinedState,
+    configureStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { NavigateOptions, To } from 'react-router-dom';
 import { CurriedGetDefaultMiddleware } from '@reduxjs/toolkit/dist/getDefaultMiddleware';
@@ -22,7 +23,7 @@ export const createReduxStore = (
     const reducerManager = createReducerManager(reducer);
 
     const store = configureStore({
-        reducer: reducerManager.reduce,
+        reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
         devTools: __IS_DEV__,
         preloadedState: initialState,
         middleware: (getDefaultMiddleware: CurriedGetDefaultMiddleware) => getDefaultMiddleware({

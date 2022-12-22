@@ -18,14 +18,16 @@ export const useAsyncReducer = (reducers: AsyncReducersList, options?: Options) 
     const store = useStore() as ReduxStoreWithManager;
 
     useEffect(() => {
-        Object.entries(reducers).forEach(([name, reducer]: ReducerLineEntity) => {
+        Object.entries(reducers).forEach((item) => {
+            const [name, reducer] = item as ReducerLineEntity;
             store.reducerManager.add(name, reducer);
             dispatch({ type: `@INTI-${name}-REDUCER` });
         });
 
         return () => {
-            if (options.removeAfterUnmount) {
-                Object.entries(reducers).forEach(([name]: ReducerLineEntity) => {
+            if (options?.removeAfterUnmount) {
+                Object.entries(reducers).forEach((item) => {
+                    const [name] = item as ReducerLineEntity;
                     store.reducerManager.remove(name);
                     dispatch({ type: `@DESTROY-${name}-REDUCER` });
                 });

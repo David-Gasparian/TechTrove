@@ -1,5 +1,3 @@
-import { DeepPartial } from '@reduxjs/toolkit';
-
 import { StateSchema } from 'app/provider/storeProvider';
 import { selectIsLoading } from './selectIsLoading';
 

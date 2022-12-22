@@ -33,14 +33,14 @@ export const AppInput = memo((props: AppInputProps) => {
         ...otherProps
     } = props;
 
-    const inputRef = useRef<HTMLInputElement>(null);
+    const inputRef = useRef<HTMLInputElement | null>(null);
     const [curetPosition, setCuretPosition] = useState(0);
     const [focus, setFocus] = useState(false);
 
     useEffect(() => {
         if (autoFocus) {
             setFocus(true);
-            inputRef.current.focus();
+            inputRef?.current?.focus();
         }
     }, [autoFocus]);
 

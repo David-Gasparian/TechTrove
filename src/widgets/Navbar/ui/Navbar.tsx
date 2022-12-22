@@ -1,5 +1,5 @@
 import {
-    FC, memo, useCallback, useState,
+    memo, useCallback, useState,
 } from 'react';
 import { useTranslation } from 'react-i18next';
 
