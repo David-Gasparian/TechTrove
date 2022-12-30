@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from 'app/provider/themeProvider';
 
 import { ThemeDecorator } from '../../config/storybook/ThemeDecorator';
-import { Text, TextTheme } from './Text';
+import { Text, TextALign, TextTheme } from './Text';
 
 export default {
     title: 'shared/Text',
@@ -42,4 +42,12 @@ ErrorText.args = {
     title: 'title',
     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
     theme: TextTheme.ERROR,
+};
+
+export const AlignError = Template.bind({});
+AlignError.args = {
+    title: 'something went wrong',
+    text: 'refresh page',
+    theme: TextTheme.ERROR,
+    align: TextALign.CENTER,
 };

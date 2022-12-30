@@ -26,3 +26,9 @@ Dark.args = {
     autoFocus: true,
     placeholder: 'placeholder',
 };
+
+export const ReadOnly = Template.bind({});
+ReadOnly.args = {
+    readOnly: true,
+    placeholder: 'placeholder',
+};

@@ -15,10 +15,16 @@
     color: var(--inverted-primary-color);
 }
 
-.outlined {
+.outlined,
+.outlined-red {
     background: none;
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
+}
+
+.outlined-red {
+    border: 1px solid var(--red-light);
+    color: var(--red-light);
 }
 
 .background {

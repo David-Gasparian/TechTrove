@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Text, TextTheme } from './Text';
+import { Text, TextALign, TextTheme } from './Text';
 
 describe('Text', () => {
     test('this element should be in the document', () => {
@@ -37,6 +37,13 @@ describe('Text', () => {
     test('with error theme', () => {
         render(<Text theme={TextTheme.ERROR} />);
         expect(screen.getByTestId('textWrapper')).toHaveClass('error');
+    });
+
+    test('check align prop', () => {
+        render(<Text
+            align={TextALign.CENTER}
+        />);
+        expect(screen.getByTestId('textWrapper')).toHaveClass(TextALign.CENTER);
     });
 
     test('check unmount', () => {

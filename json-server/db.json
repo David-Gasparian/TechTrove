@@ -1,39 +1,38 @@
 {
-    "posts": [
-      {
-        "id": "1",
-        "title": "json-server",
-        "userId": "1"
-      },
-      {
-        "id": "2",
-        "title": "json-server",
-        "userId": "2"
-      }
-    ],
-    "comments": [
-      {
-        "id": "1",
-        "body": "some comment",
-        "postId": "1"
-      }
-    ],
-    "users": [
-      {
-        "id": "1",
-        "username": "admin",
-        "password": "123"
-      }
-    ],
-    "profile": {
-      "first": "David",
-      "lastname": "Gasparyan",
-      "age": 22,
-      "currency": "RUB",
-      "country": "Armenia",
-      "city": "Yerevan",
-      "username": "admin",
-      "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+  "posts": [
+    {
+      "id": "1",
+      "title": "json-server",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "json-server",
+      "userId": "2"
     }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": "1"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123"
+    }
+  ],
+  "profile": {
+    "first": "David",
+    "lastname": "Gasparyan",
+    "age": 22,
+    "currency": "ER",
+    "country": "RUSSIA",
+    "city": "Yerevan",
+    "username": "admin",
+    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtab6vj06xo73zjIwDTcAOGYwVO95CGoAHCw&usqp=CAU"
   }
-  
+}

@@ -4,6 +4,10 @@ import {
 import { AppInput } from './AppInput';
 
 describe('AppInput', () => {
+    afterEach(() => {
+        jest.clearAllMocks();
+    });
+
     test('this elements should be in the document', () => {
         render(<AppInput />);
 
@@ -75,6 +79,17 @@ describe('AppInput', () => {
         expect(screen.queryByTestId('curet')).toBeNull();
     });
 
+    test('check prop readOnly', () => {
+        render(<AppInput readOnly />);
+        const input = screen.getByTestId('input');
+
+        input.focus();
+
+        expect(screen.queryByTestId('curet')).toBeNull();
+        expect(screen.queryByTestId('inputWrapper')).toHaveClass('readOnly');
+        expect(input).toHaveAttribute('readOnly');
+    });
+
     test('check unmount', () => {
         const wrapper = render(<AppInput />);
         const input = screen.getByTestId('inputWrapper');
@@ -84,9 +99,5 @@ describe('AppInput', () => {
         wrapper.unmount();
 
         expect(input).not.toBeInTheDocument();
-    });
-
-    afterEach(() => {
-        jest.clearAllMocks();
     });
 });

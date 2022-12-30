@@ -50,7 +50,7 @@ module.exports = {
             'error',
             {
                 markupOnly: true,
-                ignoreAttribute: ['to', 'data-testid', 'name'],
+                ignoreAttribute: ['to', 'data-testid', 'name', 'alt', 'label'],
             },
         ],
         'max-len': ['error', { ignoreComments: true, code: 120 }],
@@ -60,6 +60,7 @@ module.exports = {
         'jsx-a11y/no-static-element-interactions': 'off',
         'no-param-reassign': 'off',
         'no-undef': 'off',
+        'linebreak-style': 'off',
     },
     globals: {
         __IS_DEV__: true,
@@ -71,6 +72,7 @@ module.exports = {
             rules: {
                 'i18next/no-literal-string': 'off',
                 'max-len': 'off',
+                'no-plusplus': 'off',
             },
         },
     ],

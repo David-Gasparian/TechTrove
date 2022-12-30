@@ -3,8 +3,22 @@
     position: relative;
     padding: 20px;
 
-    .header {
+    .avatarWrapper {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
     }
+
+    .inputs {
+        .input {
+            margin: 0 0 10px;
+        }
+    }
+}
+
+.loading,
+.error {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

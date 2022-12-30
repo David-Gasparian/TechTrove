@@ -12,11 +12,6 @@ export default {
 
 const Template: ComponentStory<typeof AppButton> = (args) => <AppButton {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
-    children: 'text',
-};
-
 export const Clear = Template.bind({});
 Clear.args = {
     children: 'text',
@@ -32,6 +27,12 @@ export const Outlined = Template.bind({});
 Outlined.args = {
     children: 'text',
     theme: AppButtonTheme.OUTLINED,
+};
+
+export const OutlinedRed = Template.bind({});
+OutlinedRed.args = {
+    children: 'text',
+    theme: AppButtonTheme.OUTLINED_RED,
 };
 
 export const Background = Template.bind({});

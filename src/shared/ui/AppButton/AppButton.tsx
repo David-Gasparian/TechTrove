@@ -9,6 +9,7 @@ export enum AppButtonTheme {
     OUTLINED = 'outlined',
     BACKGROUND = 'background',
     INVERTED_BACKGROUND = 'inverted-background',
+    OUTLINED_RED = 'outlined-red',
 }
 
 export enum AppButtonSize {

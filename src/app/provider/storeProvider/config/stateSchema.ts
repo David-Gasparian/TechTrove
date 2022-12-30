@@ -38,4 +38,5 @@ interface ThunkExtraParams {
 export interface ThunkApi<RV> {
     rejectValue: RV;
     extra: ThunkExtraParams;
+    state: StateSchema;
 }

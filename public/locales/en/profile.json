@@ -2,5 +2,13 @@
     "profile": "Profile",
     "name": "Name",
     "lastname": "Lastname",
-    "edit": "edit"
+    "edit": "edit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "something_went_wrong": "Something went wrong",
+    "refresh_the_page": "refresh the page",
+    "age": "Age",
+    "city": "City",
+    "avatar": "Avatar",
+    "username": "Username"
 }

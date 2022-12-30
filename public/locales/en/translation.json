@@ -3,5 +3,7 @@
   "short_language": "EN",
   "something_went_wrong": "Something went wrong",
   "refresh_page": "Refresh page",
-  "throw_error": "Throw error"
+  "throw_error": "Throw error",
+  "currency": "Currency",
+  "country": "Country"
 }

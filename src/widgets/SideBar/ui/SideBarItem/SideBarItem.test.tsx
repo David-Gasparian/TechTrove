@@ -26,6 +26,28 @@ describe('SideBarItem', () => {
         expect(screen.getByTestId('sidebar-item')).toHaveClass('collapsed');
     });
 
+    test('if user is not authorised', () => {
+        const item: SidebarItemType = {
+            path: '/',
+            text: 'text',
+            Icon: () => <div />,
+            authOnly: true,
+        };
+
+        componentRender(
+            <SideBarItem item={item} />,
+            {
+                initialValue: {
+                    user: {
+                        authData: undefined,
+                    },
+                },
+            },
+        );
+
+        expect(screen.queryByTestId('sidebar-item')).toBeNull();
+    });
+
     test('check unmount', () => {
         const wrapper = componentRender(<SideBarItem item={item} />);
 

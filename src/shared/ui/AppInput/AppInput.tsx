@@ -8,10 +8,10 @@ import {
     useState,
 } from 'react';
 
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mode } from 'shared/lib/classNames/classNames';
 import cln from './AppInput.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>;
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>;
 
 interface AppInputProps extends HTMLInputProps {
     className?: string;
@@ -20,6 +20,7 @@ interface AppInputProps extends HTMLInputProps {
     onChange?: (value: string) => void;
     placeholder?: string;
     autoFocus?: boolean;
+    readOnly?: boolean;
 }
 
 export const AppInput = memo((props: AppInputProps) => {
@@ -30,12 +31,19 @@ export const AppInput = memo((props: AppInputProps) => {
         value,
         placeholder,
         autoFocus,
+        readOnly,
         ...otherProps
     } = props;
 
     const inputRef = useRef<HTMLInputElement | null>(null);
     const [curetPosition, setCuretPosition] = useState(0);
     const [focus, setFocus] = useState(false);
+
+    const mode: Mode = {
+        [cln.readOnly]: readOnly,
+    };
+
+    const showCuret = focus && !readOnly;
 
     useEffect(() => {
         if (autoFocus) {
@@ -63,15 +71,16 @@ export const AppInput = memo((props: AppInputProps) => {
     return (
         <div
             data-testid='inputWrapper'
-            className={classNames(cln.inputWrapper, {}, [className])}
+            className={classNames(cln.inputWrapper, mode, [className])}
         >
-            { placeholder && (
+            {placeholder && (
                 <div className={cln.placeholder}>
                     {`${placeholder}>`}
                 </div>
             )}
             <div className={cln.curetWrapper}>
                 <input
+                    readOnly={readOnly}
                     data-testid='input'
                     ref={inputRef}
                     type={type}
@@ -82,7 +91,7 @@ export const AppInput = memo((props: AppInputProps) => {
                     onChange={onHandeChange}
                     {...otherProps}
                 />
-                {focus && (
+                {showCuret && (
                     <span
                         data-testid='curet'
                         style={{ left: `${curetPosition * 10}px` }}
