@@ -10,5 +10,12 @@
     "age": "Age",
     "city": "City",
     "avatar": "Avatar",
-    "username": "Username"
+    "username": "Username",
+    "INCORRECT_USER_DATA": "Incorrect user data",
+    "INCORRECT_AGE": "Incorrect age",
+    "NO_DATA": "No data",
+    "SERVER_ERROR": "Server error",
+    "INCORRECT_CITY": "Incorrect city",
+    "INCORRECT_AVATAR": "Incorrect avatar",
+    "INCORRECT_USER_NAME": "Incorrect username"
 }

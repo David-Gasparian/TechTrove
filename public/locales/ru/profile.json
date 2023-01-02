@@ -10,5 +10,12 @@
   "age": "Возраст",
   "city": "Город",
   "avatar": "Аватар",
-  "username": "Имя пользователя"
+  "username": "Имя пользователя",
+  "INCORRECT_USER_DATA": "Неверные данные пользователя",
+  "INCORRECT_AGE": "Неверный возраст",
+  "NO_DATA": "Нет данных",
+  "SERVER_ERROR": "Ошибка сервера",
+  "INCORRECT_CITY": "Неверный город",
+  "INCORRECT_AVATAR": "Неправильный аватар",
+  "INCORRECT_USER_NAME": "Неверное имя пользователя"
 }

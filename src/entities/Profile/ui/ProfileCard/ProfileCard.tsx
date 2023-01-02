@@ -20,11 +20,11 @@ interface ProfileCardProps {
     onHandleChangeName?: (value: string) => void;
     onHandleChangeLastName?: (value: string) => void;
     onHandleChangeCity?: (value: string) => void;
-    onHandleChangeUserName: (value: string) => void;
-    onHandleChangeAge: (value: string) => void;
-    onHandleChangeAvatar: (value: string) => void;
-    onHandleChangeCurrency: (value: Currency) => void;
-    onHandleChangeCountry: (value: Country) => void;
+    onHandleChangeUserName?: (value: string) => void;
+    onHandleChangeAge?: (value: string) => void;
+    onHandleChangeAvatar?: (value: string) => void;
+    onHandleChangeCurrency?: (value: Currency) => void;
+    onHandleChangeCountry?: (value: Country) => void;
 }
 
 export const ProfileCard = memo((props: ProfileCardProps) => {
@@ -50,6 +50,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
         return (
             <div
                 className={classNames(cln.ProfileCard, {}, [className, cln.error])}
+                data-testid='error'
             >
                 <Text
                     title={t('something_went_wrong')}
@@ -65,6 +66,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
         return (
             <div
                 className={classNames(cln.ProfileCard, {}, [className, cln.loading])}
+                data-testid='loading'
             >
                 <Loader />
             </div>
@@ -74,20 +76,24 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
     return (
         <div
             className={classNames(cln.ProfileCard, {}, [className])}
+            data-testid='profile-card'
         >
-            <div
-                className={cln.avatarWrapper}
-            >
-                {profileData?.avatar && (
+            {profileData?.avatar && (
+                <div
+                    className={cln.avatarWrapper}
+                    data-testid='avatarWrapper'
+                >
                     <Avatar
                         src={profileData?.avatar}
                         size={100}
                         alt="avatar"
                     />
-                )}
-            </div>
+                </div>
+            )}
+
             <div className={cln.inputs}>
                 <AppInput
+                    data-testid='name-input'
                     className={cln.input}
                     autoFocus={!readOnly}
                     readOnly={readOnly}

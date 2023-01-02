@@ -1,4 +1,5 @@
-import { ProfileSchema } from '../types/profileSchema';
+import { updateProfileData } from '../services/updateProfileData/updateProfileData';
+import { Profile, ProfileSchema } from '../types/profileSchema';
 import { profileActions, profileReducer } from './profileSlice';
 
 describe('profileSlice', () => {
@@ -36,6 +37,49 @@ describe('profileSlice', () => {
         expect(profileReducer(
             state as ProfileSchema,
             profileActions.updatePfofile({ first: 'new firstName', lastname: 'new lastName' }),
+        )).toEqual(result);
+    });
+
+    test('update Profile extraReducer panding', () => {
+        const state: DeepPartial<ProfileSchema> = {
+            validateErrors: [],
+            isLoading: false,
+        };
+
+        const result: DeepPartial<ProfileSchema> = {
+            validateErrors: undefined,
+            isLoading: true,
+        };
+
+        expect(profileReducer(
+            state as ProfileSchema,
+            updateProfileData.pending,
+        )).toEqual(result);
+    });
+
+    test('update Profile extraReducer fulfilled', () => {
+        const state: DeepPartial<ProfileSchema> = {
+            isLoading: true,
+            data: undefined,
+            form: undefined,
+            readOnly: false,
+        };
+
+        const data = {
+            first: 'first',
+            lastname: 'lastname',
+        };
+
+        const result: DeepPartial<ProfileSchema> = {
+            isLoading: false,
+            data,
+            form: data,
+            readOnly: true,
+        };
+
+        expect(profileReducer(
+            state as ProfileSchema,
+            updateProfileData.fulfilled(data as Profile, ''),
         )).toEqual(result);
     });
 });

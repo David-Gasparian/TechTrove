@@ -10,6 +10,7 @@ const initialState: ProfileSchema = {
     error: '',
     readOnly: true,
     isLoading: false,
+    validateErrors: [],
 };
 
 const profileSlice = createSlice({
@@ -21,6 +22,7 @@ const profileSlice = createSlice({
         },
         clearForm: (state) => {
             state.form = state.data;
+            state.validateErrors = undefined;
         },
         updatePfofile: (state, { payload }: PayloadAction<DeepPartial<Profile>>) => {
             state.form = {
@@ -45,7 +47,7 @@ const profileSlice = createSlice({
                 state.error = payload;
             })
             .addCase(updateProfileData.pending, (state) => {
-                state.error = undefined;
+                state.validateErrors = undefined;
                 state.isLoading = true;
             })
             .addCase(updateProfileData.fulfilled, (state, { payload }) => {
@@ -56,7 +58,7 @@ const profileSlice = createSlice({
             })
             .addCase(updateProfileData.rejected, (state, { payload }) => {
                 state.isLoading = false;
-                state.error = payload;
+                state.validateErrors = payload;
             });
     },
 });

@@ -2,6 +2,7 @@ import {
     FC, memo, useCallback, useEffect,
 } from 'react';
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { AsyncReducersList, useAsyncReducer } from 'shared/lib/hooks/useAsyncReducer';
@@ -14,10 +15,13 @@ import {
     selectProfileError,
     selectProfileIsLoading,
     selectReadOnly,
+    selectValidateErrors,
 } from 'entities/Profile';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { ProfileHeader } from './ProfileHeader/ProfileHeader';
+import { getTranslatedErrors } from '../model/services/getTranslatedErrors';
 
 const asyncReducersList: AsyncReducersList = {
     profile: profileReducer,
@@ -25,6 +29,7 @@ const asyncReducersList: AsyncReducersList = {
 
 const ProfilePage: FC = memo(() => {
     const dispatch = useAppDispatch();
+    const { t } = useTranslation('profile');
 
     useAsyncReducer(asyncReducersList, { removeAfterUnmount: true });
 
@@ -32,8 +37,12 @@ const ProfilePage: FC = memo(() => {
     const error = useSelector(selectProfileError);
     const isLoading = useSelector(selectProfileIsLoading);
     const readOnly = useSelector(selectReadOnly);
+    const validateErrors = useSelector(selectValidateErrors);
+
+    const translatedErrors = getTranslatedErrors(t, validateErrors);
 
     useEffect(() => {
+        if (__PROJECT__ === 'storybook') return;
         dispatch(fetchProfileData());
     }, [dispatch]);
 
@@ -54,6 +63,8 @@ const ProfilePage: FC = memo(() => {
     }, [dispatch]);
 
     const onHandleChangeAge = useCallback((value: string) => {
+        if (value && !/^\d+$/.test(value)) return;
+
         dispatch(profileActions.updatePfofile({ age: +value }));
     }, [dispatch]);
 
@@ -74,6 +85,15 @@ const ProfilePage: FC = memo(() => {
             <ProfileHeader
                 readOnly={readOnly}
             />
+            {
+                !!validateErrors?.length && validateErrors.map((error) => (
+                    <Text
+                        key={error}
+                        theme={TextTheme.ERROR}
+                        text={translatedErrors[error]}
+                    />
+                ))
+            }
             <ProfileCard
                 profileData={profileData}
                 error={error}
