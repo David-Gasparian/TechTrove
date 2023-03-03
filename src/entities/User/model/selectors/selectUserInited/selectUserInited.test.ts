@@ -8,7 +8,7 @@ describe('selectUserInited', () => {
                 _inited: false,
             },
         };
-        expect(selectUserInited(state as StateSchema)).toEqual(undefined);
+        expect(selectUserInited(state as StateSchema)).toEqual(false);
     });
 
     test('if user is inited', () => {

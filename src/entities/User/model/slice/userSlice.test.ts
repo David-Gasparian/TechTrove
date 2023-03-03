@@ -23,6 +23,7 @@ describe('userSlice', () => {
         };
         const result: UserSchema = {
             authData: user,
+            _inited: true,
         };
 
         userStorage.setUser(USER_LOCAL_STORAGE_KEY, JSON.stringify(user));
