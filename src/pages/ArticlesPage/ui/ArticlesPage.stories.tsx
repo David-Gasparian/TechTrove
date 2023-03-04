@@ -1,18 +1,18 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import { Theme } from 'app/provider/themeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
-
-import NewsPage from './NewsPage';
+import ArticlesPage from './ArticlesPage';
 
 export default {
-    title: 'pages/NewsPage',
-    component: NewsPage,
+    title: 'pages/ArticlesPage',
+    component: ArticlesPage,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof NewsPage>;
+} as ComponentMeta<typeof ArticlesPage>;
 
-const Template: ComponentStory<typeof NewsPage> = (args) => <NewsPage {...args} />;
+const Template: ComponentStory<typeof ArticlesPage> = (args) => <ArticlesPage {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {};

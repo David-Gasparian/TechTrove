@@ -2,15 +2,17 @@ import { RouteProps } from 'react-router-dom';
 
 import { AboutPage } from 'pages/AboutPage';
 import { MainPage } from 'pages/MainPage';
-import { NewsPage } from 'pages/NewsPage';
 import { NotFound } from 'pages/NotFound';
 import { ProfilePage } from 'pages/ProfilePage';
+import { ArticlesPage } from 'pages/ArticlesPage';
+import { ArticleDetails } from 'pages/ArticleDetailsPage';
 
 export enum AppRouteNames {
     ABOUT = 'about',
-    NEWS = 'news',
     MAIN = 'main',
     PROFILE = 'profile',
+    ARTICLES = 'articles',
+    ARTICLE_DETAILS = 'article_details',
 
     // last
     NOT_FOUND = 'notFound',
@@ -18,8 +20,9 @@ export enum AppRouteNames {
 
 export const appRoutePaths: Record<AppRouteNames, string> = {
     [AppRouteNames.ABOUT]: '/about',
-    [AppRouteNames.NEWS]: '/news',
     [AppRouteNames.PROFILE]: '/profile',
+    [AppRouteNames.ARTICLES]: '/articles',
+    [AppRouteNames.ARTICLE_DETAILS]: '/articles/', // :id
     [AppRouteNames.MAIN]: '/',
 
     // last
@@ -35,10 +38,6 @@ export const appRoutesConfig: Record<AppRouteNames, NewRouteProps> = {
         path: appRoutePaths.about,
         element: <AboutPage />,
     },
-    [AppRouteNames.NEWS]: {
-        path: appRoutePaths.news,
-        element: <NewsPage />,
-    },
     [AppRouteNames.MAIN]: {
         path: appRoutePaths.main,
         element: <MainPage />,
@@ -46,6 +45,16 @@ export const appRoutesConfig: Record<AppRouteNames, NewRouteProps> = {
     [AppRouteNames.PROFILE]: {
         path: appRoutePaths.profile,
         element: <ProfilePage />,
+        authOnly: true,
+    },
+    [AppRouteNames.ARTICLES]: {
+        path: appRoutePaths.articles,
+        element: <ArticlesPage />,
+        authOnly: true,
+    },
+    [AppRouteNames.ARTICLE_DETAILS]: {
+        path: `${appRoutePaths.article_details}:id`,
+        element: <ArticleDetails />,
         authOnly: true,
     },
 
