@@ -8,6 +8,7 @@ import { NavigateOptions, To } from 'react-router-dom';
 import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUserName';
+import { ArticleDetailsSchema } from 'entities/Article';
 
 export interface StateSchema {
     user: UserSchema,
@@ -15,6 +16,7 @@ export interface StateSchema {
     // async reducers
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
+    article?: ArticleDetailsSchema;
 }
 
 export type StateSchemaKeys = keyof StateSchema;

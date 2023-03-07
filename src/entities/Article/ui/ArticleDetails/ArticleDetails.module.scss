@@ -1,0 +1,22 @@
+.articleDetails {
+    height: 100%;
+    .skeletonAvatar {
+        margin: 20px auto;
+    }
+
+    .skeletonTitle {
+        margin-bottom: 20px;
+    }
+
+    .skeletonBody {
+        margin-bottom: 20px;
+    }
+}
+
+.loading,
+.error {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
