@@ -1,11 +1,9 @@
 .primary {
     .title {
-        font: var(--font-l);
         color: var(--primary-color);
     }
 
     .text {
-        font: var(--font-m);
         color: var(--secondary-color);
     }
 }
@@ -30,4 +28,28 @@
 
 .right {
     text-align: right;
+}
+
+.size-m {
+    .title {
+        font: var(--font-l);
+        color: var(--primary-color);
+    }
+
+    .text {
+        color: var(--secondary-color);
+        font: var(--font-m);
+    }
+}
+
+.size-l {
+    .title {
+        font: var(--font-xl);
+        color: var(--primary-color);
+    }
+
+    .text {
+        color: var(--secondary-color);
+        font: var(--font-l);
+    }
 }

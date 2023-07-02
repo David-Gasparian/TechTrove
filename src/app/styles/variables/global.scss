@@ -16,6 +16,14 @@
     --sidebar-width: 350px;
     --collapsed-sidebar-width: 80px;
 
+    // paddings
+    --global-left-padding: 45px;
+    --global-right-padding: 20px;
+    --global-top-padding: 20px;
+    --global-bottom-padding: 20px;
+    --global-vertical-padding: calc(var(--global-top-padding) + var(--global-bottom-padding));
+    --global-horizontal-padding: calc(var(--global-left-padding) + var(--global-right-padding));
+
     // z-index
     --modal-z-index: 10;
 

@@ -1,22 +1,27 @@
 import { memo } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/lib/classNames/classNames';
+import { ArticleImageBlock } from '../../model/types/article';
+import cln from './ArticleImageBlockComponent.module.scss';
 
-interface ArticleDetailsProps {
+interface ArticleImageBlockProps {
     className?: string;
+    block: ArticleImageBlock;
 }
 
-export const ArticleImageBlockComponent = memo((props: ArticleDetailsProps) => {
-    const { t } = useTranslation('articles');
-
-    const { className } = props;
+export const ArticleImageBlockComponent = memo((props: ArticleImageBlockProps) => {
+    const { className, block } = props;
 
     return (
         <div
-            className={classNames('', {}, [className])}
+            className={classNames(cln.articleImageBlock, {}, [className])}
         >
-            {t('article_details')}
+            {block.src && (
+                <div>
+                    <img src={block.src} alt="article-iamge" />
+                    {block.title && <div className={cln.title}>{block.title}</div>}
+                </div>
+            )}
         </div>
     );
 });

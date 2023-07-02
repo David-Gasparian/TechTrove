@@ -1,22 +1,44 @@
 .articleDetails {
     height: 100%;
-    .skeletonAvatar {
-        margin: 20px auto;
+
+    .avatarWrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .avatar {
+            margin: 20px auto;
+        }
     }
 
-    .skeletonTitle {
-        margin-bottom: 20px;
+    .title {
+        margin-bottom: 15px;
     }
 
-    .skeletonBody {
-        margin-bottom: 20px;
-    }
-}
+    .blocksWrapper {
+        background: var(--bg-color);
+        margin-top: 20px;
 
-.loading,
-.error {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+        .block {
+            margin-bottom: 20px;
+        }
+    }
+
+    .createdAt,
+    .views {
+        display: flex;
+        margin-bottom: 15;
+
+        .text {
+            margin-left: 10px;
+        }
+    }
+
+    .error {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

@@ -2,7 +2,7 @@ import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 
-import { ArticleDetailsComponent } from 'entities/Article';
+import { ArticleDetails } from 'entities/Article';
 
 const ArticleDetailsPage: FC = memo(() => {
     const { t } = useTranslation('articles');
@@ -14,7 +14,7 @@ const ArticleDetailsPage: FC = memo(() => {
 
     return (
         <div>
-            <ArticleDetailsComponent id={id} />
+            <ArticleDetails id={id} />
         </div>
     );
 });

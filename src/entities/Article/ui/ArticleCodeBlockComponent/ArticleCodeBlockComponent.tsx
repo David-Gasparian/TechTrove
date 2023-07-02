@@ -1,22 +1,23 @@
 import { memo } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Code } from 'shared/ui/Code/Code';
+import { ArticleCodeBlock } from '../../model/types/article';
+import cln from './ArticleCodeBlockComponent.module.scss';
 
-interface ArticleDetailsProps {
+interface ArticleCodeBlockProps {
     className?: string;
+    block: ArticleCodeBlock;
 }
 
-export const ArticleCodeBlockComponent = memo((props: ArticleDetailsProps) => {
-    const { t } = useTranslation('articles');
-
-    const { className } = props;
+export const ArticleCodeBlockComponent = memo((props: ArticleCodeBlockProps) => {
+    const { className, block } = props;
 
     return (
         <div
-            className={classNames('', {}, [className])}
+            className={classNames(cln.articleCodeBlock, {}, [className])}
         >
-            {t('article_details')}
+            <Code text={block.code} />
         </div>
     );
 });
