@@ -1,6 +1,8 @@
 import { memo } from 'react';
+import { appRoutePaths } from 'shared/config/configRoute.tsx/configRoute';
 
 import { classNames } from 'shared/lib/classNames/classNames';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Text } from 'shared/ui/Text/Text';
@@ -10,7 +12,7 @@ import cln from './CommentCard.module.scss';
 interface CommentCardProps {
     className?: string;
     isLoading?: boolean;
-    comment: Comment;
+    comment?: Comment;
 }
 
 const avatarSize = 30;
@@ -22,16 +24,13 @@ export const CommentCard = memo((props: CommentCardProps) => {
         comment,
     } = props;
 
-    const { user, text } = comment;
-    const { avatar, username } = user;
-
     if (isLoading) {
         return (
             <div
-                className={classNames(cln.CommentCard, {}, [className])}
+                className={classNames(cln.CommentCard, {}, [className, cln.loading])}
             >
                 <div className={cln.topBlock}>
-                    {avatar && <Skeleton width={avatarSize} height={avatarSize} border="50%" />}
+                    <Skeleton width={avatarSize} height={avatarSize} border="50%" />
                     <Skeleton className={cln.title} width={150} height={15} />
                 </div>
                 <Skeleton className={cln.text} width="100%" height={20} />
@@ -39,11 +38,18 @@ export const CommentCard = memo((props: CommentCardProps) => {
         );
     }
 
+    if (!comment) {
+        return null;
+    }
+
+    const { user, text } = comment;
+    const { avatar, username } = user;
+
     return (
         <div
             className={classNames(cln.CommentCard, {}, [className])}
         >
-            <div className={cln.topBlock}>
+            <AppLink to={`${appRoutePaths.profile}${user.id}`} className={cln.topBlock}>
                 {avatar && (
                     <Avatar
                         src={avatar}
@@ -55,7 +61,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
                     className={cln.title}
                     title={username}
                 />
-            </div>
+            </AppLink>
             <Text
                 className={cln.text}
                 text={text}

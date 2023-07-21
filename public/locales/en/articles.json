@@ -2,6 +2,8 @@
   "articles": "Articles",
 
   "article_not_found": "Article not found",
-  "article_error": "Error"
+  "article_error": "Error",
+  "article_enter_comment_text": "Enter comment text",
+  "article_send": "Send"
 }
   

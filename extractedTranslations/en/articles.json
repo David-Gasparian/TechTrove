@@ -1,6 +1,10 @@
 {
   "article_details": "",
+  "article_enter_comment_text": "",
   "article_error": "",
   "article_not_found": "",
-  "articles": ""
+  "article_send": "",
+  "articles": "",
+  "comments": "",
+  "comments_is_empty": ""
 }

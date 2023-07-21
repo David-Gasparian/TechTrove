@@ -2,6 +2,8 @@
   "articles": "Статьи",
   
   "article_not_found": "Статья не найдена",
-  "article_error": "Ошибка"
+  "article_error": "Ошибка",
+  "article_enter_comment_text": "Введите текст комментария",
+  "article_send": "Отправить"
 }
   

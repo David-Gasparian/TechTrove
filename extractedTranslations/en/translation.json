@@ -1,6 +1,7 @@
 {
   "": "",
   "About": "About",
+  "Enter comment text": "Enter comment text",
   "Loading": "Loading",
   "Lorem ipsum dolor sit amet consectetur adipisicing elit": {
     " Tempore, totam provident minima ipsa saepe voluptates, laudantium veniam at quis odit aspernatur repellendus accusamus culpa impedit nam et quisquam maiores corrupti": {
@@ -15,9 +16,11 @@
   "age": "age",
   "article not found": "article not found",
   "article_details": "article_details",
+  "article_enter_comment_text": "article_enter_comment_text",
   "article_error": "article_error",
   "article_not_found": "article_not_found",
   "article_not_ound": "article_not_ound",
+  "article_send": "article_send",
   "articles": "articles",
   "avatar": "avatar",
   "cancel": "cancel",
@@ -58,5 +61,6 @@
   "toggle_button": "toggle_button",
   "upload": "upload",
   "upload_page": "upload_page",
-  "username": "username"
+  "username": "username",
+  "Отправить": "Отправить"
 }

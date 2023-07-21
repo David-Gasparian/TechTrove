@@ -8,6 +8,7 @@ import avatarImg from 'shared/assets/test/avatarImg.jpg';
 import { ProfileCard } from './ProfileCard';
 
 const data = {
+    id: '1',
     first: 'David',
     lastname: 'Gasparyan',
     age: 22,

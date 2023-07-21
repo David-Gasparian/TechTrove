@@ -101,7 +101,19 @@
       "id": "3",
       "text": "some comment 3",
       "articleId": "1",
-      "userId": "2"
+      "userId": "1"
+    },
+    {
+      "text": "t",
+      "articleId": "1",
+      "userId": "2",
+      "id": "PHx2ZY2"
+    },
+    {
+      "text": "f",
+      "articleId": "1",
+      "userId": "2",
+      "id": "R9wzFdQ"
     }
   ],
   "users": [
@@ -110,24 +122,38 @@
       "username": "admin",
       "password": "123",
       "role": "ADMIN",
-      "avatar": "https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
+      "avatar": "https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
       "role": "USER",
-      "avatar": "https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
-  "profile": {
-    "first": "David",
-    "lastname": "Gasparyan",
-    "age": 22,
-    "currency": "ER",
-    "country": "RUSSIA",
-    "city": "Yerevan",
-    "username": "admin",
-    "avatar": "https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "jgh",
+      "lastname": "asf",
+      "age": 465,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "admin213",
+      "avatar": "https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg"
+    },
+    {
+      "id": "2",
+      "first": "ulbie",
+      "lastname": "asf",
+      "age": 46,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "ulbi tv",
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    }
+  ]
 }

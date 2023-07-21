@@ -3,6 +3,7 @@ import {
 } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
 
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { AsyncReducersList, useAsyncReducer } from 'shared/lib/hooks/useAsyncReducer';
@@ -21,6 +22,7 @@ import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useInitEffect } from 'shared/lib/hooks/useInitEffect';
+import { selectAuthData } from 'entities/User';
 import { ProfileHeader } from './ProfileHeader/ProfileHeader';
 import { getTranslatedErrors } from '../model/services/getTranslatedErrors';
 
@@ -31,6 +33,7 @@ const asyncReducersList: AsyncReducersList = {
 const ProfilePage: FC = memo(() => {
     const dispatch = useAppDispatch();
     const { t } = useTranslation('profile');
+    const { id: profileId } = useParams<{id: string}>();
 
     useAsyncReducer(asyncReducersList, { removeAfterUnmount: true });
 
@@ -39,11 +42,13 @@ const ProfilePage: FC = memo(() => {
     const isLoading = useSelector(selectProfileIsLoading);
     const readOnly = useSelector(selectReadOnly);
     const validateErrors = useSelector(selectValidateErrors);
+    const authData = useSelector(selectAuthData);
+    const canEdit = authData?.id === profileData?.id;
 
     const translatedErrors = getTranslatedErrors(t, validateErrors);
 
     useInitEffect(() => {
-        dispatch(fetchProfileData());
+        dispatch(fetchProfileData({ id: profileId }));
     });
 
     const onHandleChangeName = useCallback((first: string) => {
@@ -83,6 +88,7 @@ const ProfilePage: FC = memo(() => {
     return (
         <>
             <ProfileHeader
+                canEdit={canEdit}
                 readOnly={readOnly}
             />
             {

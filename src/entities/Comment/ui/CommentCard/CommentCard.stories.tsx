@@ -1,4 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Theme } from 'app/provider/themeProvider';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
+import { Comment } from '../../model/types/commentTypes';
 
 import { CommentCard } from './CommentCard';
 
@@ -12,5 +15,27 @@ export default {
 
 const Template: ComponentStory<typeof CommentCard> = (args) => <CommentCard {...args} />;
 
-export const Normal = Template.bind({});
-Normal.args = {};
+const comment: Comment = {
+    id: '1',
+    text: 'text',
+    user: {
+        username: 'username',
+        id: '1',
+        avatar: 'https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg',
+    },
+};
+
+export const Light = Template.bind({});
+Light.args = { comment };
+
+export const Dark = Template.bind({});
+Dark.decorators = [ThemeDecorator(Theme.Dark)];
+Dark.args = {
+    comment,
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+    comment,
+    isLoading: true,
+};

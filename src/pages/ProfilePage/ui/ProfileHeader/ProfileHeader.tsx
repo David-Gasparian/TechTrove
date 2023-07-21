@@ -12,16 +12,18 @@ import cln from './ProfileHeader.module.scss';
 interface ProfileHeaderProps {
     className?: string;
     readOnly?: boolean;
+    canEdit?: boolean;
 }
 
 export const ProfileHeader = memo((props: ProfileHeaderProps) => {
-    const { t } = useTranslation('profile');
-    const dispatch = useDispatch();
-
     const {
         className,
         readOnly,
+        canEdit,
     } = props;
+
+    const { t } = useTranslation('profile');
+    const dispatch = useDispatch();
 
     const onHandleEdit = useCallback(() => {
         dispatch(profileActions.setreadOnly(false));
@@ -42,38 +44,41 @@ export const ProfileHeader = memo((props: ProfileHeaderProps) => {
             className={classNames(cln.header, {}, [className])}
         >
             <Text title={t('profile')} />
-            {
-                readOnly ? (
-                    <div
-                        data-testid='editBtn'
-                    >
-                        <AppButton
-                            onClick={onHandleEdit}
-                            theme={AppButtonTheme.OUTLINED}
+            {canEdit && (
+                <div>
+                    {readOnly ? (
+                        <div
+                            data-testid='editBtn'
                         >
-                            {t('edit')}
-                        </AppButton>
-                    </div>
-                ) : (
-                    <div>
-                        <AppButton
-                            data-testid='cancelBtn'
-                            className={cln.cancel}
-                            onClick={onHandleCancelEdit}
-                            theme={AppButtonTheme.OUTLINED_RED}
-                        >
-                            {t('cancel')}
-                        </AppButton>
-                        <AppButton
-                            data-testid='saveBtn'
-                            onClick={onHandleSave}
-                            theme={AppButtonTheme.OUTLINED}
-                        >
-                            {t('save')}
-                        </AppButton>
-                    </div>
-                )
-            }
+                            <AppButton
+                                onClick={onHandleEdit}
+                                theme={AppButtonTheme.OUTLINED}
+                            >
+                                {t('edit')}
+                            </AppButton>
+                        </div>
+                    ) : (
+                        <div>
+                            <AppButton
+                                data-testid='cancelBtn'
+                                className={cln.cancel}
+                                onClick={onHandleCancelEdit}
+                                theme={AppButtonTheme.OUTLINED_RED}
+                            >
+                                {t('cancel')}
+                            </AppButton>
+                            <AppButton
+                                data-testid='saveBtn'
+                                onClick={onHandleSave}
+                                theme={AppButtonTheme.OUTLINED}
+                            >
+                                {t('save')}
+                            </AppButton>
+                        </div>
+                    )}
+                </div>
+            )}
+
         </div>
     );
 });

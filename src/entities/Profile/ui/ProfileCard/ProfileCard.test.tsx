@@ -38,6 +38,7 @@ describe('ProfileCard', () => {
 
     test('check profileData prop', () => {
         const data = {
+            id: '1',
             first: 'David',
             lastname: 'Gasparyan',
             age: 22,
