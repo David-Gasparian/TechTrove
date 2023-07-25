@@ -1,6 +1,6 @@
 import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import { ArticleDetails } from 'entities/Article';
@@ -10,6 +10,8 @@ import { AsyncReducersList, useAsyncReducer } from 'shared/lib/hooks/useAsyncRed
 import { useInitEffect } from 'shared/lib/hooks/useInitEffect';
 import { AddCommentForm } from 'features/AddCommentForm';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+import { AppButton, AppButtonTheme } from 'shared/ui/AppButton/AppButton';
+import { appRoutePaths } from 'shared/config/configRoute.tsx/configRoute';
 import { articleDetailsPageReducer, commentsSelectors } from '../model/slice/articleDetailsPageSlice';
 import { fetchCommentsByArticleId } from '../model/services/fetchArticleDetailsComments/fetchCommentsByArticleId';
 import { selectCommentsLoading } from '../model/selectors/selectCommentsLoading/selectCommentsLoading';
@@ -24,6 +26,8 @@ const ArticleDetailsPage: FC = memo(() => {
     const { t } = useTranslation('articles');
     const { id } = useParams<{id: string}>();
     const dispatch = useAppDispatch();
+    const navigate = useNavigate();
+
     const comments = useSelector(commentsSelectors.selectAll);
     const isLoading = useSelector(selectCommentsLoading);
 
@@ -39,12 +43,25 @@ const ArticleDetailsPage: FC = memo(() => {
         dispatch(AddCommentForArticle({ text }));
     }, [dispatch]);
 
+    const onGoBackHandler = useCallback(() => {
+        navigate(appRoutePaths.articles);
+    }, [navigate]);
+
     if (!id) {
         return <div>{t('article_not_found')}</div>;
     }
 
     return (
         <div className={cln.ArticleDetailsPage}>
+            <div>
+                <AppButton
+                    className={cln.loginBtn}
+                    theme={AppButtonTheme.OUTLINED}
+                    onClick={onGoBackHandler}
+                >
+                    {t('article_go_back')}
+                </AppButton>
+            </div>
             <ArticleDetails id={id} />
             <Text className={cln.commentsTitle} title={t('comments')} />
             <div className={cln.addCommentWrapper}>

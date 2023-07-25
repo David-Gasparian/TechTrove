@@ -1,14 +1,11 @@
 import { FC, memo } from 'react';
-import { useTranslation } from 'react-i18next';
 
-const ArticlesPage: FC = memo(() => {
-    const { t } = useTranslation('articles');
+import { ArticlesList, ArticleView } from 'entities/Article';
 
-    return (
-        <div>
-            {t('articles')}
-        </div>
-    );
-});
+const ArticlesPage: FC = memo(() => (
+    <div>
+        <ArticlesList articles={[]} view={ArticleView.SMALL} isLoading={false} />
+    </div>
+));
 
 export default ArticlesPage;

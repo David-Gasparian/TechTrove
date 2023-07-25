@@ -1,0 +1,111 @@
+.ArticlesListItem {
+    .view {
+        display: flex;
+        align-items: center;
+
+        .viewCount {
+            margin-right: 5px;
+        }
+    }
+}
+
+.SMALL {
+    width: 280px;
+    transition: 0.3s scale;
+    cursor: pointer;
+
+    .imageWrapper {
+        position: relative;
+        object-fit: contain;
+        width: 100%;
+    }
+
+    .image {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .createdDate {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .infoWrapper {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    .types div {
+        width: 150px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .title {
+        margin-top: 10px;
+    }
+
+    .title div {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+.cardHover {
+    scale: 1.03;
+}
+
+.BIG {
+    max-width: 100%;
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .userInfo {
+            display: flex;
+            align-items: center;
+
+            .userName {
+                margin-left: 10px;
+            }
+        }
+    }
+
+    .types {
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+
+    .imageWrapper {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 20px;
+
+        .image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .block {
+        overflow: hidden;
+        height: 140px;
+    }
+
+    .footer {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

@@ -1,0 +1,18 @@
+.SMALL {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .articleItem {
+        margin-right: 30px;
+        margin-top: 30px;
+    }
+}
+
+.BIG {
+    width: 100%;
+
+    .articleItem {
+        margin-top: 30px;
+    }
+}
