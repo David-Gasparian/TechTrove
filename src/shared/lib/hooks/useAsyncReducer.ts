@@ -17,6 +17,8 @@ export const useAsyncReducer = (reducers: AsyncReducersList, options?: Options) 
     const dispatch = useDispatch();
     const store = useStore() as ReduxStoreWithManager;
 
+    const removeAfterUnmount = options?.removeAfterUnmount ?? true;
+
     useEffect(() => {
         Object.entries(reducers).forEach((item) => {
             const [name, reducer] = item as ReducerLineEntity;
@@ -25,7 +27,7 @@ export const useAsyncReducer = (reducers: AsyncReducersList, options?: Options) 
         });
 
         return () => {
-            if (options?.removeAfterUnmount) {
+            if (removeAfterUnmount) {
                 Object.entries(reducers).forEach((item) => {
                     const [name] = item as ReducerLineEntity;
                     store.reducerManager.remove(name);

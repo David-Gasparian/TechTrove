@@ -36,7 +36,6 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
         >
             <AppInput
                 data-testid='commentText'
-                autoFocus
                 placeholder={t('article_enter_comment_text')}
                 value={text}
                 onChange={onChangeHandler}

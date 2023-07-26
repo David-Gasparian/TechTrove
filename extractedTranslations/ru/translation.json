@@ -15,6 +15,7 @@
   "about": "about",
   "age": "age",
   "article not found": "article not found",
+  "article_comments_is_empty": "article_comments_is_empty",
   "article_details": "article_details",
   "article_enter_comment_text": "article_enter_comment_text",
   "article_error": "article_error",

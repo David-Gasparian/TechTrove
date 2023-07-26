@@ -6,6 +6,7 @@
   "article_enter_comment_text": "Введите текст комментария",
   "article_send": "Отправить",
   "article_read_more": "Читать далее",
-  "article_go_back": "Возвращаться"
+  "article_go_back": "Возвращаться",
+  "article_comments_is_empty": "Комментарии пусты"
 }
   

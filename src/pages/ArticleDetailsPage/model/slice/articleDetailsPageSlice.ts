@@ -6,7 +6,7 @@ import { fetchCommentsByArticleId } from '../services/fetchArticleDetailsComment
 import { ArticleDetailsCommentSchema } from '../types/ArticleDetailsCommentSchema';
 
 const commentsAdapter = createEntityAdapter<Comment>({
-    selectId: (book) => book.id,
+    selectId: (comment) => comment.id,
 });
 
 export const commentsSelectors = commentsAdapter.getSelectors<StateSchema>(
@@ -14,7 +14,7 @@ export const commentsSelectors = commentsAdapter.getSelectors<StateSchema>(
 );
 
 const articleDetailsPageSlice = createSlice({
-    name: 'books',
+    name: 'comments',
     initialState: commentsAdapter.getInitialState<ArticleDetailsCommentSchema>({
         isLoading: false,
         error: '',

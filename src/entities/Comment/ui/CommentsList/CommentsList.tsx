@@ -55,7 +55,7 @@ export const CommentsList = memo((props: CommentsListProps) => {
                         isLoading={isLoading}
                         className={cln.commentCard}
                     />
-                )) : <Text text={t('comments_is_empty')} />
+                )) : <Text text={t('article_comments_is_empty')} />
             }
         </div>
     );
