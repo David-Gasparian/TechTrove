@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, ReactElement } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
@@ -14,5 +14,5 @@ export const ProtectedRoute: FC = (props) => {
         return <Navigate to={appRoutePaths.main} state={{ form: location }} replace />;
     }
 
-    return <div>{children}</div>;
+    return children as ReactElement;
 };

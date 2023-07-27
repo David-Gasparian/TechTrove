@@ -23,6 +23,7 @@ import { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useInitEffect } from 'shared/lib/hooks/useInitEffect';
 import { selectAuthData } from 'entities/User';
+import { Page } from 'shared/ui/Page/Page';
 import { ProfileHeader } from './ProfileHeader/ProfileHeader';
 import { getTranslatedErrors } from '../model/services/getTranslatedErrors';
 
@@ -86,7 +87,7 @@ const ProfilePage: FC = memo(() => {
     }, [dispatch]);
 
     return (
-        <>
+        <Page>
             <ProfileHeader
                 canEdit={canEdit}
                 readOnly={readOnly}
@@ -114,7 +115,7 @@ const ProfilePage: FC = memo(() => {
                 onHandleChangeCurrency={onHandleChangeCurrency}
                 onHandleChangeCountry={onHandleChangeCountry}
             />
-        </>
+        </Page>
     );
 });
 

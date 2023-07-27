@@ -6,10 +6,12 @@ import { AsyncReducersList, useAsyncReducer } from 'shared/lib/hooks/useAsyncRed
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { ArticleViewSwitcher } from 'features/ArticleViewSwitcher';
 import { useInitEffect } from 'shared/lib/hooks/useInitEffect';
+import { Page } from 'shared/ui/Page/Page';
 import { articlesPageActions, articlesPageReducer, articlesSelectors } from '../model/slice/articlesPageSlice';
 import { selectArticlesLoading } from '../model/selectors/selectArticlesLoading/selectArticlesLoading';
-import { fetchArticles } from '../model/services/fetchArticles';
+import { fetchArticles } from '../model/services/fetchArticles/fetchArticles';
 import { selectArticleView } from '../model/selectors/selectArticleView/selectArticleView';
+import { fetchNextArticles } from '../model/services/fetchNextArticles/fetchNextArticles';
 
 const asyncReducersList: AsyncReducersList = {
     articles: articlesPageReducer,
@@ -24,19 +26,24 @@ const ArticlesPage: FC = memo(() => {
     useAsyncReducer(asyncReducersList);
 
     useInitEffect(() => {
-        dispatch(fetchArticles());
         dispatch(articlesPageActions.initState());
+        dispatch(fetchArticles({ page: 1 }));
     });
 
     const onViewChangeHandler = useCallback((view: ArticleView) => {
         dispatch(articlesPageActions.setView(view));
     }, [dispatch]);
 
+    const onScrollToEnd = () => {
+        dispatch(fetchNextArticles());
+    };
+
     return (
-        <div>
+        <Page onScrollToEnd={onScrollToEnd}>
             <ArticleViewSwitcher view={articleView} onChange={onViewChangeHandler} />
             <ArticlesList articles={articles} view={articleView} isLoading={loading} />
-        </div>
+        </Page>
+
     );
 });
 

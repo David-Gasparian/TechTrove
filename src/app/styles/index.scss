@@ -18,15 +18,3 @@ body {
 .main-content {
     display: flex;
 }
-
-.page-wrapper {
-    flex-grow: 1;
-    padding:
-        var(--global-top-padding)
-        var(--global-right-padding)
-        var(--global-bottom-padding)
-        var(--global-left-padding);
-    height: calc(100vh - var(--navbar-height) - var(--global-vertical-padding));
-    overflow-y: auto;
-    width: calc(100% - var(--sidebar-width) - var(--global-horizontal-padding));
-}

@@ -13,28 +13,22 @@ interface ArticlesListProps {
     isLoading?: boolean;
 }
 
+const getSkeletons = (view: ArticleView) => {
+    const isBig = view === ArticleView.BIG;
+    const articleListForSkeleton = new Array(isBig ? 3 : 6).fill(1);
+
+    return articleListForSkeleton.map(() => (
+        <ArticlesListItemSkeleton
+            className={cln.articleItem}
+            view={view}
+        />
+    ));
+};
+
 export const ArticlesList = memo((props: ArticlesListProps) => {
     const {
         className, view = ArticleView.SMALL, articles, isLoading,
     } = props;
-
-    if (isLoading) {
-        const isBig = view === ArticleView.BIG;
-        const articleListForSkeleton = new Array(isBig ? 3 : 8).fill(1);
-
-        return (
-            <div
-                className={classNames('', {}, [className, cln[view]])}
-            >
-                {articleListForSkeleton.map(() => (
-                    <ArticlesListItemSkeleton
-                        className={cln.articleItem}
-                        view={view}
-                    />
-                ))}
-            </div>
-        );
-    }
 
     return (
         <div
@@ -50,6 +44,7 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
                          view={view}
                      />
                  ))}
+            {isLoading && getSkeletons(view)}
         </div>
     );
 });

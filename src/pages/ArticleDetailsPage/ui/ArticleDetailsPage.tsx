@@ -12,6 +12,7 @@ import { AddCommentForm } from 'features/AddCommentForm';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { AppButton, AppButtonTheme } from 'shared/ui/AppButton/AppButton';
 import { appRoutePaths } from 'shared/config/configRoute.tsx/configRoute';
+import { Page } from 'shared/ui/Page/Page';
 import { articleDetailsPageReducer, commentsSelectors } from '../model/slice/articleDetailsPageSlice';
 import { fetchCommentsByArticleId } from '../model/services/fetchArticleDetailsComments/fetchCommentsByArticleId';
 import { selectCommentsLoading } from '../model/selectors/selectCommentsLoading/selectCommentsLoading';
@@ -48,27 +49,33 @@ const ArticleDetailsPage: FC = memo(() => {
     }, [navigate]);
 
     if (!id) {
-        return <div>{t('article_not_found')}</div>;
+        return (
+            <Page className={cln.articleNotFound}>
+                <Text className={cln.commentsTitle} title={t('article_not_found')} />
+            </Page>
+        );
     }
 
     return (
-        <div className={cln.ArticleDetailsPage}>
-            <div>
-                <AppButton
-                    className={cln.loginBtn}
-                    theme={AppButtonTheme.OUTLINED}
-                    onClick={onGoBackHandler}
-                >
-                    {t('article_go_back')}
-                </AppButton>
+        <Page>
+            <div className={cln.ArticleDetailsPage}>
+                <div>
+                    <AppButton
+                        className={cln.loginBtn}
+                        theme={AppButtonTheme.OUTLINED}
+                        onClick={onGoBackHandler}
+                    >
+                        {t('article_go_back')}
+                    </AppButton>
+                </div>
+                <ArticleDetails id={id} />
+                <Text className={cln.commentsTitle} title={t('comments')} />
+                <div className={cln.addCommentWrapper}>
+                    <AddCommentForm onSendComment={onSendComment} />
+                </div>
+                <CommentsList isLoading={isLoading} comments={comments} />
             </div>
-            <ArticleDetails id={id} />
-            <Text className={cln.commentsTitle} title={t('comments')} />
-            <div className={cln.addCommentWrapper}>
-                <AddCommentForm onSendComment={onSendComment} />
-            </div>
-            <CommentsList isLoading={isLoading} comments={comments} />
-        </div>
+        </Page>
     );
 });
 
