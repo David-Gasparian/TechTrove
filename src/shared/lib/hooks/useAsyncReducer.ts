@@ -1,6 +1,7 @@
 import { Reducer } from '@reduxjs/toolkit';
 import { useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
+
 import { ReduxStoreWithManager, StateSchemaKeys } from 'app/provider/storeProvider';
 
 export type AsyncReducersList = {
@@ -20,10 +21,15 @@ export const useAsyncReducer = (reducers: AsyncReducersList, options?: Options) 
     const removeAfterUnmount = options?.removeAfterUnmount ?? true;
 
     useEffect(() => {
+        const reducersMap = store.reducerManager.getReducerMap();
+
         Object.entries(reducers).forEach((item) => {
             const [name, reducer] = item as ReducerLineEntity;
-            store.reducerManager.add(name, reducer);
-            dispatch({ type: `@INTI-${name}-REDUCER` });
+            // skip if reducer is already exist
+            if (!reducersMap[name]) {
+                store.reducerManager.add(name, reducer);
+                dispatch({ type: `@INTI-${name}-REDUCER` });
+            }
         });
 
         return () => {

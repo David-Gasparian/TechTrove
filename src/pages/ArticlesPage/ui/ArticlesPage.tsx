@@ -9,9 +9,9 @@ import { useInitEffect } from 'shared/lib/hooks/useInitEffect';
 import { Page } from 'shared/ui/Page/Page';
 import { articlesPageActions, articlesPageReducer, articlesSelectors } from '../model/slice/articlesPageSlice';
 import { selectArticlesLoading } from '../model/selectors/selectArticlesLoading/selectArticlesLoading';
-import { fetchArticles } from '../model/services/fetchArticles/fetchArticles';
 import { selectArticleView } from '../model/selectors/selectArticleView/selectArticleView';
 import { fetchNextArticles } from '../model/services/fetchNextArticles/fetchNextArticles';
+import { initArticlesPage } from '../model/services/initArticlesPage/initArticlesPage';
 
 const asyncReducersList: AsyncReducersList = {
     articles: articlesPageReducer,
@@ -23,11 +23,10 @@ const ArticlesPage: FC = memo(() => {
     const loading = useSelector(selectArticlesLoading);
     const articles = useSelector(articlesSelectors.selectAll);
 
-    useAsyncReducer(asyncReducersList);
+    useAsyncReducer(asyncReducersList, { removeAfterUnmount: false });
 
     useInitEffect(() => {
-        dispatch(articlesPageActions.initState());
-        dispatch(fetchArticles({ page: 1 }));
+        dispatch(initArticlesPage());
     });
 
     const onViewChangeHandler = useCallback((view: ArticleView) => {

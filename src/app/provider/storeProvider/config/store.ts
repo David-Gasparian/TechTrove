@@ -2,7 +2,6 @@ import {
     CombinedState,
     configureStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { NavigateOptions, To } from 'react-router-dom';
 import { CurriedGetDefaultMiddleware } from '@reduxjs/toolkit/dist/getDefaultMiddleware';
 
 import { userReducer } from 'entities/User';
@@ -13,7 +12,6 @@ import { StateSchema } from './stateSchema';
 export const createReduxStore = (
     initialState?: StateSchema,
     asyncReducers?: ReducersMapObject<StateSchema>,
-    navigate?: (to: To, options?: NavigateOptions) => void,
 ) => {
     const reducer: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
@@ -30,7 +28,6 @@ export const createReduxStore = (
             thunk: {
                 extraArgument: {
                     api: $api,
-                    navigate,
                 },
             },
         }),
