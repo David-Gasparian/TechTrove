@@ -3,7 +3,6 @@ import {
     CombinedState, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
-import { NavigateOptions, To } from 'react-router-dom';
 
 import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
@@ -11,9 +10,11 @@ import { LoginSchema } from 'features/AuthByUserName';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailsCommentSchema } from 'pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import { ScrollPositionSchema } from 'features/SaveScrollPosition';
 
 export interface StateSchema {
     user: UserSchema,
+    scrollPosition: ScrollPositionSchema,
 
     // async reducers
     loginForm?: LoginSchema;

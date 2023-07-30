@@ -23,7 +23,7 @@ import { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useInitEffect } from 'shared/lib/hooks/useInitEffect';
 import { selectAuthData } from 'entities/User';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 import { ProfileHeader } from './ProfileHeader/ProfileHeader';
 import { getTranslatedErrors } from '../model/services/getTranslatedErrors';
 

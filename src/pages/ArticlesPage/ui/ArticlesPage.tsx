@@ -6,7 +6,7 @@ import { AsyncReducersList, useAsyncReducer } from 'shared/lib/hooks/useAsyncRed
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { ArticleViewSwitcher } from 'features/ArticleViewSwitcher';
 import { useInitEffect } from 'shared/lib/hooks/useInitEffect';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 import { articlesPageActions, articlesPageReducer, articlesSelectors } from '../model/slice/articlesPageSlice';
 import { selectArticlesLoading } from '../model/selectors/selectArticlesLoading/selectArticlesLoading';
 import { selectArticleView } from '../model/selectors/selectArticleView/selectArticleView';
@@ -38,7 +38,7 @@ const ArticlesPage: FC = memo(() => {
     };
 
     return (
-        <Page onScrollToEnd={onScrollToEnd}>
+        <Page isScrollSave onScrollToEnd={onScrollToEnd}>
             <ArticleViewSwitcher view={articleView} onChange={onViewChangeHandler} />
             <ArticlesList articles={articles} view={articleView} isLoading={loading} />
         </Page>

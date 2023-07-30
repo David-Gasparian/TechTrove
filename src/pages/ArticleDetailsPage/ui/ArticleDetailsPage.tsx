@@ -12,7 +12,7 @@ import { AddCommentForm } from 'features/AddCommentForm';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { AppButton, AppButtonTheme } from 'shared/ui/AppButton/AppButton';
 import { appRoutePaths } from 'shared/config/configRoute.tsx/configRoute';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 import { articleDetailsPageReducer, commentsSelectors } from '../model/slice/articleDetailsPageSlice';
 import { fetchCommentsByArticleId } from '../model/services/fetchArticleDetailsComments/fetchCommentsByArticleId';
 import { selectCommentsLoading } from '../model/selectors/selectCommentsLoading/selectCommentsLoading';
