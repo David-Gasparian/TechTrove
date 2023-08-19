@@ -1,27 +1,23 @@
 import {
-    ChangeEvent, memo, SelectHTMLAttributes, useMemo,
+    ChangeEvent, SelectHTMLAttributes, useMemo,
 } from 'react';
+import { OptionItem } from 'shared/types/types';
 
 import { classNames, Mode } from '../../lib/classNames/classNames';
 import cln from './Select.module.scss';
 
 type HTMLSelectProps = Omit<SelectHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'label'>;
 
-interface OptionItem {
-    value: string;
-    content: string;
-}
-
-interface SelectProps extends HTMLSelectProps {
+interface SelectProps<T extends string> extends HTMLSelectProps {
     className?: string;
-    value?: string;
+    value?: T;
     label?: string;
-    options?: OptionItem[];
-    onChange?: (value: string) => void;
+    options?: OptionItem<T>[];
+    onChange?: (value: T) => void;
     readOnly?: boolean;
 }
 
-export const Select = memo((props: SelectProps) => {
+export const Select = <T extends string>(props: SelectProps<T>) => {
     const {
         className,
         value,
@@ -36,7 +32,7 @@ export const Select = memo((props: SelectProps) => {
     };
 
     const onHandleSelect = (e: ChangeEvent<HTMLSelectElement>) => {
-        onChange?.(e.target.value);
+        onChange?.(e.target.value as T);
     };
 
     const optionsList = useMemo(() => options?.map((opt) => (
@@ -74,4 +70,4 @@ export const Select = memo((props: SelectProps) => {
             </select>
         </div>
     );
-});
+};

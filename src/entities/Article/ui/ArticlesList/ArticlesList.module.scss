@@ -1,12 +1,8 @@
 .SMALL {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     flex-wrap: wrap;
-
-    .articleItem {
-        margin-right: 30px;
-        margin-top: 30px;
-    }
+    gap: 30px;
 }
 
 .BIG {
@@ -15,4 +11,9 @@
     .articleItem {
         margin-top: 30px;
     }
+}
+
+.emptyText {
+    text-align: center;
+    margin-top: 50px;
 }

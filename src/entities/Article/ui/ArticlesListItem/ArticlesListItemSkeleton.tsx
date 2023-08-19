@@ -21,7 +21,6 @@ export const ArticlesListItemSkeleton = memo((props: ArticlesListItemProps) => {
             >
                 <div className={cln.header}>
                     <div className={cln.userInfo}>
-
                         <Skeleton border="50%" width={30} height={30} />
                         <Skeleton className={cln.userName} width={50} height={15} />
                     </div>

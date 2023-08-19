@@ -9,3 +9,7 @@
     overflow-y: auto;
     width: calc(100% - var(--sidebar-width) - var(--global-horizontal-padding));
 }
+
+.trigger {
+    height: 30px;
+}

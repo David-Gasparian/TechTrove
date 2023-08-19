@@ -7,6 +7,16 @@
   "article_send": "Send",
   "article_read_more": "Read more",
   "article_go_back": "Go back",
-  "article_comments_is_empty": "Comments is empty"
+  "article_comments_is_empty": "Comments is empty",
+  "article_sort_by": "Sort By",
+  "article_by": "By",
+  "article_search": "Search",
+  "article_title": "Title",
+  "article_views": "Views",
+  "article_createdAt": "CreatedAt",
+  "article_all": "All",
+  "article_it": "IT",
+  "article_economics": "Economics",
+  "article_science": "Science",
+  "articles_empty": "Articles are empty"
 }
-  

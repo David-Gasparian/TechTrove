@@ -5,5 +5,7 @@
   "refresh_page": "Refresh page",
   "throw_error": "Throw error",
   "currency": "Currency",
-  "country": "Country"
+  "country": "Country",
+  "by_asc": "asc",
+  "by_desc": "desc"
 }

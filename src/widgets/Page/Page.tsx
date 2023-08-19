@@ -60,7 +60,7 @@ export const Page = memo((props: PageProps) => {
             className={classNames(cln.Page, {}, [className])}
         >
             {children}
-            <div ref={targetRef} />
+            <div className={cln.trigger} ref={targetRef} />
         </section>
     );
 });

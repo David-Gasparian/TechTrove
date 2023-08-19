@@ -11,6 +11,7 @@ import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailsCommentSchema } from 'pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { ScrollPositionSchema } from 'features/SaveScrollPosition';
+import { FilterArticlesSchema } from 'features/FilterArticles';
 
 export interface StateSchema {
     user: UserSchema,
@@ -22,6 +23,7 @@ export interface StateSchema {
     article?: ArticleDetailsSchema;
     articleDetailsComments?: ArticleDetailsCommentSchema
     articles?: ArticlesPageSchema;
+    filterArticlesForm?: FilterArticlesSchema;
 }
 
 export type StateSchemaKeys = keyof StateSchema;

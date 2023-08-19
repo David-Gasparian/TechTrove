@@ -7,6 +7,16 @@
   "article_send": "Отправить",
   "article_read_more": "Читать далее",
   "article_go_back": "Возвращаться",
-  "article_comments_is_empty": "Комментарии пусты"
+  "article_comments_is_empty": "Комментарии пусты",
+  "article_sort_by": "Сортировать По",
+  "article_by": "По",
+  "article_search": "Поиск",
+  "article_title": "Заголовоку",
+  "article_views": "Просмотрам",
+  "article_createdAt": "Дату создание",
+  "article_all": "Все",
+  "article_it": "ИТ",
+  "article_economics": "Экономика",
+  "article_science": "Наука",
+  "articles_empty": "Статьи пусты"
 }
-  
