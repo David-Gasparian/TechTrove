@@ -1,4 +1,4 @@
-import { ScrollPositionSchema } from '../types/ScrollPositionSchema';
+import { ScrollPositionSchema } from '../types/scrollPositionSchema';
 import { saveScrollPositionActions, saveScrollPositionReducer } from './saveScrollPositionSlice';
 
 describe('saveScrollPositionSlice', () => {
