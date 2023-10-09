@@ -20,5 +20,7 @@
   "article_science": "Science",
   "articles_empty": "Articles are empty",
   "articles_recommendations": "Recommendations",
-  "articles_comments": "Comments"
+  "articles_comments": "Comments",
+  "articles_edit": "edit",
+  "articles_create": "create"
 }

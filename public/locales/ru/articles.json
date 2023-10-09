@@ -20,5 +20,7 @@
   "article_science": "Наука",
   "articles_empty": "Статьи пусты",
   "articles_recommendations": "Рекомендации",
-  "articles_comments": "Комментарии"
+  "articles_comments": "Комментарии",
+  "articles_edit": "редактировать",
+  "articles_create": "создавать"
 }
