@@ -6,16 +6,21 @@ describe('selectCommentsError', () => {
         const errorText = 'error';
 
         const state: DeepPartial<StateSchema> = {
-            articleDetailsComments: {
-                error: errorText,
+            articleDetailsPage: {
+                articleDetailsComments: {
+                    error: errorText,
+                },
             },
+
         };
         expect(selectCommentsError(state as StateSchema)).toEqual(errorText);
     });
 
     test('should return undefined', () => {
         const state: DeepPartial<StateSchema> = {
-            articleDetailsComments: { error: undefined },
+            articleDetailsPage: {
+                articleDetailsComments: { error: undefined },
+            },
         };
         expect(selectCommentsError(state as StateSchema)).toBe('');
     });

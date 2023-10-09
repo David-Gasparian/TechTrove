@@ -1,3 +1,4 @@
 import { StateSchema } from 'app/provider/storeProvider';
 
-export const selectCommentsLoading = (state: StateSchema) => state?.articleDetailsComments?.isLoading;
+export const selectCommentsLoading = (state: StateSchema) => state?.articleDetailsPage
+    ?.articleDetailsComments?.isLoading;

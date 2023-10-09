@@ -18,5 +18,7 @@
   "article_it": "IT",
   "article_economics": "Economics",
   "article_science": "Science",
-  "articles_empty": "Articles are empty"
+  "articles_empty": "Articles are empty",
+  "articles_recommendations": "Recommendations",
+  "articles_comments": "Comments"
 }

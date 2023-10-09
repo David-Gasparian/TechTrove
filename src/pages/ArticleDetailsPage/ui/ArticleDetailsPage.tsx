@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import { ArticleDetails } from 'entities/Article';
+import { ArticleDetails, ArticlesList } from 'entities/Article';
 import { CommentsList } from 'entities/Comment';
 import { Text } from 'shared/ui/Text/Text';
 import { AsyncReducersList, useAsyncReducer } from 'shared/lib/hooks/useAsyncReducer';
@@ -13,14 +13,22 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { AppButton, AppButtonTheme } from 'shared/ui/AppButton/AppButton';
 import { appRoutePaths } from 'shared/config/configRoute.tsx/configRoute';
 import { Page } from 'widgets/Page/Page';
-import { articleDetailsPageReducer, commentsSelectors } from '../model/slice/articleDetailsPageSlice';
+import { commentsSelectors } from '../model/slice/articleDetailsPageCommentsSlice';
 import { fetchCommentsByArticleId } from '../model/services/fetchArticleDetailsComments/fetchCommentsByArticleId';
 import { selectCommentsLoading } from '../model/selectors/selectCommentsLoading/selectCommentsLoading';
 import { AddCommentForArticle } from '../model/services/AddCommentForArticle/AddCommentForArticle';
+import {
+    recommendationArticlesSelectors,
+} from '../model/slice/ArticleDetailsPageRecommendationSlice';
+import { fetchRecommendationArticles } from '../model/services/fetchRecommendationArticles/fetchRecommendationArticles';
+import {
+    selectRecommendationArticlesLoading,
+} from '../model/selectors/selectRecommendationArticlesLoading/selectRecommendationArticlesLoading';
 import cln from './ArticleDetailsPage.module.scss';
+import { articleDetailsPageSlice } from '../model/slice';
 
 const asyncReducersList: AsyncReducersList = {
-    articleDetailsComments: articleDetailsPageReducer,
+    articleDetailsPage: articleDetailsPageSlice,
 };
 
 const ArticleDetailsPage: FC = memo(() => {
@@ -30,7 +38,9 @@ const ArticleDetailsPage: FC = memo(() => {
     const navigate = useNavigate();
 
     const comments = useSelector(commentsSelectors.selectAll);
+    const recommendationArticles = useSelector(recommendationArticlesSelectors.selectAll);
     const isLoading = useSelector(selectCommentsLoading);
+    const recommendationArticlesLoading = useSelector(selectRecommendationArticlesLoading);
 
     useAsyncReducer(asyncReducersList, { removeAfterUnmount: true });
 
@@ -38,6 +48,7 @@ const ArticleDetailsPage: FC = memo(() => {
         if (!id) return;
 
         dispatch(fetchCommentsByArticleId({ id }));
+        dispatch(fetchRecommendationArticles());
     });
 
     const onSendComment = useCallback((text: string) => {
@@ -69,7 +80,14 @@ const ArticleDetailsPage: FC = memo(() => {
                     </AppButton>
                 </div>
                 <ArticleDetails id={id} />
-                <Text className={cln.commentsTitle} title={t('comments')} />
+                <Text className={cln.title} title={t('articles_recommendations')} />
+                <ArticlesList
+                    target="_blank"
+                    className={cln.recommendationArticles}
+                    articles={recommendationArticles}
+                    isLoading={recommendationArticlesLoading}
+                />
+                <Text className={cln.title} title={t('articles_comments')} />
                 <div className={cln.addCommentWrapper}>
                     <AddCommentForm onSendComment={onSendComment} />
                 </div>

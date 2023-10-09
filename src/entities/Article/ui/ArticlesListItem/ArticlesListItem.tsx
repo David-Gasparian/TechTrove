@@ -1,6 +1,5 @@
-import { memo, useCallback } from 'react';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Card } from 'shared/ui/Card/Card';
@@ -11,6 +10,7 @@ import { AppButton, AppButtonTheme } from 'shared/ui/AppButton/AppButton';
 import Eye from 'shared/assets/icons/eye.svg';
 import { useHover } from 'shared/lib/hooks/useHover';
 import { appRoutePaths } from 'shared/config/configRoute.tsx/configRoute';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
 import {
     Article, ArticleBlockTypes, ArticleTextBlock, ArticleView,
 } from '../../model/types/article';
@@ -21,10 +21,14 @@ interface ArticlesListItemProps {
     className?: string;
     view?: ArticleView;
     article: Article;
+    target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
-    const { className, article, view = ArticleView.SMALL } = props;
+    const {
+        className, article, view = ArticleView.SMALL, target,
+    } = props;
+
     const {
         title,
         img,
@@ -38,7 +42,6 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
 
     const [isHover, bindHover] = useHover();
     const { t } = useTranslation('articles');
-    const navigate = useNavigate();
 
     const types = <Text className={cln.types} text={type.join(', ')} />;
     const viewsBlock = (
@@ -47,10 +50,6 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
             <Icon SVG={Eye} />
         </div>
     );
-
-    const onReadMoreHadler = useCallback(() => {
-        navigate(appRoutePaths.article_details + id);
-    }, [id, navigate]);
 
     if (view === ArticleView.BIG) {
         const textBlock = blocks.find((block) => block.type === ArticleBlockTypes.TEXT) as ArticleTextBlock;
@@ -80,13 +79,14 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
                     block={textBlock}
                 />
                 <div className={cln.footer}>
-                    <AppButton
-                        className={cln.loginBtn}
-                        theme={AppButtonTheme.OUTLINED}
-                        onClick={onReadMoreHadler}
-                    >
-                        {t('article_read_more')}
-                    </AppButton>
+                    <AppLink to={appRoutePaths.article_details + id}>
+                        <AppButton
+                            className={cln.loginBtn}
+                            theme={AppButtonTheme.OUTLINED}
+                        >
+                            {t('article_read_more')}
+                        </AppButton>
+                    </AppLink>
                     {viewsBlock}
                 </div>
             </Card>
@@ -95,20 +95,21 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
     }
 
     return (
-        <Card
-            {...bindHover}
-            onClick={onReadMoreHadler}
-            className={classNames(cln.ArticlesListItem, { [cln.cardHover]: isHover }, [className, cln[view]])}
-        >
-            <div className={cln.imageWrapper}>
-                <img className={cln.image} src={img} alt={title} />
-                {isHover && <Text className={cln.createdDate} text={createdAt} />}
-            </div>
-            <div className={cln.infoWrapper}>
-                {types}
-                {viewsBlock}
-            </div>
-            <Text className={cln.title} text={title} />
-        </Card>
+        <AppLink target={target} to={appRoutePaths.article_details + id}>
+            <Card
+                {...bindHover}
+                className={classNames(cln.ArticlesListItem, { [cln.cardHover]: isHover }, [className, cln[view]])}
+            >
+                <div className={cln.imageWrapper}>
+                    <img className={cln.image} src={img} alt={title} />
+                    {isHover && <Text className={cln.createdDate} text={createdAt} />}
+                </div>
+                <div className={cln.infoWrapper}>
+                    {types}
+                    {viewsBlock}
+                </div>
+                <Text className={cln.title} text={title} />
+            </Card>
+        </AppLink>
     );
 });

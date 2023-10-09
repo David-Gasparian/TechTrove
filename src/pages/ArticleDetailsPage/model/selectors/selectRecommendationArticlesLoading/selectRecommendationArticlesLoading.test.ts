@@ -1,17 +1,17 @@
 import { StateSchema } from 'app/provider/storeProvider';
-import { selectCommentsLoading } from './selectCommentsLoading';
+import { selectRecommendationArticlesLoading } from './selectRecommendationArticlesLoading';
 
-describe('selectCommentsLoading', () => {
+describe('selectRecommendationArticlesLoading', () => {
     test('should return loading info', () => {
         const isLoading = true;
 
         const state: DeepPartial<StateSchema> = {
             articleDetailsPage: {
-                articleDetailsComments: {
+                recommendationArticles: {
                     isLoading,
                 },
             },
         };
-        expect(selectCommentsLoading(state as StateSchema)).toEqual(isLoading);
+        expect(selectRecommendationArticlesLoading(state as StateSchema)).toEqual(isLoading);
     });
 });

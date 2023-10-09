@@ -7,6 +7,15 @@
 body {
     font: var(--font-m);
     color: var(--primary-color);
+
+    // for firefox
+    scrollbar-color: var(--scrollbar-color) #eae5e5;
+
+    a,
+    a:visited {
+        text-decoration: none;
+        cursor: pointer;
+    }
 }
 
 .App {
@@ -17,4 +26,18 @@ body {
 
 .main-content {
     display: flex;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+// Track
+::-webkit-scrollbar-track {
+    background: #eae5e5;
+}
+
+// Handle
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-color);
 }

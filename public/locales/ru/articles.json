@@ -18,5 +18,7 @@
   "article_it": "ИТ",
   "article_economics": "Экономика",
   "article_science": "Наука",
-  "articles_empty": "Статьи пусты"
+  "articles_empty": "Статьи пусты",
+  "articles_recommendations": "Рекомендации",
+  "articles_comments": "Комментарии"
 }
