@@ -5,6 +5,8 @@ export interface buildPaths {
     outputPath: string;
     htmlPath: string;
     src: string;
+    locales: string;
+    buildLocales: string;
 }
 
 export interface buildOptions {

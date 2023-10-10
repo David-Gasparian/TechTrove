@@ -16,9 +16,6 @@ import { fetchCommentsByArticleId } from '../../model/services/fetchArticleDetai
 import { selectCommentsLoading } from '../../model/selectors/selectCommentsLoading/selectCommentsLoading';
 import { AddCommentForArticle } from '../../model/services/AddCommentForArticle/AddCommentForArticle';
 import {
-    recommendationArticlesSelectors,
-} from '../../model/slice/ArticleDetailsPageRecommendationSlice';
-import {
     selectRecommendationArticlesLoading,
 } from '../../model/selectors/selectRecommendationArticlesLoading/selectRecommendationArticlesLoading';
 import { articleDetailsPageSlice } from '../../model/slice';
@@ -27,6 +24,7 @@ import {
 } from '../../model/services/fetchRecommendationArticles/fetchRecommendationArticles';
 import ArticleDetailsPageHeader from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import cln from './ArticleDetailsPage.module.scss';
+import { recommendationArticlesSelectors } from '../../model/slice/articleDetailsPageRecommendationSlice';
 
 const asyncReducersList: AsyncReducersList = {
     articleDetailsPage: articleDetailsPageSlice,
