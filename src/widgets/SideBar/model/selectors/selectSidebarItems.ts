@@ -1,5 +1,5 @@
 import { StateSchema } from 'app/provider/storeProvider';
-import { appRoutePaths } from 'shared/config/configRoute.tsx/configRoute';
+import { appRoutePaths } from 'shared/config/configRoute/configRoute';
 import Main from 'shared/assets/icons/main.svg';
 import About from 'shared/assets/icons/about.svg';
 import Articles from 'shared/assets/icons/articles.svg';

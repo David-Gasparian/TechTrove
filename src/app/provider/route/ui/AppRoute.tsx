@@ -1,7 +1,7 @@
 import { memo, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import { appRoutesConfig, NewRouteProps } from 'shared/config/configRoute.tsx/configRoute';
+import { appRoutesConfig, NewRouteProps } from 'shared/config/configRoute/configRoute';
 import { PageLoader } from 'widgets/PageLoader';
 import { ProtectedRoute } from './ProtectedRoute/ProtectedRoute';
 

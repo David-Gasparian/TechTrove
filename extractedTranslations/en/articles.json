@@ -9,7 +9,11 @@
   "article_search": "",
   "article_send": "",
   "articles": "",
+  "articles_comments": "",
+  "articles_create": "",
+  "articles_edit": "",
   "articles_empty": "",
+  "articles_recommendations": "",
   "comments": "",
   "comments_is_empty": ""
 }

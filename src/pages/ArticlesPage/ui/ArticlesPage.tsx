@@ -19,12 +19,12 @@ import {
 } from 'features/FilterArticles';
 import { SortingOrder } from 'shared/types/filterTypes';
 import { useDebouncing } from 'shared/lib/hooks/useDebouncing';
+import { fetchArticles } from 'pages/ArticlesPage/model/services/fetchArticles/fetchArticles';
 import { articlesPageActions, articlesPageReducer, articlesSelectors } from '../model/slice/articlesPageSlice';
 import { selectArticlesLoading } from '../model/selectors/selectArticlesLoading/selectArticlesLoading';
 import { selectArticleView } from '../model/selectors/selectArticleView/selectArticleView';
 import { fetchNextArticles } from '../model/services/fetchNextArticles/fetchNextArticles';
 import { initArticlesPage } from '../model/services/initArticlesPage/initArticlesPage';
-import { fetchArticles } from '../model/services/fetchArticles/fetchArticles';
 import cln from './ArticlesPage.module.scss';
 
 const asyncReducersList: AsyncReducersList = {

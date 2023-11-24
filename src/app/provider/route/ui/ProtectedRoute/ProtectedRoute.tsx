@@ -3,7 +3,7 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import { selectAuthData } from 'entities/User';
-import { appRoutePaths } from 'shared/config/configRoute.tsx/configRoute';
+import { appRoutePaths } from 'shared/config/configRoute/configRoute';
 
 export const ProtectedRoute: FC = (props) => {
     const { children } = props;

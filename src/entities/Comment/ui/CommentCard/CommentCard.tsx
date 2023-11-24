@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { appRoutePaths } from 'shared/config/configRoute.tsx/configRoute';
+import { appRoutePaths } from 'shared/config/configRoute/configRoute';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink } from 'shared/ui/AppLink/AppLink';

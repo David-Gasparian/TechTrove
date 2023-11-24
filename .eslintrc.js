@@ -22,6 +22,7 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'react-hooks',
+        'feature-slice-import-manager',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -50,7 +51,18 @@ module.exports = {
             'error',
             {
                 markupOnly: true,
-                ignoreAttribute: ['to', 'data-testid', 'name', 'alt', 'label', 'target'],
+                ignoreAttribute: [
+                    'to',
+                    'data-testid',
+                    'name',
+                    'alt',
+                    'label',
+                    'target',
+                    'direction',
+                    'align',
+                    'justify',
+                    'testId',
+                ],
             },
         ],
         'max-len': ['error', { ignoreComments: true, code: 120 }],

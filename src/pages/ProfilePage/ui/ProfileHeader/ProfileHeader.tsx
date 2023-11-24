@@ -6,7 +6,8 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text/Text';
 import { AppButton, AppButtonTheme } from 'shared/ui/AppButton/AppButton';
 import { profileActions } from 'entities/Profile/model/slice/profileSlice';
-import { updateProfileData } from '../../../../entities/Profile/model/services/updateProfileData/updateProfileData';
+import { HStack } from 'shared/ui/Stack';
+import { updateProfileData } from 'entities/Profile';
 import cln from './ProfileHeader.module.scss';
 
 interface ProfileHeaderProps {
@@ -39,8 +40,11 @@ export const ProfileHeader = memo((props: ProfileHeaderProps) => {
     }, [dispatch]);
 
     return (
-        <div
-            data-testid='header'
+        <HStack
+            max
+            justify="spaceBetween"
+            testId='header'
+            align='center'
             className={classNames(cln.header, {}, [className])}
         >
             <Text title={t('profile')} />
@@ -58,10 +62,9 @@ export const ProfileHeader = memo((props: ProfileHeaderProps) => {
                             </AppButton>
                         </div>
                     ) : (
-                        <div>
+                        <HStack max gap={4}>
                             <AppButton
                                 data-testid='cancelBtn'
-                                className={cln.cancel}
                                 onClick={onHandleCancelEdit}
                                 theme={AppButtonTheme.OUTLINED_RED}
                             >
@@ -74,11 +77,10 @@ export const ProfileHeader = memo((props: ProfileHeaderProps) => {
                             >
                                 {t('save')}
                             </AppButton>
-                        </div>
+                        </HStack>
                     )}
                 </div>
             )}
-
-        </div>
+        </HStack>
     );
 });

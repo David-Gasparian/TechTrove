@@ -8,6 +8,7 @@ import { Loader } from 'shared/ui/Loader/Loader';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Currency, CurrencySelect } from 'entities/Currency';
 import { Country, CountrySelect } from 'entities/Country';
+import { HStack, VStack } from 'shared/ui/Stack';
 import { Profile } from '../../model/types/profileSchema';
 import cln from './ProfileCard.module.scss';
 
@@ -79,22 +80,22 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
             data-testid='profile-card'
         >
             {profileData?.avatar && (
-                <div
-                    className={cln.avatarWrapper}
-                    data-testid='avatarWrapper'
+                <HStack
+                    max
+                    justify='center'
+                    testId='avatarWrapper'
                 >
                     <Avatar
                         src={profileData?.avatar}
                         size={100}
                         alt="avatar"
                     />
-                </div>
+                </HStack>
             )}
 
-            <div className={cln.inputs}>
+            <VStack max gap={16}>
                 <AppInput
                     data-testid='name-input'
-                    className={cln.input}
                     autoFocus={!readOnly}
                     readOnly={readOnly}
                     placeholder={t('name')}
@@ -102,53 +103,46 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
                     onChange={onHandleChangeName}
                 />
                 <AppInput
-                    className={cln.input}
                     readOnly={readOnly}
                     placeholder={t('lastname')}
                     value={profileData?.lastname}
                     onChange={onHandleChangeLastName}
                 />
                 <AppInput
-                    className={cln.input}
                     readOnly={readOnly}
                     placeholder={t('age')}
                     value={String(profileData?.age)}
                     onChange={onHandleChangeAge}
                 />
                 <AppInput
-                    className={cln.input}
                     readOnly={readOnly}
                     placeholder={t('city')}
                     value={profileData?.city}
                     onChange={onHandleChangeCity}
                 />
                 <AppInput
-                    className={cln.input}
                     readOnly={readOnly}
                     placeholder={t('username')}
                     value={profileData?.username}
                     onChange={onHandleChangeUserName}
                 />
                 <AppInput
-                    className={cln.input}
                     readOnly={readOnly}
                     placeholder={t('avatar')}
                     value={profileData?.avatar}
                     onChange={onHandleChangeAvatar}
                 />
                 <CurrencySelect
-                    className={cln.input}
                     value={profileData?.currency}
                     onChange={onHandleChangeCurrency}
                     readOnly={readOnly}
                 />
                 <CountrySelect
-                    className={cln.input}
                     value={profileData?.country}
                     onChange={onHandleChangeCountry}
                     readOnly={readOnly}
                 />
-            </div>
+            </VStack>
         </div>
     );
 });

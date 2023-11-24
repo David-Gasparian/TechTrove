@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import { AppButton, AppButtonTheme } from 'shared/ui/AppButton/AppButton';
-import { appRoutePaths } from 'shared/config/configRoute.tsx/configRoute';
+import { appRoutePaths } from 'shared/config/configRoute/configRoute';
 import { selectCanEdit } from '../../model/selectors/selectCanEdit/selectCanEdit';
 import cln from './ArticleDetailsPageHeader.module.scss';
 

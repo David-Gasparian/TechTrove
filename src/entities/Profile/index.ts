@@ -11,3 +11,4 @@ export { ProfileSchema, ValidateProfileCodes } from './model/types/profileSchema
 export { ProfileCard } from './ui/ProfileCard/ProfileCard';
 
 export { fetchProfileData } from './model/services/fetchProfileData/fetchProfileData';
+export { updateProfileData } from './model/services/updateProfileData/updateProfileData';

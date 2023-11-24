@@ -9,7 +9,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { AppButton, AppButtonTheme } from 'shared/ui/AppButton/AppButton';
 import Eye from 'shared/assets/icons/eye.svg';
 import { useHover } from 'shared/lib/hooks/useHover';
-import { appRoutePaths } from 'shared/config/configRoute.tsx/configRoute';
+import { appRoutePaths } from 'shared/config/configRoute/configRoute';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import {
     Article, ArticleBlockTypes, ArticleTextBlock, ArticleView,

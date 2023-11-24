@@ -6,10 +6,7 @@
     transition: 0.3s width;
 
     .items {
-        display: flex;
-        flex-direction: column;
         margin: 20px 0 0 20px;
-        justify-content: center;
     }
 
     .toggleButton {
@@ -38,7 +35,6 @@
 
     .items {
         width: calc(var(--collapsed-sidebar-width) / 2);
-        text-align: center;
     }
 
     .switchers {
