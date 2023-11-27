@@ -62,6 +62,7 @@ module.exports = {
                     'align',
                     'justify',
                     'testId',
+                    'role',
                 ],
             },
         ],

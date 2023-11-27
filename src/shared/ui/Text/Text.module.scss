@@ -30,12 +30,14 @@
     text-align: right;
 }
 
-.size-m {
-    .title {
-        font: var(--font-l);
-        color: var(--primary-color);
+.size-s {
+    .text {
+        color: var(--secondary-color);
+        font: var(--font-s);
     }
+}
 
+.size-m {
     .text {
         color: var(--secondary-color);
         font: var(--font-m);
@@ -43,11 +45,6 @@
 }
 
 .size-l {
-    .title {
-        font: var(--font-xl);
-        color: var(--primary-color);
-    }
-
     .text {
         color: var(--secondary-color);
         font: var(--font-l);
