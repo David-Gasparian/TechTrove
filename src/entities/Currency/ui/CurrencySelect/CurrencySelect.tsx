@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Select } from 'shared/ui/Select/Select';
+import { Listbox } from 'shared/ui/Listbox/Listbox';
 import { Currency } from '../../medel/types/curencyTypes';
 
 interface CurrencySelectProps {
@@ -13,9 +13,9 @@ interface CurrencySelectProps {
 }
 
 const options = [
-    { value: Currency.DOL, content: Currency.DOL },
-    { value: Currency.ER, content: Currency.ER },
-    { value: Currency.RU, content: Currency.RU },
+    { value: Currency.DOL, content: Currency.DOL, disabled: false },
+    { value: Currency.ER, content: Currency.ER, disabled: true },
+    { value: Currency.RU, content: Currency.RU, disabled: false },
 ];
 
 export const CurrencySelect = memo((props: CurrencySelectProps) => {
@@ -36,12 +36,12 @@ export const CurrencySelect = memo((props: CurrencySelectProps) => {
         <div
             className={classNames('', {}, [className])}
         >
-            <Select
-                value={value}
-                readOnly={readOnly}
+            <Listbox
                 label={t('currency')}
-                options={options}
+                value={value}
                 onChange={onHandleCurrencyChange}
+                options={options}
+                readOnly={readOnly}
             />
         </div>
     );

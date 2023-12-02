@@ -63,6 +63,7 @@ module.exports = {
                     'justify',
                     'testId',
                     'role',
+                    'as',
                 ],
             },
         ],

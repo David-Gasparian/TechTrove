@@ -1,0 +1,28 @@
+.Listbox {
+    position: relative;
+    width: 200px;
+
+    .trigger {
+        border: 1px solid var(--primary-color);
+        color: var(--primary-color);
+    }
+
+    .options {
+        position: absolute;
+        padding: 0;
+        outline: transparent;
+        border-radius: 10px;
+        width: 100%;
+
+        .item {
+            background: var(--listboxitem-bg);
+            cursor: pointer;
+            height: 40px;
+            justify-content: center;
+        }
+    }
+
+    .optionTop {
+        bottom: 100%;
+    }
+}
