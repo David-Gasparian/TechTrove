@@ -7,6 +7,7 @@ import { ArticleSortType, ArticleTypes, ArticleView } from 'entities/Article';
 import { AppInput } from 'shared/ui/AppInput/AppInput';
 import { AsyncReducersList, useAsyncReducer } from 'shared/lib/hooks/useAsyncReducer';
 import { SortingOrder } from 'shared/types/filterTypes';
+import { HStack, VStack } from 'shared/ui/Stack';
 import {
     filterArticlesSliceReducer,
 } from '../../model/slice/filterArticlesSliceSlice';
@@ -51,10 +52,11 @@ export const FilterArticles = memo((props: FilterArticlesProps) => {
     useAsyncReducer(asyncReducersList, { removeAfterUnmount: false });
 
     return (
-        <div
+        <VStack
+            max
             className={classNames(cln.FilterArticles, {}, [className])}
         >
-            <div className={cln.sortWrapper}>
+            <HStack justify='spaceBetween' className={cln.sortWrapper}>
                 <ArticleSortSelector
                     order={articleOrderType}
                     sortType={articleSortType}
@@ -62,7 +64,7 @@ export const FilterArticles = memo((props: FilterArticlesProps) => {
                     onHandleOrderSelect={onHandleOrderSelect}
                 />
                 <ArticleViewSwitcher view={articleView} onChange={onViewChangeHandler} />
-            </div>
+            </HStack>
 
             <AppInput
                 autoFocus
@@ -76,6 +78,6 @@ export const FilterArticles = memo((props: FilterArticlesProps) => {
                 value={articleType}
                 onTabSelect={onHandleTypeSelect}
             />
-        </div>
+        </VStack>
     );
 });

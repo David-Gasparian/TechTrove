@@ -17,5 +17,6 @@
   "SERVER_ERROR": "Ошибка сервера",
   "INCORRECT_CITY": "Неверный город",
   "INCORRECT_AVATAR": "Неправильный аватар",
-  "INCORRECT_USER_NAME": "Неверное имя пользователя"
+  "INCORRECT_USER_NAME": "Неверное имя пользователя",
+  "PROFILE_NOT_FOUND": "Профиль не найден"
 }

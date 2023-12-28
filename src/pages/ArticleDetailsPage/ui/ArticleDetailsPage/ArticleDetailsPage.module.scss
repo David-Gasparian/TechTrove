@@ -1,24 +1,5 @@
-.ArticleDetailsPage {
-    .title {
-        margin-bottom: 20px;
-        margin-top: 30px;
-    }
-
-    .addCommentWrapper {
-        margin-bottom: 20px;
-    }
-}
-
 .articleNotFound {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.recommendationArticles {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-y: hidden;
-    overflow-x: auto;
-    padding-bottom: 15px;
 }

@@ -7,6 +7,7 @@ import { CurriedGetDefaultMiddleware } from '@reduxjs/toolkit/dist/getDefaultMid
 import { userReducer } from 'entities/User';
 import { saveScrollPositionReducer } from 'features/SaveScrollPosition';
 import { $api } from 'shared/api/axiosInstance';
+import { rtkApi } from 'shared/api/rtkApi';
 import { createReducerManager } from './reducerManager';
 import { StateSchema } from './stateSchema';
 
@@ -18,6 +19,7 @@ export const createReduxStore = (
         ...asyncReducers,
         user: userReducer,
         scrollPosition: saveScrollPositionReducer,
+        [rtkApi.reducerPath]: rtkApi.reducer,
     };
 
     const reducerManager = createReducerManager(reducer);
@@ -32,7 +34,7 @@ export const createReduxStore = (
                     api: $api,
                 },
             },
-        }),
+        }).concat(rtkApi.middleware),
     });
 
     // @ts-ignore

@@ -4,7 +4,6 @@ import {
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 
-import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUserName';
 import { ArticleDetailsSchema } from 'entities/Article';
@@ -14,10 +13,13 @@ import {
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { ScrollPositionSchema } from 'features/SaveScrollPosition';
 import { FilterArticlesSchema } from 'features/FilterArticles';
+import { rtkApi } from 'shared/api/rtkApi';
+import { ProfileSchema } from 'features/EditableProfileCard';
 
 export interface StateSchema {
     user: UserSchema,
     scrollPosition: ScrollPositionSchema,
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>,
 
     // async reducers
     loginForm?: LoginSchema;

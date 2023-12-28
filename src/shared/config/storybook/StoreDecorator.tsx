@@ -3,8 +3,8 @@ import { Story } from '@storybook/react';
 
 import { StateSchema, StoreProvider } from 'app/provider/storeProvider';
 import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
-import { profileReducer } from 'entities/Profile';
 import { loginReducer } from 'features/AuthByUserName/model/slice/loginSlice';
+import { profileReducer } from 'features/EditableProfileCard';
 import { AsyncReducersList } from '../../lib/hooks/useAsyncReducer';
 
 const defaultAsyncReducers: AsyncReducersList = {
