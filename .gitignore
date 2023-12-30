@@ -3,4 +3,5 @@ node_modules
 .vscode
 /storybook-static
 .loki/report.html
-.loki/report.json
+.loki/repo
+/config/jest/reports
