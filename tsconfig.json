@@ -23,6 +23,7 @@
   "include": [
     "./config/jest/setupTests.ts",
     "./src/**/*.ts",
-    "./src/**/*.tsx"
-,   "src/shared/config/configRoute"  ]
+    "./src/**/*.tsx",
+    "src/shared/config/configRoute"
+ ]
 }

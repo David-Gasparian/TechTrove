@@ -15,13 +15,22 @@ export default ({ config }: { config: Configuration }) => {
     };
 
     config.resolve!.modules!.push(paths.src);
+
+    // Add path aliases
+    config.resolve!.alias = {
+        ...config.resolve!.alias,
+        shared: path.resolve(__dirname, '../../src/shared/'),
+        features: path.resolve(__dirname, '../../src/features/'),
+        widgets: path.resolve(__dirname, '../../src/widgets/'),
+    };
+
     config.resolve!.extensions!.push('.ts', '.tsx');
     config.module!.rules!.push(getCssLoader(true));
 
     if (config.module?.rules) {
         const { rules } = config.module as { rules: RuleSetRule[] };
 
-        // eslint-disable-next-line no-param-reassign
+        // Modify existing rules to exclude SVG files from the default loader
         config.module.rules = rules.map((rule) => {
             if (/svg/.test(rule.test as string)) {
                 return { ...rule, exclude: /\.svg$/i };
@@ -31,11 +40,13 @@ export default ({ config }: { config: Configuration }) => {
         });
     }
 
+    // Add new rule for SVG files using @svgr/webpack
     config.module!.rules!.push({
         test: /\.svg$/i,
         use: ['@svgr/webpack'],
     });
 
+    // Add DefinePlugin to define global constants
     config.plugins!.push(
         new DefinePlugin({
             __IS_DEV__: JSON.stringify(true),

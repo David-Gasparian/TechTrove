@@ -1,6 +1,5 @@
 import {
     HTMLAttributes,
-    memo,
     MutableRefObject,
     ReactNode,
     useRef,
@@ -25,7 +24,7 @@ interface PageProps extends HTMLAttributes<HTMLDivElement> {
     isScrollSave?: boolean;
 }
 
-export const Page = memo((props: PageProps) => {
+export const Page = (props: PageProps) => {
     const {
         className,
         children,
@@ -63,4 +62,4 @@ export const Page = memo((props: PageProps) => {
             <div className={cln.trigger} ref={targetRef} />
         </main>
     );
-});
+};

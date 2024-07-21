@@ -10,7 +10,7 @@ import { articlesPageReducer } from '../../model/slice/articlesPageSlice';
 import { fetchNextArticles } from '../../model/services/fetchNextArticles/fetchNextArticles';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import ArticlesPageFilters from '../ArticlesPageFilters/ArticlesPageFilters';
-import Articlesinfinitylist from '../ArticlesInfinityList/ArticlesInfinityList';
+import ArticlesInfinityList from '../ArticlesInfinityList/ArticlesInfinityList';
 
 const asyncReducersList: AsyncReducersList = {
     articles: articlesPageReducer,
@@ -34,7 +34,7 @@ const ArticlesPage: FC = memo(() => {
         <Page isScrollSave onScrollToEnd={onScrollToEnd}>
             <VStack gap={32} max>
                 <ArticlesPageFilters />
-                <Articlesinfinitylist />
+                <ArticlesInfinityList />
             </VStack>
         </Page>
     );
