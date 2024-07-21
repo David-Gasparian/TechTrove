@@ -16,7 +16,7 @@ export const RecommendedArticlesList = memo((props: RecommendedArticlesListProps
 
     const { data: articles, error, isLoading } = useFetchRecommendationArticlesQuery(3);
 
-    if (error || isLoading) {
+    if (error || isLoading || !articles) {
         return null;
     }
 

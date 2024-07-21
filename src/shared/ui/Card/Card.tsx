@@ -1,6 +1,6 @@
 import {
     HTMLAttributes,
-    memo, ReactElement,
+    memo,
     ReactNode,
 } from 'react';
 

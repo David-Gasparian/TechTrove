@@ -43,7 +43,7 @@ export const EditableProfileCardHeader = memo((props: EditableProfileCardHeaderP
             max
             gap={8}
             justify="spaceBetween"
-            testId='header'
+            testId='EditableProfileCardHeader.header'
             align='center'
             className={classNames('', {}, [className])}
         >
@@ -51,27 +51,24 @@ export const EditableProfileCardHeader = memo((props: EditableProfileCardHeaderP
             {canEdit && (
                 <div>
                     {readOnly ? (
-                        <div
-                            data-testid='editBtn'
+                        <AppButton
+                            data-testid='EditableProfileCardHeader.editBtn'
+                            onClick={onHandleEdit}
+                            theme={AppButtonTheme.OUTLINED}
                         >
-                            <AppButton
-                                onClick={onHandleEdit}
-                                theme={AppButtonTheme.OUTLINED}
-                            >
-                                {t('edit')}
-                            </AppButton>
-                        </div>
+                            {t('edit')}
+                        </AppButton>
                     ) : (
                         <HStack max gap={4}>
                             <AppButton
-                                data-testid='cancelBtn'
+                                data-testid='EditableProfileCardHeader.cancelBtn'
                                 onClick={onHandleCancelEdit}
                                 theme={AppButtonTheme.OUTLINED_RED}
                             >
                                 {t('cancel')}
                             </AppButton>
                             <AppButton
-                                data-testid='saveBtn'
+                                data-testid='EditableProfileCardHeader.saveBtn'
                                 onClick={onHandleSave}
                                 theme={AppButtonTheme.OUTLINED}
                             >

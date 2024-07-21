@@ -9,8 +9,8 @@ describe('EditableProfileCardHeader', () => {
             readOnly
             canEdit
         />);
-        expect(screen.getByTestId('header')).toBeInTheDocument();
-        expect(screen.getByTestId('editBtn')).toBeInTheDocument();
+        expect(screen.getByTestId('EditableProfileCardHeader.header')).toBeInTheDocument();
+        expect(screen.getByTestId('EditableProfileCardHeader.editBtn')).toBeInTheDocument();
     });
 
     test('if readOnly false', () => {
@@ -18,9 +18,9 @@ describe('EditableProfileCardHeader', () => {
             readOnly={false}
             canEdit
         />);
-        expect(screen.getByTestId('header')).toBeInTheDocument();
-        expect(screen.getByTestId('cancelBtn')).toBeInTheDocument();
-        expect(screen.getByTestId('saveBtn')).toBeInTheDocument();
+        expect(screen.getByTestId('EditableProfileCardHeader.header')).toBeInTheDocument();
+        expect(screen.getByTestId('EditableProfileCardHeader.cancelBtn')).toBeInTheDocument();
+        expect(screen.getByTestId('EditableProfileCardHeader.saveBtn')).toBeInTheDocument();
     });
 
     test('if canEdit false', () => {
@@ -28,8 +28,8 @@ describe('EditableProfileCardHeader', () => {
             readOnly={false}
             canEdit={false}
         />);
-        expect(screen.queryByTestId('editBtn')).not.toBeInTheDocument();
-        expect(screen.queryByTestId('cancelBtn')).not.toBeInTheDocument();
-        expect(screen.queryByTestId('saveBtn')).not.toBeInTheDocument();
+        expect(screen.queryByTestId('EditableProfileCardHeader.editBtn')).not.toBeInTheDocument();
+        expect(screen.queryByTestId('EditableProfileCardHeader.cancelBtn')).not.toBeInTheDocument();
+        expect(screen.queryByTestId('EditableProfileCardHeader.saveBtn')).not.toBeInTheDocument();
     });
 });
