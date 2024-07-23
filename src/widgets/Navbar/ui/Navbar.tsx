@@ -2,12 +2,14 @@ import {
     memo, useCallback, useState,
 } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppButton, AppButtonTheme } from 'shared/ui/AppButton/AppButton';
 import { LoginModal } from 'features/AuthByUserName';
-import { useDispatch, useSelector } from 'react-redux';
 import { selectAuthData, userActions } from 'entities/User';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 import cln from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -41,13 +43,20 @@ export const Navbar = memo((props: NavbarProps) => {
     if (authData) {
         return (
             <header className={classNames(cln.Navbar, {}, [className])}>
-                <AppButton
+                <Dropdown 
                     className={cln.loginBtn}
-                    theme={AppButtonTheme.INVERTED_CLEAR}
-                    onClick={onHandleLogout}
-                >
-                    {t('logout')}
-                </AppButton>
+                    direction={'bottom left'}
+                    items={[
+                        {
+                            content: t('logout'),
+                            onClick: onHandleLogout,
+                        },
+                         {
+                            content: t('logout'),
+                            onClick: onHandleLogout,
+                        },
+                    ]}
+                    trigger={<Avatar size={30} src={authData.avatar}/>}/>
             </header>
         );
     }

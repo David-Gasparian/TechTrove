@@ -13,6 +13,7 @@ import { selectAuthData } from 'entities/User';
 import { AsyncReducersList, useAsyncReducer } from 'shared/lib/hooks/useAsyncReducer';
 import { useInitEffect } from 'shared/lib/hooks/useInitEffect';
 import { ProfileCard } from 'entities/Profile';
+import { VStack } from 'shared/ui/Stack';
 import { selectReadOnly } from '../../model/selectors/selectReadonly/selectReadonly';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
@@ -88,7 +89,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     }, [dispatch]);
 
     return (
-        <div className={classNames('', {}, [className])}>
+        <VStack gap={8} max className={classNames('', {}, [className])}>
             <EditableProfileCardHeader
                 canEdit={canEdit}
                 readOnly={readOnly}
@@ -116,6 +117,6 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                 onHandleChangeCurrency={onHandleChangeCurrency}
                 onHandleChangeCountry={onHandleChangeCountry}
             />
-        </div>
+        </VStack>
     );
 });

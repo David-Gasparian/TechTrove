@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html,
 body,
 #root,
@@ -40,6 +46,10 @@ code {
 
 ul {
     list-style: none;
+}
+
+li {
+    list-style-type: none;
 }
 
 // scrollbar

@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Theme } from 'app/provider/themeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
-import ArticlesInfinityList from './ArticlesInfinityList';
+import { ArticlesInfinityList } from './ArticlesInfinityList';
 
 export default {
     title: 'pages/ArticlesInfinityList',

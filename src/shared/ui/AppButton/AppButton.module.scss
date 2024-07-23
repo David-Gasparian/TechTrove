@@ -7,6 +7,16 @@
         fill-opacity: 70%;
         stroke-opacity: 70%;
     }
+
+    &.disabled {
+        cursor: not-allowed;
+
+        &:hover {
+            opacity: 0.5;
+            fill-opacity: 50%;
+            stroke-opacity: 50%;
+        }
+    }
 }
 
 .clear,
