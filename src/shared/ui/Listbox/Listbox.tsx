@@ -46,8 +46,15 @@ export const Listbox = (props: ListBoxProps) => {
     const optionsClasses = [mapDirectionClass[direction]];
 
     return (
-        <HStack style={{opacity: 0.3}} gap={4} align={'center'}>
-            {label && <span className={classNames(cls.span, {[cls.disabled]: readonly}, [className])}>{`${label}>`}</span>}
+        <HStack style={{ opacity: 0.3 }} gap={4} align="center">
+            {label
+                && (
+                    <span
+                        className={classNames(cls.span, { [cls.disabled]: readonly }, [className])}
+                    >
+                        {`${label}>`}
+                    </span>
+                )}
             <HListBox
                 disabled={readonly}
                 as="div"
@@ -88,4 +95,4 @@ export const Listbox = (props: ListBoxProps) => {
             </HListBox>
         </HStack>
     );
-}
+};

@@ -43,20 +43,21 @@ export const Navbar = memo((props: NavbarProps) => {
     if (authData) {
         return (
             <header className={classNames(cln.Navbar, {}, [className])}>
-                <Dropdown 
+                <Dropdown
                     className={cln.loginBtn}
-                    direction={'bottom left'}
+                    direction="bottom left"
                     items={[
                         {
                             content: t('logout'),
                             onClick: onHandleLogout,
                         },
-                         {
+                        {
                             content: t('logout'),
                             onClick: onHandleLogout,
                         },
                     ]}
-                    trigger={<Avatar size={30} src={authData.avatar}/>}/>
+                    trigger={<Avatar size={30} src={authData.avatar} />}
+                />
             </header>
         );
     }
