@@ -7,9 +7,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppButton, AppButtonTheme } from 'shared/ui/AppButton/AppButton';
 import { LoginModal } from 'features/AuthByUserName';
-import { selectAuthData, userActions } from 'entities/User';
+import {
+    selectAuthData, userActions, isRoleAdmin, isRoleManager,
+} from 'entities/User';
 import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { appRoutePaths } from 'shared/config/configRoute/configRoute';
 import cln from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -19,8 +22,12 @@ interface NavbarProps {
 export const Navbar = memo((props: NavbarProps) => {
     const { className } = props;
     const { t } = useTranslation('navbar');
+    const { t: at } = useTranslation('admin');
+
     const dispatch = useDispatch();
     const authData = useSelector(selectAuthData);
+    const isAdmin = useSelector(isRoleAdmin);
+    const isManager = useSelector(isRoleManager);
 
     const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
 
@@ -40,6 +47,8 @@ export const Navbar = memo((props: NavbarProps) => {
         dispatch(userActions.logout());
     }, [dispatch]);
 
+    const isAdminPanelAvailable = isAdmin || isManager;
+
     if (authData) {
         return (
             <header className={classNames(cln.Navbar, {}, [className])}>
@@ -47,10 +56,10 @@ export const Navbar = memo((props: NavbarProps) => {
                     className={cln.loginBtn}
                     direction="bottom left"
                     items={[
-                        {
-                            content: t('logout'),
-                            onClick: onHandleLogout,
-                        },
+                        ...(isAdminPanelAvailable ? [{
+                            content: at('admin'),
+                            href: appRoutePaths.admin,
+                        }] : []),
                         {
                             content: t('logout'),
                             onClick: onHandleLogout,

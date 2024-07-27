@@ -1,18 +1,18 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
 import { Theme } from 'app/provider/themeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
-import ArticlesInfinityList from './ArticlesInfinityList';
+
+import ForbiddenPage from './ForbiddenPage';
 
 export default {
-    title: 'pages/ArticlesInfinityList',
-    component: ArticlesInfinityList,
+    title: 'pages/ForbiddenPage',
+    component: ForbiddenPage,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof ArticlesInfinityList>;
+} as ComponentMeta<typeof ForbiddenPage>;
 
-const Template: ComponentStory<typeof ArticlesInfinityList> = (args) => <ArticlesInfinityList {...args} />;
+const Template: ComponentStory<typeof ForbiddenPage> = (args) => <ForbiddenPage {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {};

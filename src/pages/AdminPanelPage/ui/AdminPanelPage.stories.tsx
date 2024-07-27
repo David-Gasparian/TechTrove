@@ -1,18 +1,18 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
 import { Theme } from 'app/provider/themeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
-import ArticlesInfinityList from './ArticlesInfinityList';
+
+import AdminPanelPage from './AdminPanelPage';
 
 export default {
-    title: 'pages/ArticlesInfinityList',
-    component: ArticlesInfinityList,
+    title: 'pages/AdminPanelPage',
+    component: AdminPanelPage,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof ArticlesInfinityList>;
+} as ComponentMeta<typeof AdminPanelPage>;
 
-const Template: ComponentStory<typeof ArticlesInfinityList> = (args) => <ArticlesInfinityList {...args} />;
+const Template: ComponentStory<typeof AdminPanelPage> = (args) => <AdminPanelPage {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {};
