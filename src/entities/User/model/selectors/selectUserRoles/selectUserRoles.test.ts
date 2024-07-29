@@ -1,5 +1,5 @@
 import { StateSchema } from 'app/provider/storeProvider';
-import { UserRole } from '../../types/userSchema';
+import { UserRole } from '../../consts/consts';
 import { isRoleAdmin, isRoleManager } from './selectUserRoles';
 
 describe('Selectors', () => {

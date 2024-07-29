@@ -1,5 +1,5 @@
 import { Profile } from 'entities/Profile';
-import { ValidateProfileCodes } from '../../../../model/types/EditableProfileCardSchema';
+import { ValidateProfileCodes } from '../../../../model/consts/consts';
 import { validateUserAge } from '../validateUserAge/validateUserAge';
 
 export const validateProfileData = (profile?: Profile): ValidateProfileCodes[] => {

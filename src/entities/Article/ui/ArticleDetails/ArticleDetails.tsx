@@ -18,10 +18,11 @@ import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { selectArticleData } from '../../model/selectors/selectArticleData/selectArticleData';
 import { selectArticleError } from '../../model/selectors/selectArticleError/selectArticleError';
-import { ArticleBlock, ArticleBlockTypes } from '../../model/types/article';
+import { ArticleBlock } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { ArticleBlockTypes } from '../../model/consts/consts';
 import cln from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {

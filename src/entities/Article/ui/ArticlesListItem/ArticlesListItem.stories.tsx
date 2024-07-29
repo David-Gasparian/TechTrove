@@ -1,9 +1,11 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Theme } from 'app/provider/themeProvider';
-import { Article, ArticleView } from 'entities/Article/model/types/article';
+import { Article } from '../../model/types/article';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { ArticlesListItem } from './ArticlesListItem';
+import { ArticleView } from '../../model/consts/consts';
+
 
 const article = {
     id: '1',

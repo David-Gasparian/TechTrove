@@ -12,9 +12,10 @@ import { useHover } from 'shared/lib/hooks/useHover';
 import { appRoutePaths } from 'shared/config/configRoute/configRoute';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import {
-    Article, ArticleBlockTypes, ArticleTextBlock, ArticleView,
+    Article, ArticleTextBlock,
 } from '../../model/types/article';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { ArticleBlockTypes, ArticleView } from '../../model/consts/consts';
 import cln from './ArticlesListItem.module.scss';
 
 interface ArticlesListItemProps {

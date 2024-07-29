@@ -1,6 +1,6 @@
 import { Profile } from 'entities/Profile';
 
-import { ValidateProfileCodes } from '../../../../model/types/EditableProfileCardSchema';
+import { ValidateProfileCodes } from '../../../../model/consts/consts';
 import { validateProfileData } from './validateProfileData';
 
 const profileData: DeepPartial<Profile> = {

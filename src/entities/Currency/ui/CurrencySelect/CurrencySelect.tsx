@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Listbox } from 'shared/ui/Listbox/Listbox';
-import { Currency } from '../../medel/types/curencyTypes';
+import { Currency } from '../../medel/consts/consts';
 
 interface CurrencySelectProps {
     className?: string;
