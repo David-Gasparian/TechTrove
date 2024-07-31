@@ -1,4 +1,4 @@
-import babelRemovePropsPlugin from "../../babel/babelRemovePropsPlugin";
+import babelRemovePropsPlugin from '../../babel/babelRemovePropsPlugin';
 
 interface BabelLoaderProps {
     isTsx: boolean;
@@ -25,7 +25,7 @@ export const getBabelLoader = ({ isTsx }: BabelLoaderProps) => ({
                 [
                     '@babel/plugin-transform-typescript',
                     {
-                        isTsx
+                        isTsx,
                     },
                 ],
                 '@babel/plugin-transform-runtime',
