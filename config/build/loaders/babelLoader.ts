@@ -1,5 +1,11 @@
-export const getBabelLoader = () => ({
-    test: /\.(js|ts|jsx|tsx)$/,
+import babelRemovePropsPlugin from "../../babel/babelRemovePropsPlugin";
+
+interface BabelLoaderProps {
+    isTsx: boolean;
+}
+
+export const getBabelLoader = ({ isTsx }: BabelLoaderProps) => ({
+    test: isTsx ? /\.(jsx|tsx)$/ : /\.(js|ts)$/,
     exclude: /node_modules/,
     use: {
         loader: 'babel-loader',
@@ -16,7 +22,20 @@ export const getBabelLoader = () => ({
                         keyAsDefaultValue: true,
                     },
                 ],
-            ],
+                [
+                    '@babel/plugin-transform-typescript',
+                    {
+                        isTsx
+                    },
+                ],
+                '@babel/plugin-transform-runtime',
+                isTsx && [
+                    babelRemovePropsPlugin,
+                    {
+                        props: ['data-testid'],
+                    },
+                ],
+            ].filter(Boolean),
         },
     },
 });
