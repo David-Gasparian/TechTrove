@@ -3,3 +3,9 @@
         fill: var(--secondary-color);
     }
 }
+
+.inverted {
+    .svg {
+        fill: var(--inverted-primary-color);
+    }
+}

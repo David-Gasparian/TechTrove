@@ -64,6 +64,7 @@ module.exports = {
                     'testId',
                     'role',
                     'as',
+                    'border',
                 ],
             },
         ],

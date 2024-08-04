@@ -1,7 +1,3 @@
-.ListBox {
-    position: relative;
-}
-
 .span.disabled {
     opacity: 0.5;
 }
@@ -26,30 +22,6 @@
     padding: 10px 20px;
 }
 
-.active {
-    background: var(--inverted-primary-color);
-}
-
 .disabled {
     opacity: 0.5;
-}
-
-.optionsBottomLeft {
-    top: 100%;
-    right: 0;
-}
-
-.optionsBottomRight {
-    top: 100%;
-    left: 0;
-}
-
-.optionsTopRight {
-    bottom: 100%;
-    left: 0;
-}
-
-.optionsTopLeft {
-    right: 0;
-    bottom: 100%;
 }
