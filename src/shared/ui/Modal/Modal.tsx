@@ -3,6 +3,7 @@ import {
 } from 'react';
 
 import { classNames, Mode } from 'shared/lib/classNames/classNames';
+import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 import cln from './Modal.module.scss';
 
@@ -77,18 +78,13 @@ export const Modal: FC<ModalProps> = (props) => {
                 data-testid='modal'
                 className={classNames(cln.Modal, mode, [className])}
             >
+                <Overlay data-testid='overlay' onClick={onHandleClose} />
                 <div
-                    data-testid='overlay'
-                    className={cln.overlay}
-                    onClick={onHandleClose}
+                    data-testid='content'
+                    className={cln.content}
+                    onClick={onHandleContentClick}
                 >
-                    <div
-                        data-testid='content'
-                        className={cln.content}
-                        onClick={onHandleContentClick}
-                    >
-                        {children}
-                    </div>
+                    {children}
                 </div>
             </div>
         </Portal>
