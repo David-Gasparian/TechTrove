@@ -49,3 +49,9 @@
         transform: translateY(0%);
     }
 }
+
+.Drawer.closing {
+    .content {
+        transform: translateY(100%);
+    }
+}

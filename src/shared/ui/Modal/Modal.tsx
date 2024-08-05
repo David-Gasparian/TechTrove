@@ -1,8 +1,7 @@
-import {
-    FC, MouseEvent, useEffect, useRef, useState,
-} from 'react';
+import { FC } from 'react';
 
 import { classNames, Mode } from 'shared/lib/classNames/classNames';
+import { useModal } from 'shared/lib/hooks/useModal';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 import cln from './Modal.module.scss';
@@ -14,8 +13,6 @@ interface ModalProps {
     lazy?: boolean;
 }
 
-const ANIMATION_DELAY = 300;
-
 export const Modal: FC<ModalProps> = (props) => {
     const {
         className,
@@ -25,52 +22,16 @@ export const Modal: FC<ModalProps> = (props) => {
         lazy,
     } = props;
 
-    const timerId = useRef<ReturnType<typeof setTimeout>>();
-    const [isClosing, setIsClosing] = useState(false);
-    const [isMounted, setIsMounted] = useState(false);
+    const { close, isClosing, isMounted } = useModal({ animationDelay: 300, isOpen, onClose });
+
+    if (lazy && !isMounted) {
+        return null;
+    }
 
     const mode: Mode = {
         [cln.opened]: isOpen,
         [cln.closing]: isClosing,
     };
-
-    useEffect(() => {
-        if (isOpen) {
-            setIsMounted(true);
-        }
-    }, [isOpen]);
-
-    useEffect(() => {
-        const onKeyDown = (e: KeyboardEvent) => {
-            if (e.code === 'Space') {
-                setIsClosing(false);
-            }
-        };
-
-        document.addEventListener('keydown', onKeyDown);
-        return () => {
-            clearTimeout(timerId.current);
-            document.removeEventListener('keydown', onKeyDown);
-        };
-    }, [isOpen]);
-
-    const onHandleClose = () => {
-        if (onClose) {
-            setIsClosing(true);
-            timerId.current = setTimeout(() => {
-                onClose();
-                setIsClosing(false);
-            }, ANIMATION_DELAY);
-        }
-    };
-
-    const onHandleContentClick = (e: MouseEvent<HTMLDivElement>) => {
-        e.stopPropagation();
-    };
-
-    if (lazy && !isMounted) {
-        return null;
-    }
 
     return (
         <Portal>
@@ -78,11 +39,10 @@ export const Modal: FC<ModalProps> = (props) => {
                 data-testid='modal'
                 className={classNames(cln.Modal, mode, [className])}
             >
-                <Overlay data-testid='overlay' onClick={onHandleClose} />
+                <Overlay data-testid='overlay' onClick={close} />
                 <div
                     data-testid='content'
                     className={cln.content}
-                    onClick={onHandleContentClick}
                 >
                     {children}
                 </div>
