@@ -1,9 +1,9 @@
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { classNames } from 'shared/lib/classNames/classNames';
-import { AppButton } from 'shared/ui/AppButton/AppButton';
-import { AppInput } from 'shared/ui/AppInput/AppInput';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { AppButton } from '@/shared/ui/AppButton/AppButton';
+import { AppInput } from '@/shared/ui/AppInput/AppInput';
 import cln from './AddCommentForm.module.scss';
 
 export interface AddCommentFormProps {

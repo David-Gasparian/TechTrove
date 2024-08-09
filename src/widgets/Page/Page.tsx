@@ -8,13 +8,13 @@ import {
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll';
-import { useInitEffect } from 'shared/lib/hooks/useInitEffect';
-import { useThrottling } from 'shared/lib/hooks/useThrottling';
-import { StateSchema } from 'app/provider/storeProvider';
-import { saveScrollPositionActions, selectScrollByPath } from 'features/SaveScrollPosition';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll';
+import { useInitEffect } from '@/shared/lib/hooks/useInitEffect';
+import { useThrottling } from '@/shared/lib/hooks/useThrottling';
+import { StateSchema } from '@/app/provider/storeProvider';
+import { saveScrollPositionActions, selectScrollByPath } from '@/features/SaveScrollPosition';
 import cln from './Page.module.scss';
 
 interface PageProps extends HTMLAttributes<HTMLDivElement> {

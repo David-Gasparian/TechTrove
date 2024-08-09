@@ -8,7 +8,7 @@ import {
     useState,
 } from 'react';
 
-import { classNames, Mode } from 'shared/lib/classNames/classNames';
+import { classNames, Mode } from '@/shared/lib/classNames/classNames';
 import cln from './AppInput.module.scss';
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>;

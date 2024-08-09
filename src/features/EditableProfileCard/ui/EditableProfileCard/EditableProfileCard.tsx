@@ -4,16 +4,16 @@ import {
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { selectAuthData } from 'entities/User';
-import { AsyncReducersList, useAsyncReducer } from 'shared/lib/hooks/useAsyncReducer';
-import { useInitEffect } from 'shared/lib/hooks/useInitEffect';
-import { ProfileCard } from 'entities/Profile';
-import { VStack } from 'shared/ui/Stack';
+import { Currency } from '@/entities/Currency';
+import { Country } from '@/entities/Country';
+import { Text, TextTheme } from '@/shared/ui/Text/Text';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { selectAuthData } from '@/entities/User';
+import { AsyncReducersList, useAsyncReducer } from '@/shared/lib/hooks/useAsyncReducer';
+import { useInitEffect } from '@/shared/lib/hooks/useInitEffect';
+import { ProfileCard } from '@/entities/Profile';
+import { VStack } from '@/shared/ui/Stack';
 import { selectReadOnly } from '../../model/selectors/selectReadonly/selectReadonly';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';

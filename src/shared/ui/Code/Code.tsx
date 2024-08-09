@@ -1,10 +1,10 @@
 import { memo, useEffect, useState } from 'react';
 
-import { classNames } from 'shared/lib/classNames/classNames';
-import { AppButton, AppButtonTheme } from 'shared/ui/AppButton/AppButton';
-import { Icon } from 'shared/ui//Icon/Icon';
-import CopyIcon from 'shared/assets/icons/copy.svg';
-import SuccessIcon from 'shared/assets/icons/success.svg';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { AppButton, AppButtonTheme } from '@/shared/ui/AppButton/AppButton';
+import { Icon } from '@/shared/ui//Icon/Icon';
+import CopyIcon from '@/shared/assets/icons/copy.svg';
+import SuccessIcon from '@/shared/assets/icons/success.svg';
 import cln from './Code.module.scss';
 
 interface IconProps {

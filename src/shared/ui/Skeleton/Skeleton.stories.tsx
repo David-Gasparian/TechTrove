@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from 'app/provider/themeProvider';
+import { Theme } from '@/app/provider/themeProvider';
 
 import { ThemeDecorator } from '../../config/storybook/ThemeDecorator';
 import { Skeleton } from './Skeleton';

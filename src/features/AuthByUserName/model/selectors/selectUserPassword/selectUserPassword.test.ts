@@ -1,4 +1,4 @@
-import { StateSchema } from 'app/provider/storeProvider';
+import { StateSchema } from '@/app/provider/storeProvider';
 import { selectUserPassword } from './selectUserPassword';
 
 describe('selectUserPassword', () => {

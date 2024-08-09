@@ -1,5 +1,5 @@
-import { StateSchema } from 'app/provider/storeProvider';
-import { Profile } from 'entities/Profile';
+import { StateSchema } from '@/app/provider/storeProvider';
+import { Profile } from '@/entities/Profile';
 import { selectProfileForm } from './selectProfileForm';
 
 describe('selectProfileForm', () => {

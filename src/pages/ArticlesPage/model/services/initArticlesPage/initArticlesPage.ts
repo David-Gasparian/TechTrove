@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { ThunkApi } from 'app/provider/storeProvider';
-import { filterArticlesSliceActions } from 'features/FilterArticles';
-import { ArticleSortType, ArticleTypes } from 'entities/Article';
-import { SortingOrder } from 'shared/types/filterTypes';
+import { ThunkApi } from '@/app/provider/storeProvider';
+import { filterArticlesSliceActions } from '@/features/FilterArticles';
+import { ArticleSortType, ArticleTypes } from '@/entities/Article';
+import { SortingOrder } from '@/shared/types/filterTypes';
 import { articlesPageActions } from '../../slice/articlesPageSlice';
 import { fetchArticles } from '../fetchArticles/fetchArticles';
 import { selectArticlesInited } from '../../selectors/selectArticlesInited/selectArticlesInited';

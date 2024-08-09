@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 
 import {
     ArticleSortType, ArticleTypes, ArticleView,
-} from 'entities/Article';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
+} from '@/entities/Article';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import {
     FilterArticles,
     filterArticlesSliceActions,
@@ -12,9 +12,9 @@ import {
     selectArticleSearch,
     selectArticleSortType,
     selectArticleType,
-} from 'features/FilterArticles';
-import { SortingOrder } from 'shared/types/filterTypes';
-import { useDebouncing } from 'shared/lib/hooks/useDebouncing';
+} from '@/features/FilterArticles';
+import { SortingOrder } from '@/shared/types/filterTypes';
+import { useDebouncing } from '@/shared/lib/hooks/useDebouncing';
 import { fetchArticles } from '../../model/services/fetchArticles/fetchArticles';
 import { articlesPageActions } from '../../model/slice/articlesPageSlice';
 import { selectArticleView } from '../../model/selectors/selectArticleView/selectArticleView';

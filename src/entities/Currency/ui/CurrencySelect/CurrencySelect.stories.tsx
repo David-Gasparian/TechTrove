@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Theme } from 'app/provider/themeProvider';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
+import { Theme } from '@/app/provider/themeProvider';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Currency } from '../../medel/consts/consts';
 import { CurrencySelect } from './CurrencySelect';
 

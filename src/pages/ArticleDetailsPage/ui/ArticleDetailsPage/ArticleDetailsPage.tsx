@@ -2,11 +2,11 @@ import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 
-import { ArticleDetails } from 'entities/Article';
-import { Text } from 'shared/ui/Text/Text';
-import { AsyncReducersList, useAsyncReducer } from 'shared/lib/hooks/useAsyncReducer';
-import { Page } from 'widgets/Page/Page';
-import { RecommendedArticlesList } from 'features/RecommendedArticlesList';
+import { ArticleDetails } from '@/entities/Article';
+import { Text } from '@/shared/ui/Text/Text';
+import { AsyncReducersList, useAsyncReducer } from '@/shared/lib/hooks/useAsyncReducer';
+import { Page } from '@/widgets/Page/Page';
+import { RecommendedArticlesList } from '@/features/RecommendedArticlesList';
 import { articleDetailsPageSlice } from '../../model/slice';
 import ArticleDetailsPageHeader from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import ArticleDetailsComments from '../ArticleDetailsComments/ArticleDetailsComments';

@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { ThunkApi } from 'app/provider/storeProvider';
-import { Profile } from 'entities/Profile';
+import { ThunkApi } from '@/app/provider/storeProvider';
+import { Profile } from '@/entities/Profile';
 
 interface fetchProfileDataProps {
     id?: string;

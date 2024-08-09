@@ -1,4 +1,4 @@
-import { OptionItem } from 'shared/types/types';
+import { OptionItem } from '@/shared/types/types';
 import { classNames } from '../../lib/classNames/classNames';
 import { Card, CardTheme } from '../Card/Card';
 import cln from './Tabs.module.scss';

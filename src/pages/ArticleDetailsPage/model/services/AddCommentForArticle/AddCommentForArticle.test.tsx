@@ -1,5 +1,5 @@
-import { Comment } from 'entities/Comment';
-import { TestAsyncThunk } from 'shared/lib/test/testAsyncThunk';
+import { Comment } from '@/entities/Comment';
+import { TestAsyncThunk } from '@/shared/lib/test/testAsyncThunk';
 import { AddCommentForArticle } from './AddCommentForArticle';
 
 const state = {

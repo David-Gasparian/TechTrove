@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import {
     ArticlesList,
-} from 'entities/Article';
+} from '@/entities/Article';
 import { articlesSelectors } from '../../model/slice/articlesPageSlice';
 import { selectArticleView } from '../../model/selectors/selectArticleView/selectArticleView';
 import { selectArticlesLoading } from '../../model/selectors/selectArticlesLoading/selectArticlesLoading';

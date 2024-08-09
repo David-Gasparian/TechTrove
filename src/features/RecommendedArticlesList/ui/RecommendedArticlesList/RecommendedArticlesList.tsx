@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Text } from 'shared/ui/Text/Text';
-import { ArticlesList } from 'entities/Article';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text } from '@/shared/ui/Text/Text';
+import { ArticlesList } from '@/entities/Article';
 import { useFetchRecommendationArticlesQuery } from '../../api/RecommendedArticlesListApi';
 
 interface RecommendedArticlesListProps {

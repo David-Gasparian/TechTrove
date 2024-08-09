@@ -2,8 +2,8 @@ import { FC, ReactElement, useMemo } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import { selectUserRoles, UserRole } from 'entities/User';
-import { appRoutePaths } from 'shared/config/configRoute/configRoute';
+import { selectUserRoles, UserRole } from '@/entities/User';
+import { appRoutePaths } from '@/shared/config/configRoute/configRoute';
 
 interface RequireRolesProps {
     routeRoles?: UserRole[];

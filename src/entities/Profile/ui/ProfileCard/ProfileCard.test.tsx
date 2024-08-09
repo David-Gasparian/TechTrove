@@ -1,8 +1,8 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
-import { componentRender } from 'shared/lib/test/componentRender/componentRender';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
+import { componentRender } from '@/shared/lib/test/componentRender/componentRender';
 import { ProfileCard } from './ProfileCard';
 
 describe('ProfileCard', () => {

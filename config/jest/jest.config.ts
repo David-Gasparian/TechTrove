@@ -42,6 +42,7 @@ export default {
     moduleNameMapper: {
         '\\.s?css$': 'identity-obj-proxy',
         '\\.svg$': path.resolve(__dirname, 'SvgMockComponent.tsx'),
+        '^@/(.*)$': '<rootDir>/src/$1',
     },
     rootDir: '../../',
     globals: {

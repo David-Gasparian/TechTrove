@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import { classNames, Mode } from 'shared/lib/classNames/classNames';
-import { useModal } from 'shared/lib/hooks/useModal';
+import { classNames, Mode } from '@/shared/lib/classNames/classNames';
+import { useModal } from '@/shared/lib/hooks/useModal';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 import cln from './Modal.module.scss';

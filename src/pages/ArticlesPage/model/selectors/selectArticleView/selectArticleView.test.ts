@@ -1,5 +1,5 @@
-import { StateSchema } from 'app/provider/storeProvider';
-import { ArticleView } from 'entities/Article';
+import { StateSchema } from '@/app/provider/storeProvider';
+import { ArticleView } from '@/entities/Article';
 import { selectArticleView } from './selectArticleView';
 
 describe('selectArticleView', () => {

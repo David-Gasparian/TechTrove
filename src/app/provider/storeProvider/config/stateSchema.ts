@@ -4,17 +4,17 @@ import {
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 
-import { UserSchema } from 'entities/User';
-import { LoginSchema } from 'features/AuthByUserName';
-import { ArticleDetailsSchema } from 'entities/Article';
+import { UserSchema } from '@/entities/User';
+import { LoginSchema } from '@/features/AuthByUserName';
+import { ArticleDetailsSchema } from '@/entities/Article';
 import {
     ArticleDetailsPageSchema,
-} from 'pages/ArticleDetailsPage';
-import { ArticlesPageSchema } from 'pages/ArticlesPage';
-import { ScrollPositionSchema } from 'features/SaveScrollPosition';
-import { FilterArticlesSchema } from 'features/FilterArticles';
-import { rtkApi } from 'shared/api/rtkApi';
-import { ProfileSchema } from 'features/EditableProfileCard';
+} from '@/pages/ArticleDetailsPage';
+import { ArticlesPageSchema } from '@/pages/ArticlesPage';
+import { ScrollPositionSchema } from '@/features/SaveScrollPosition';
+import { FilterArticlesSchema } from '@/features/FilterArticles';
+import { rtkApi } from '@/shared/api/rtkApi';
+import { ProfileSchema } from '@/features/EditableProfileCard';
 
 export interface StateSchema {
     user: UserSchema,

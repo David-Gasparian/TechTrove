@@ -4,15 +4,15 @@ import {
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
-import { classNames } from 'shared/lib/classNames/classNames';
-import { AppButton, AppButtonTheme } from 'shared/ui/AppButton/AppButton';
-import { LoginModal } from 'features/AuthByUserName';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { AppButton, AppButtonTheme } from '@/shared/ui/AppButton/AppButton';
+import { LoginModal } from '@/features/AuthByUserName';
 import {
     selectAuthData,
-} from 'entities/User';
-import { HStack } from 'shared/ui/Stack';
-import { NotificationButton } from 'features/NotificationButton';
-import { AvatarDropdown } from 'features/AvatarDropdown';
+} from '@/entities/User';
+import { HStack } from '@/shared/ui/Stack';
+import { NotificationButton } from '@/features/NotificationButton';
+import { AvatarDropdown } from '@/features/AvatarDropdown';
 import cln from './Navbar.module.scss';
 
 interface NavbarProps {

@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-import { ThunkApi } from 'app/provider/storeProvider';
+import { ThunkApi } from '@/app/provider/storeProvider';
 import { selectArticlesLoading } from '../../selectors/selectArticlesLoading/selectArticlesLoading';
 import { selectArticlesHasMore } from '../../selectors/selectArticlesHasMore/selectArticlesHasMore';
 import { selectArticlesPage } from '../../selectors/selectArticlesPage/selectArticlesPage';

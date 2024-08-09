@@ -4,8 +4,8 @@ import { ReactNode } from 'react';
 import { I18nextProvider } from 'react-i18next';
 import { MemoryRouter } from 'react-router-dom';
 
-import { StateSchema, StoreProvider } from 'app/provider/storeProvider';
-import i18n from 'shared/config/i18n/testI18n';
+import { StateSchema, StoreProvider } from '@/app/provider/storeProvider';
+import i18n from '@/shared/config/i18n/testI18n';
 
 interface ComponentRenderOptions {
     path?: string;

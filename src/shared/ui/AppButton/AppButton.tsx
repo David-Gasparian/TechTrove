@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, memo } from 'react';
 
-import { classNames, Mode } from 'shared/lib/classNames/classNames';
+import { classNames, Mode } from '@/shared/lib/classNames/classNames';
 import cln from './AppButton.module.scss';
 
 export enum AppButtonTheme {

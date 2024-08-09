@@ -4,10 +4,10 @@ import {
 } from '@reduxjs/toolkit';
 import { CurriedGetDefaultMiddleware } from '@reduxjs/toolkit/dist/getDefaultMiddleware';
 
-import { userReducer } from 'entities/User';
-import { saveScrollPositionReducer } from 'features/SaveScrollPosition';
-import { $api } from 'shared/api/axiosInstance';
-import { rtkApi } from 'shared/api/rtkApi';
+import { userReducer } from '@/entities/User';
+import { saveScrollPositionReducer } from '@/features/SaveScrollPosition';
+import { $api } from '@/shared/api/axiosInstance';
+import { rtkApi } from '@/shared/api/rtkApi';
 import { createReducerManager } from './reducerManager';
 import { StateSchema } from './stateSchema';
 

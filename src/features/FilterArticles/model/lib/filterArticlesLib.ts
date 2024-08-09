@@ -1,8 +1,8 @@
 import { TFunction } from 'i18next';
 
-import { ArticleSortType, ArticleTypes } from 'entities/Article';
-import { SortingOrder } from 'shared/types/filterTypes';
-import { OptionItem } from 'shared/types/types';
+import { ArticleSortType, ArticleTypes } from '@/entities/Article';
+import { SortingOrder } from '@/shared/types/filterTypes';
+import { OptionItem } from '@/shared/types/types';
 
 export const getSortOptions = (t:TFunction): OptionItem<ArticleSortType>[] => ([
     {

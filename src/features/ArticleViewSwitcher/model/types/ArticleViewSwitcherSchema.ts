@@ -1,4 +1,4 @@
-import { ArticleView } from 'entities/Article';
+import { ArticleView } from '@/entities/Article';
 
 export interface ArticleViewSwitcherSchema {
     view: ArticleView;

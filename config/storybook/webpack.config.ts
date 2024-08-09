@@ -55,5 +55,7 @@ export default ({ config }: { config: Configuration }) => {
         }),
     );
 
+    config!.resolve!.alias = { '@': path.resolve(__dirname, '..', '..', 'src') };
+
     return config;
 };

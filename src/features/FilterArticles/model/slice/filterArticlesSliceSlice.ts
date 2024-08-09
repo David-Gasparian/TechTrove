@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { ArticleSortType, ArticleTypes } from 'entities/Article';
-import { SortingOrder } from 'shared/types/filterTypes';
+import { ArticleSortType, ArticleTypes } from '@/entities/Article';
+import { SortingOrder } from '@/shared/types/filterTypes';
 
 const initialState = {
     sortType: '',

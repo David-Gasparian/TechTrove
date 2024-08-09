@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Main from 'shared/assets/icons/main.svg';
+import Main from '@/shared/assets/icons/main.svg';
 import { SideBarItem } from './SideBarItem';
 
 export default {

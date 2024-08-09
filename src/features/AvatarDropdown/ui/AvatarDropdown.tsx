@@ -4,11 +4,11 @@ import {
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { Dropdown } from 'shared/ui/popups';
-import { isRoleAdmin, isRoleManager, userActions } from 'entities/User';
-import { appRoutePaths } from 'shared/config/configRoute/configRoute';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { Dropdown } from '@/shared/ui/popups';
+import { isRoleAdmin, isRoleManager, userActions } from '@/entities/User';
+import { appRoutePaths } from '@/shared/config/configRoute/configRoute';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 interface AvatarDropdownProps {
     className?: string;

@@ -1,5 +1,5 @@
-import { Article } from 'entities/Article/model/types/article';
-import { TestAsyncThunk } from 'shared/lib/test/testAsyncThunk';
+import { Article } from '@/entities/Article/model/types/article';
+import { TestAsyncThunk } from '@/shared/lib/test/testAsyncThunk';
 import { fetchArticles } from './fetchArticles';
 
 describe('fetchArticles', () => {

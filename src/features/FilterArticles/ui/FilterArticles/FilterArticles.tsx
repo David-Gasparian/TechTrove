@@ -1,13 +1,13 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { classNames } from 'shared/lib/classNames/classNames';
-import { ArticleViewSwitcher } from 'features/ArticleViewSwitcher';
-import { ArticleSortType, ArticleTypes, ArticleView } from 'entities/Article';
-import { AppInput } from 'shared/ui/AppInput/AppInput';
-import { AsyncReducersList, useAsyncReducer } from 'shared/lib/hooks/useAsyncReducer';
-import { SortingOrder } from 'shared/types/filterTypes';
-import { HStack, VStack } from 'shared/ui/Stack';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { ArticleViewSwitcher } from '@/features/ArticleViewSwitcher';
+import { ArticleSortType, ArticleTypes, ArticleView } from '@/entities/Article';
+import { AppInput } from '@/shared/ui/AppInput/AppInput';
+import { AsyncReducersList, useAsyncReducer } from '@/shared/lib/hooks/useAsyncReducer';
+import { SortingOrder } from '@/shared/types/filterTypes';
+import { HStack, VStack } from '@/shared/ui/Stack';
 import {
     filterArticlesSliceReducer,
 } from '../../model/slice/filterArticlesSliceSlice';

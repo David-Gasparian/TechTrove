@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
-import { UserRole } from 'entities/User';
-import { HStack } from 'shared/ui/Stack';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
+import { UserRole } from '@/entities/User';
+import { HStack } from '@/shared/ui/Stack';
 import avatarImg from '../../../shared/assets/test/avatarImg.jpg';
 import { AvatarDropdown } from './AvatarDropdown';
 

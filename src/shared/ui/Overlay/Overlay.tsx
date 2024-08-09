@@ -1,6 +1,6 @@
 import { HTMLAttributes, memo } from 'react';
 
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Overlay.module.scss';
 
 interface OverlayProps extends HTMLAttributes<HTMLDivElement> {

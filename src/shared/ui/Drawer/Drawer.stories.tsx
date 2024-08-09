@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from 'app/provider/themeProvider';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
+import { Theme } from '@/app/provider/themeProvider';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Drawer } from './Drawer';
 
 export default {

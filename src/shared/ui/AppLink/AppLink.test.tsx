@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 
-import { componentRender } from 'shared/lib/test/componentRender/componentRender';
+import { componentRender } from '@/shared/lib/test/componentRender/componentRender';
 import { AppLink, APPLinkTheme } from './AppLink';
 
 describe('AppLink', () => {

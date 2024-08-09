@@ -4,7 +4,7 @@ import {
     ReactNode,
 } from 'react';
 
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cln from './Card.module.scss';
 
 export enum CardTheme {

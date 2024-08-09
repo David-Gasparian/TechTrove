@@ -1,15 +1,15 @@
 import { RouteProps } from 'react-router-dom';
 
-import { AboutPage } from 'pages/AboutPage';
-import { MainPage } from 'pages/MainPage';
-import { NotFound } from 'pages/NotFound';
-import { ProfilePage } from 'pages/ProfilePage';
-import { ArticlesPage } from 'pages/ArticlesPage';
-import { ArticleDetails } from 'pages/ArticleDetailsPage';
-import { ArticleEditorPage } from 'pages/ArticleEditorPage';
-import { AdminPage } from 'pages/AdminPanelPage';
-import { UserRole } from 'entities/User';
-import { ForbiddenPage } from 'pages/ForbiddenPage';
+import { AboutPage } from '@/pages/AboutPage';
+import { MainPage } from '@/pages/MainPage';
+import { NotFound } from '@/pages/NotFound';
+import { ProfilePage } from '@/pages/ProfilePage';
+import { ArticlesPage } from '@/pages/ArticlesPage';
+import { ArticleDetails } from '@/pages/ArticleDetailsPage';
+import { ArticleEditorPage } from '@/pages/ArticleEditorPage';
+import { AdminPage } from '@/pages/AdminPanelPage';
+import { UserRole } from '@/entities/User';
+import { ForbiddenPage } from '@/pages/ForbiddenPage';
 
 export enum AppRouteNames {
     ABOUT = 'about',

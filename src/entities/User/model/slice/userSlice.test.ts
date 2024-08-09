@@ -1,5 +1,5 @@
-import { USER_LOCAL_STORAGE_KEY } from 'shared/consts/localStorage';
-import { userStorage } from 'shared/lib/storage/adapters/userAdapter';
+import { USER_LOCAL_STORAGE_KEY } from '@/shared/consts/localStorage';
+import { userStorage } from '@/shared/lib/storage/adapters/userAdapter';
 import { User, UserSchema } from '../types/userSchema';
 import { userActions, userReducer } from './userSlice';
 

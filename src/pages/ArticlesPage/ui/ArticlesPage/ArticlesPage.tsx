@@ -1,11 +1,11 @@
 import { FC, memo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-import { AsyncReducersList, useAsyncReducer } from 'shared/lib/hooks/useAsyncReducer';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
-import { useInitEffect } from 'shared/lib/hooks/useInitEffect';
-import { Page } from 'widgets/Page/Page';
-import { VStack } from 'shared/ui/Stack';
+import { AsyncReducersList, useAsyncReducer } from '@/shared/lib/hooks/useAsyncReducer';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { useInitEffect } from '@/shared/lib/hooks/useInitEffect';
+import { Page } from '@/widgets/Page/Page';
+import { VStack } from '@/shared/ui/Stack';
 import { articlesPageReducer } from '../../model/slice/articlesPageSlice';
 import { fetchNextArticles } from '../../model/services/fetchNextArticles/fetchNextArticles';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';

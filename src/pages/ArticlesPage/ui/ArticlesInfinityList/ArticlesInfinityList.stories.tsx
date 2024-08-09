@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Theme } from 'app/provider/themeProvider';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
+import { Theme } from '@/app/provider/themeProvider';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import ArticlesInfinityList from './ArticlesInfinityList';
 
 export default {

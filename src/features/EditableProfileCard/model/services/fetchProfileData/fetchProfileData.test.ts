@@ -1,5 +1,5 @@
-import { Profile } from 'entities/Profile';
-import { TestAsyncThunk } from 'shared/lib/test/testAsyncThunk';
+import { Profile } from '@/entities/Profile';
+import { TestAsyncThunk } from '@/shared/lib/test/testAsyncThunk';
 import { fetchProfileData } from './fetchProfileData';
 
 describe('fetchProfileData', () => {
