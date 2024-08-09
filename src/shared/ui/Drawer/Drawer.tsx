@@ -3,7 +3,7 @@ import {
 } from 'react';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
+import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
 import { useTheme } from '@/app/provider/themeProvider';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
@@ -19,7 +19,7 @@ interface DrawerProps {
 
 const height = window.innerHeight - 100;
 
-export const DrawerContent = memo((props: DrawerProps) => {
+const DrawerContent = memo((props: DrawerProps) => {
     const { Spring, Gesture } = useAnimationLibs();
     const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
     const { theme } = useTheme();
@@ -97,7 +97,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
     );
 });
 
-export const Drawer = memo((props: DrawerProps) => {
+const LazyDrawer = (props: DrawerProps) => {
     const { isLoaded } = useAnimationLibs();
 
     if (!isLoaded) {
@@ -105,4 +105,10 @@ export const Drawer = memo((props: DrawerProps) => {
     }
 
     return <DrawerContent {...props} />;
-});
+};
+
+export const Drawer = (props: DrawerProps) => (
+    <AnimationProvider>
+        <LazyDrawer {...props} />
+    </AnimationProvider>
+);
