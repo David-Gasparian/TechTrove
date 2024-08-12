@@ -7,5 +7,8 @@
   "currency": "Currency",
   "country": "Country",
   "by_asc": "asc",
-  "by_desc": "desc"
+  "by_desc": "desc",
+  "cancel": "cancel",
+  "send": "send",
+  "your_feedback": "your feedback."
 }

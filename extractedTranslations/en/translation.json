@@ -8,6 +8,7 @@
   "article_views": "",
   "by_asc": "",
   "by_desc": "",
+  "cancel": "",
   "country": "country",
   "currency": "currency",
   "form_authorization": "form_authorization",
@@ -15,7 +16,9 @@
   "login": "login",
   "password": "password",
   "refresh_page": "refresh_page",
+  "send": "",
   "short_language": "short_language",
   "something_went_wrong": "something_went_wrong",
-  "username": "username"
+  "username": "username",
+  "your_feedback": ""
 }

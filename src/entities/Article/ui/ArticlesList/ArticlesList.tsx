@@ -21,8 +21,9 @@ const getSkeletons = (view: ArticleView) => {
     const isBig = view === ArticleView.BIG;
     const articleListForSkeleton = new Array(isBig ? 3 : 6).fill(1);
 
-    return articleListForSkeleton.map(() => (
+    return articleListForSkeleton.map((_: number, inedx: number) => (
         <ArticlesListItemSkeleton
+            key={inedx.toString()}
             view={view}
         />
     ));

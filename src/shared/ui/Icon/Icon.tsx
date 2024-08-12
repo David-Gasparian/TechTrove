@@ -1,9 +1,9 @@
-import { memo } from 'react';
+import React, { memo } from 'react';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import cln from './Icon.module.scss';
+import cls from './Icon.module.scss';
 
-interface IconProps {
+interface IconProps extends React.SVGProps<SVGSVGElement> {
     className?: string;
     SVG: React.VFC<React.SVGProps<SVGSVGElement>>;
     isInverted?: boolean;
@@ -11,16 +11,16 @@ interface IconProps {
 
 export const Icon = memo((props: IconProps) => {
     const {
-        className,
-        SVG,
-        isInverted = false,
+        className, SVG, isInverted, ...otherProps
     } = props;
 
     return (
-        <div
-            className={classNames(isInverted ? cln.inverted : cln.Icon, {}, [className])}
-        >
-            <SVG className={cln.svg} />
-        </div>
+        <SVG
+            className={classNames('', {
+                [cls.inverted]: isInverted,
+                [cls.Icon]: !isInverted,
+            }, [className])}
+            {...otherProps}
+        />
     );
 });

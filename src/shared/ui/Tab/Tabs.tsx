@@ -28,6 +28,7 @@ export const Tabs = <T extends string>(props: TabsProps<T>) => {
         >
             {tabs.map((tab) => (
                 <Card
+                    key={tab.value}
                     onClick={onHandleTabClick(tab.value)}
                     theme={value === tab.value ? CardTheme.NORMAL : CardTheme.OUTLINED}
                 >

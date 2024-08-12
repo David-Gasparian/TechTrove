@@ -24,7 +24,8 @@ interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     square?: boolean;
     size?: AppButtonSize;
     disabled?: boolean;
-   'data-testid'?: string;
+    'data-testid'?: string;
+    fullWidth?: boolean;
 }
 
 export const AppButton = memo((props: AppButtonProps) => {
@@ -36,12 +37,14 @@ export const AppButton = memo((props: AppButtonProps) => {
         disabled,
         size = AppButtonSize.M,
         'data-testid': dataTestid = 'AppButton',
+        fullWidth,
         ...otherProps
     } = props;
 
     const mode: Mode = {
         [cln.square]: square,
         [cln.disabled]: disabled,
+        [cln.fullWidth]: fullWidth,
     };
 
     return (
