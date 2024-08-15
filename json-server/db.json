@@ -684,14 +684,19 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN", "MANAGER"],
+      "roles": [
+        "ADMIN",
+        "MANAGER"
+      ],
       "avatar": "https://avatars.mds.yandex.net/get-zen_doc/3413519/pub_5ff887b2fe4e686f6ae6ba3f_5ff887d7f906b16872a69755/scale_1200"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
@@ -717,6 +722,35 @@
       "city": "Moscow",
       "username": "ulbi tv",
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 2,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "articleId": "3",
+      "userId": "1",
+      "rate": 4,
+      "feedback": "i like this article",
+      "id": "A-0LWt6"
+    },
+    {
+      "articleId": "4",
+      "userId": "1",
+      "rate": 1,
+      "id": "b_ybCZJ"
     }
   ]
 }

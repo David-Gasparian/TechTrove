@@ -7,6 +7,7 @@ import { Text } from '@/shared/ui/Text/Text';
 import { AsyncReducersList, useAsyncReducer } from '@/shared/lib/hooks/useAsyncReducer';
 import { Page } from '@/widgets/Page/Page';
 import { RecommendedArticlesList } from '@/features/RecommendedArticlesList';
+import { ArticleRating } from '@/features/ArticleRating';
 import { articleDetailsPageSlice } from '../../model/slice';
 import ArticleDetailsPageHeader from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import ArticleDetailsComments from '../ArticleDetailsComments/ArticleDetailsComments';
@@ -35,6 +36,7 @@ const ArticleDetailsPage: FC = memo(() => {
             <div>
                 <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
+                <ArticleRating articleId={id} />
                 <RecommendedArticlesList />
                 <ArticleDetailsComments id={id} />
             </div>

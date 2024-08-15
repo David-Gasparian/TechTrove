@@ -22,5 +22,7 @@
   "articles_recommendations": "Рекомендации",
   "articles_comments": "Комментарии",
   "articles_edit": "редактировать",
-  "articles_create": "создавать"
+  "articles_create": "создавать",
+  "rate_this_article": "Оцените эту статью",
+  "feedback_title": "Вам понравилась статья? Ваш отзыв поможет нам улучшить качество."
 }

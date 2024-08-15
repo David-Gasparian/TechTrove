@@ -1,6 +1,6 @@
 import { memo, useEffect } from 'react';
 
-import { useFetchNotificationsQuery } from '@/entities/Notification/api/notificationApi';
+import { useFetchNotifications } from '@/entities/Notification/api/notificationApi';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 import { VStack } from '@/shared/ui/Stack';
@@ -15,7 +15,7 @@ export const NotificationList = memo((props: NotificationListProps) => {
         className,
     } = props;
 
-    const { data: notifications, isLoading, refetch } = useFetchNotificationsQuery();
+    const { data: notifications, isLoading, refetch } = useFetchNotifications();
 
     useEffect(() => {
         const intervalId = setInterval(() => {

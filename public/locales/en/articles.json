@@ -22,5 +22,7 @@
   "articles_recommendations": "Recommendations",
   "articles_comments": "Comments",
   "articles_edit": "edit",
-  "articles_create": "create"
+  "articles_create": "create",
+  "rate_this_article": "Rate this article",
+  "feedback_title": "Did you like this article? Your feedback will help us improve."
 }
