@@ -1,4 +1,4 @@
-import { Article } from '@/entities/Article/model/types/article';
+import { Article } from '@/entities/Article';
 import { TestAsyncThunk } from '@/shared/lib/test/testAsyncThunk';
 import { fetchArticles } from './fetchArticles';
 

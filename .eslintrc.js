@@ -77,7 +77,9 @@ module.exports = {
         'no-undef': 'off',
         'linebreak-style': 'off',
         'consistent-return': 'off',
-        "react/no-array-index-key": 'off'
+        "react/no-array-index-key": 'off',
+        'feature-slice-import-manager/check-imports': ['error', { alias: '@' }],
+        'feature-slice-import-manager/public-api-imports': ['error', { alias: '@' }],
     },
     globals: {
         __IS_DEV__: true,
