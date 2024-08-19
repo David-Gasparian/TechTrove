@@ -79,7 +79,13 @@ module.exports = {
         'consistent-return': 'off',
         "react/no-array-index-key": 'off',
         'feature-slice-import-manager/check-imports': ['error', { alias: '@' }],
-        'feature-slice-import-manager/public-api-imports': ['error', { alias: '@' }],
+        'feature-slice-import-manager/public-api-imports': [
+            'error',
+            { 
+                alias: '@',
+                testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'] 
+            }
+        ],
     },
     globals: {
         __IS_DEV__: true,

@@ -11,5 +11,7 @@
   "articles_create": "articles_create",
   "articles_edit": "articles_edit",
   "articles_empty": "articles_empty",
-  "articles_recommendations": "articles_recommendations"
+  "articles_recommendations": "articles_recommendations",
+  "feedback_title": "feedback_title",
+  "rate_this_article": "rate_this_article"
 }
