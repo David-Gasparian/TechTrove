@@ -3,7 +3,7 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import { selectUserRoles, UserRole } from '@/entities/User';
-import { appRoutePaths } from '@/shared/config/configRoute/configRoute';
+import { appRoutePaths } from '@/shared/consts/router';
 
 interface RequireRolesProps {
     routeRoles?: UserRole[];

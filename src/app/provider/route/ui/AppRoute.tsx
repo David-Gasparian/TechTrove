@@ -1,10 +1,11 @@
 import { memo, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import { appRoutesConfig, NewRouteProps } from '@/shared/config/configRoute/configRoute';
 import { PageLoader } from '@/widgets/PageLoader';
+import { NewRouteProps } from '@/shared/types/router';
 import { ProtectedRoute } from './ProtectedRoute/ProtectedRoute';
 import { RequireRoles } from './RequireRoles/RequireRoles';
+import { appRoutesConfig } from '../config/configRoute';
 
 export const AppRoute = memo(() => {
     const renderWithRoutes = (route: NewRouteProps) => {

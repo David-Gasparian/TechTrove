@@ -1,4 +1,13 @@
 {
+  "article_all": "article_all",
+  "article_createdAt": "article_createdAt",
+  "article_economics": "article_economics",
+  "article_it": "article_it",
+  "article_science": "article_science",
+  "article_title": "article_title",
+  "article_views": "article_views",
+  "by_asc": "by_asc",
+  "by_desc": "by_desc",
   "cancel": "cancel",
   "country": "country",
   "currency": "currency",
