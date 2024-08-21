@@ -86,6 +86,13 @@ module.exports = {
                 testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'] 
             }
         ],
+        'feature-slice-import-manager/layer-imports': [
+            'error',
+            { 
+                alias: '@',
+                ignoreImportPatterns: ['**/storeProvider', '**/testing']
+            }
+        ],
     },
     globals: {
         __IS_DEV__: true,

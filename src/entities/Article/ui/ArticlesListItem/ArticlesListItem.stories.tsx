@@ -1,6 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
-import { Theme } from '@/app/provider/themeProvider';
+import { Theme } from '@/shared/consts/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Article } from '../../model/types/article';
 import { ArticlesListItem } from './ArticlesListItem';

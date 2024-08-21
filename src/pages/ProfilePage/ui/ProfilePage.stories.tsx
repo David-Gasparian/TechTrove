@@ -1,10 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from '@/app/provider/themeProvider';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-
+import { Theme } from '@/shared/consts/theme';
 import ProfilePage from './ProfilePage';
 
 export default {

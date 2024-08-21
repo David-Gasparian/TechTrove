@@ -1,5 +1,7 @@
 import { Story } from '@storybook/react';
-import { Theme, ThemeProvider } from '@/app/provider/themeProvider';
+// eslint-disable-next-line feature-slice-import-manager/layer-imports
+import { ThemeProvider } from '@/app/provider/themeProvider';
+import { Theme } from '@/shared/consts/theme';
 
 export const ThemeDecorator = (theme: Theme) => (StoryComponent: Story) => {
     document.body.className = theme;

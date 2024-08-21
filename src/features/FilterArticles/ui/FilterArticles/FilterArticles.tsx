@@ -2,6 +2,7 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
+// eslint-disable-next-line feature-slice-import-manager/layer-imports
 import { ArticleViewSwitcher } from '@/features/ArticleViewSwitcher';
 import { ArticleSortType, ArticleTypes, ArticleView } from '@/entities/Article';
 import { AppInput } from '@/shared/ui/AppInput/AppInput';

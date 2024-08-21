@@ -1,6 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
-import { Theme } from '@/app/provider/themeProvider';
+import { Theme } from '@/shared/consts/theme';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { ArticleBlockTypes, ArticleTypes } from '../../model/consts/consts';
