@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 
 import { ArticleDetails } from '@/entities/Article';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text';
 import { AsyncReducersList, useAsyncReducer } from '@/shared/lib/hooks/useAsyncReducer';
 import { RecommendedArticlesList } from '@/features/RecommendedArticlesList';
 import { ArticleRating } from '@/features/ArticleRating';

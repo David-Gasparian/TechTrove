@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { Dropdown } from '@/shared/ui/popups';
 import { isRoleAdmin, isRoleManager, userActions } from '@/entities/User';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Avatar } from '@/shared/ui/Avatar';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { appRoutePaths } from '@/shared/consts/router';
 

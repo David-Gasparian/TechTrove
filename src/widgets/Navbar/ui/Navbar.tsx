@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppButton, AppButtonTheme } from '@/shared/ui/AppButton/AppButton';
+import { AppButton, AppButtonTheme } from '@/shared/ui/AppButton';
 import { LoginModal } from '@/features/AuthByUserName';
 import {
     selectAuthData,

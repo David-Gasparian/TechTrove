@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/Text/Text';
-import { AppButton, AppButtonTheme } from '@/shared/ui/AppButton/AppButton';
+import { Text } from '@/shared/ui/Text';
+import { AppButton, AppButtonTheme } from '@/shared/ui/AppButton';
 import { HStack } from '@/shared/ui/Stack';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
 import { profileActions } from '../../model/slice/profileSlice';

@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppButton, AppButtonTheme } from '@/shared/ui/AppButton/AppButton';
-import { AppInput } from '@/shared/ui/AppInput/AppInput';
-import { Text, TextTheme } from '@/shared/ui/Text/Text';
+import { AppButton, AppButtonTheme } from '@/shared/ui/AppButton';
+import { AppInput } from '@/shared/ui/AppInput';
+import { Text, TextTheme } from '@/shared/ui/Text';
 import { AsyncReducersList, useAsyncReducer } from '@/shared/lib/hooks/useAsyncReducer';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { selectUserPassword } from '../../model/selectors/selectUserPassword/selectUserPassword';

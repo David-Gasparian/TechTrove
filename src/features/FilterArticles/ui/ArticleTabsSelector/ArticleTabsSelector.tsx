@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { ArticleTypes } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Tabs } from '@/shared/ui/Tab/Tabs';
+import { Tabs } from '@/shared/ui/Tabs';
 import { getArticleTabs } from '../../model/lib/filterArticlesLib';
 
 interface ArticleTabsSelectorProps {

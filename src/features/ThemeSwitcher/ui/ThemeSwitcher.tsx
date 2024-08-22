@@ -2,7 +2,7 @@ import { memo } from 'react';
 
 import LightTheme from '@/shared/assets/icons/theme-light.svg';
 import DarkTheme from '@/shared/assets/icons/theme-dark.svg';
-import { AppButton, AppButtonTheme } from '@/shared/ui/AppButton/AppButton';
+import { AppButton, AppButtonTheme } from '@/shared/ui/AppButton';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTheme } from '@/shared/lib/hooks/useTheme';
 import { Theme } from '@/shared/consts/theme';

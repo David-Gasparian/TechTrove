@@ -2,14 +2,14 @@ import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Card } from '@/shared/ui/Card/Card';
-import { Icon } from '@/shared/ui/Icon/Icon';
-import { Text } from '@/shared/ui/Text/Text';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
-import { AppButton, AppButtonTheme } from '@/shared/ui/AppButton/AppButton';
+import { Card } from '@/shared/ui/Card';
+import { Icon } from '@/shared/ui/Icon';
+import { Text } from '@/shared/ui/Text';
+import { Avatar } from '@/shared/ui/Avatar';
+import { AppButton, AppButtonTheme } from '@/shared/ui/AppButton';
 import Eye from '@/shared/assets/icons/eye.svg';
 import { useHover } from '@/shared/lib/hooks/useHover';
-import { AppLink } from '@/shared/ui/AppLink/AppLink';
+import { AppLink } from '@/shared/ui/AppLink';
 import { appRoutePaths } from '@/shared/consts/router';
 import {
     Article, ArticleTextBlock,

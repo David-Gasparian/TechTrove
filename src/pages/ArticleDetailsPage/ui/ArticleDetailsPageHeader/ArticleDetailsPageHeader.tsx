@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import { AppButton, AppButtonTheme } from '@/shared/ui/AppButton/AppButton';
+import { AppButton, AppButtonTheme } from '@/shared/ui/AppButton';
 import { appRoutePaths } from '@/shared/consts/router';
 import { selectCanEdit } from '../../model/selectors/selectCanEdit/selectCanEdit';
 import cln from './ArticleDetailsPageHeader.module.scss';

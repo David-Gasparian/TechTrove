@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 // eslint-disable-next-line feature-slice-import-manager/layer-imports
 import { ArticleViewSwitcher } from '@/features/ArticleViewSwitcher';
 import { ArticleSortType, ArticleTypes, ArticleView } from '@/entities/Article';
-import { AppInput } from '@/shared/ui/AppInput/AppInput';
+import { AppInput } from '@/shared/ui/AppInput';
 import { AsyncReducersList, useAsyncReducer } from '@/shared/lib/hooks/useAsyncReducer';
 import { SortingOrder } from '@/shared/types/filterTypes';
 import { HStack, VStack } from '@/shared/ui/Stack';
