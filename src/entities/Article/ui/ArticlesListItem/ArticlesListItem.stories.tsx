@@ -2,8 +2,8 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from '@/shared/consts/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Article } from '../../model/types/article';
-import { ArticlesListItem } from './ArticlesListItem';
 import { ArticleView } from '../../model/consts/consts';
+import { ArticlesListItem } from './ArticlesListItem';
 
 const article = {
     id: '1',

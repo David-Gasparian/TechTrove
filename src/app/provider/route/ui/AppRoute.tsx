@@ -3,9 +3,9 @@ import { Routes, Route } from 'react-router-dom';
 
 import { PageLoader } from '@/widgets/PageLoader';
 import { NewRouteProps } from '@/shared/types/router';
+import { appRoutesConfig } from '../config/configRoute';
 import { ProtectedRoute } from './ProtectedRoute/ProtectedRoute';
 import { RequireRoles } from './RequireRoles/RequireRoles';
-import { appRoutesConfig } from '../config/configRoute';
 
 export const AppRoute = memo(() => {
     const renderWithRoutes = (route: NewRouteProps) => {

@@ -23,10 +23,38 @@ module.exports = {
         'i18next',
         'react-hooks',
         'feature-slice-import-manager',
+        'unused-imports',
+        'import',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
+        "unused-imports/no-unused-imports": "error",
+        "import/order": [
+            "error",
+            {
+              "groups": [
+                "builtin", 
+                "external", 
+                "internal", 
+                "parent", 
+                "sibling", 
+                "index"
+              ],
+              "pathGroups": [
+                {
+                  "pattern": "@/**",
+                  "group": "internal",
+                  "position": "after"
+                }
+              ],
+              "pathGroupsExcludedImportTypes": ["builtin", "external"],
+              "newlines-between": "ignore",
+              "alphabetize": {
+                "caseInsensitive": true
+              }
+            }
+          ],
         indent: [2, 4],
         'react/jsx-filename-extension': [2, {
             extensions: [

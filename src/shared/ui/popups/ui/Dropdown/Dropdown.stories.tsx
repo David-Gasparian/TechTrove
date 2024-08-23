@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Dropdown } from './Dropdown';
 import { AppButton } from '../../../AppButton/AppButton';
+import { Dropdown } from './Dropdown';
 
 export default {
     title: 'shared/Dropdown',
