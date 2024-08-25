@@ -10,6 +10,22 @@ interface UseThemeResult {
     toggleTheme: () => void;
 }
 
+/**
+ * Custom hook to manage and toggle the application theme.
+ *
+ * @interface UseThemeResult
+ * @property {Theme} theme - The current theme.
+ * @property {() => void} toggleTheme - Function to toggle between themes.
+ *
+ * @returns {UseThemeResult} - An object containing the current theme and a function to toggle the theme.
+ *
+ * @example
+ * const { theme, toggleTheme } = useTheme();
+ *
+ * <button onClick={toggleTheme}>
+ *   Toggle Theme
+ * </button>
+ */
 export const useTheme = (): UseThemeResult => {
     const { setTheme, theme } = useContext(ThemeContext);
 

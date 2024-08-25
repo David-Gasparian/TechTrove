@@ -14,6 +14,19 @@ interface Options {
     removeAfterUnmount?: boolean;
 }
 
+/**
+ * Hook to dynamically add and optionally remove Redux reducers at runtime.
+ *
+ * @param {AsyncReducersList} reducers - An object mapping state keys to their corresponding reducers.
+ * @param {Options} [options] - Configuration options.
+ * @param {boolean} [options.removeAfterUnmount=true] - If true, removes the reducers when the component unmounts.
+ *
+ * @example
+ * useAsyncReducer(
+ *     { user: userReducer, posts: postsReducer },
+ *     { removeAfterUnmount: true }
+ * );
+ */
 export const useAsyncReducer = (reducers: AsyncReducersList, options?: Options) => {
     const dispatch = useDispatch();
     const store = useStore() as ReduxStoreWithManager;
