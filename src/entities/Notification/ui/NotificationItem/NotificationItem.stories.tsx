@@ -7,9 +7,6 @@ import { NotificationItem } from './NotificationItem';
 export default {
     title: 'entities/NotificationItem',
     component: NotificationItem,
-    decorators: [
-        (Story) => <div style={{ padding: 20 }}><Story /></div>,
-    ],
 } as ComponentMeta<typeof NotificationItem>;
 
 const Template: ComponentStory<typeof NotificationItem> = (args) => <NotificationItem {...args} />;

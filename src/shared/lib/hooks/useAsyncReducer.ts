@@ -2,10 +2,10 @@ import { Reducer } from '@reduxjs/toolkit';
 import { useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 
-import { ReduxStoreWithManager, StateSchemaKeys } from '@/app/provider/storeProvider';
+import { ReduxStoreWithManager, StateSchema, StateSchemaKeys } from '@/app/provider/storeProvider';
 
 export type AsyncReducersList = {
-    [name in StateSchemaKeys]?: Reducer;
+    [name in StateSchemaKeys]?: Reducer<NonNullable<StateSchema[name]>>;
 }
 
 type ReducerLineEntity = [StateSchemaKeys, Reducer];
