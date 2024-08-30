@@ -34,7 +34,7 @@ const ArticleDetailsPage: FC = memo(() => {
     return (
         <Page>
             <div>
-                <ArticleDetailsPageHeader />
+                <ArticleDetailsPageHeader id={id} />
                 <ArticleDetails id={id} />
                 <ArticleRating articleId={id} />
                 <RecommendedArticlesList />

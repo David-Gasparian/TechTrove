@@ -3,20 +3,25 @@ import Main from '@/shared/assets/icons/main.svg';
 import About from '@/shared/assets/icons/about.svg';
 import Articles from '@/shared/assets/icons/articles.svg';
 import Profile from '@/shared/assets/icons/profile.svg';
-import { appRoutePaths } from '@/shared/consts/router';
+import {
+    getRouteAbout,
+    getRouteArticles,
+    getRouteMain,
+    getRouteProfile,
+} from '@/shared/consts/router';
 
 export const selectSidebarItems = (state: StateSchema) => {
     const { authData } = state.user;
 
     const sidebarItems = [
         {
-            path: appRoutePaths.main,
+            path: getRouteMain(),
             text: 'main',
             Icon: Main,
             authOnly: false,
         },
         {
-            path: appRoutePaths.about,
+            path: getRouteAbout(),
             text: 'about',
             Icon: About,
             authOnly: false,
@@ -26,13 +31,13 @@ export const selectSidebarItems = (state: StateSchema) => {
     if (authData) {
         sidebarItems.push(
             {
-                path: `${appRoutePaths.profile}${authData.id}`,
+                path: getRouteProfile(authData.id),
                 text: 'profile',
                 Icon: Profile,
                 authOnly: true,
             },
             {
-                path: appRoutePaths.articles,
+                path: getRouteArticles(),
                 text: 'articles',
                 Icon: Articles,
                 authOnly: true,

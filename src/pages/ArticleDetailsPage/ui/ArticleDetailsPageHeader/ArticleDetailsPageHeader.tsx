@@ -1,29 +1,35 @@
-import { FC, memo, useCallback } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import { AppButton, AppButtonTheme } from '@/shared/ui/AppButton';
-import { appRoutePaths } from '@/shared/consts/router';
+import { getRouteArticleCreate, getRouteArticleEdit, getRouteArticles } from '@/shared/consts/router';
 import { selectCanEdit } from '../../model/selectors/selectCanEdit/selectCanEdit';
 import cln from './ArticleDetailsPageHeader.module.scss';
 
-const ArticleDetailsPageHeader: FC = memo(() => {
+interface ArticleDetailsPageHeaderProps {
+    id: string;
+}
+
+const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderProps) => {
+    const { id } = props;
+
     const { t } = useTranslation('articles');
     const navigate = useNavigate();
     const canEdit = useSelector(selectCanEdit);
 
     const onGoBackHandler = useCallback(() => {
-        navigate(appRoutePaths.articles);
+        navigate(getRouteArticles());
     }, [navigate]);
 
     const onArticleCreateHandler = useCallback(() => {
-        navigate(appRoutePaths.article_create);
+        navigate(getRouteArticleCreate());
     }, [navigate]);
 
     const onArticleEditHandler = useCallback(() => {
-        navigate(appRoutePaths.article_edit);
-    }, [navigate]);
+        navigate(getRouteArticleEdit(id));
+    }, [navigate, id]);
 
     return (
         <div className={cln.articleDetailsPageHeader}>

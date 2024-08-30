@@ -4,7 +4,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Skeleton } from '@/shared/ui/Skeleton';
-import { appRoutePaths } from '@/shared/consts/router';
+import { getRouteProfile } from '@/shared/consts/router';
 import { Text } from '@/shared/ui/Text';
 import { Comment } from '../../model/types/commentTypes';
 import cln from './CommentCard.module.scss';
@@ -49,7 +49,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
         <div
             className={classNames(cln.CommentCard, {}, [className])}
         >
-            <AppLink to={`${appRoutePaths.profile}${user.id}`} className={cln.topBlock}>
+            <AppLink to={getRouteProfile(user.id)} className={cln.topBlock}>
                 {avatar && (
                     <Avatar
                         src={avatar}

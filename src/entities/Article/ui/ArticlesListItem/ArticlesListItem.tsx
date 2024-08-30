@@ -10,7 +10,7 @@ import { AppButton, AppButtonTheme } from '@/shared/ui/AppButton';
 import Eye from '@/shared/assets/icons/eye.svg';
 import { useHover } from '@/shared/lib/hooks/useHover';
 import { AppLink } from '@/shared/ui/AppLink';
-import { appRoutePaths } from '@/shared/consts/router';
+import { getRouteArticleDetails } from '@/shared/consts/router';
 import {
     Article, ArticleTextBlock,
 } from '../../model/types/article';
@@ -80,7 +80,7 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
                     block={textBlock}
                 />
                 <div className={cln.footer}>
-                    <AppLink to={appRoutePaths.article_details + id}>
+                    <AppLink to={getRouteArticleDetails(id)}>
                         <AppButton
                             className={cln.loginBtn}
                             theme={AppButtonTheme.OUTLINED}
@@ -96,7 +96,7 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
     }
 
     return (
-        <AppLink target={target} to={appRoutePaths.article_details + id}>
+        <AppLink target={target} to={getRouteArticleDetails(id)}>
             <Card
                 {...bindHover}
                 className={classNames(cln.ArticlesListItem, { [cln.cardHover]: isHover }, [className, cln[view]])}

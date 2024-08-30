@@ -3,7 +3,7 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import { selectAuthData } from '@/entities/User';
-import { appRoutePaths } from '@/shared/consts/router';
+import { getRouteMain } from '@/shared/consts/router';
 
 export const ProtectedRoute: FC = (props) => {
     const { children } = props;
@@ -11,7 +11,7 @@ export const ProtectedRoute: FC = (props) => {
     const isAuth = useSelector(selectAuthData);
 
     if (!isAuth) {
-        return <Navigate to={appRoutePaths.main} state={{ form: location }} replace />;
+        return <Navigate to={getRouteMain()} state={{ form: location }} replace />;
     }
 
     return children as ReactElement;
