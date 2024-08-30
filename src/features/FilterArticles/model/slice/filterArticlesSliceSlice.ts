@@ -2,10 +2,11 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { ArticleSortType, ArticleTypes } from '@/entities/Article';
 import { SortingOrder } from '@/shared/types/filterTypes';
+import { FilterArticlesSchema } from '../types/filterArticlesSchema';
 
-const initialState = {
-    sortType: '',
-    order: '',
+const initialState: FilterArticlesSchema = {
+    sortType: ArticleSortType.TITLE,
+    order: SortingOrder.ASC,
     search: '',
     type: ArticleTypes.ALL,
 };
