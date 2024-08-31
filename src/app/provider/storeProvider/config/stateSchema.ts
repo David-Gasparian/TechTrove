@@ -12,7 +12,6 @@ import {
 } from '@/pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from '@/pages/ArticlesPage';
 import { ScrollPositionSchema } from '@/features/SaveScrollPosition';
-import { FilterArticlesSchema } from '@/features/FilterArticles';
 import { rtkApi } from '@/shared/api/rtkApi';
 import { ProfileSchema } from '@/features/EditableProfileCard';
 
@@ -26,7 +25,6 @@ export interface StateSchema {
     profile?: ProfileSchema;
     article?: ArticleDetailsSchema;
     articles?: ArticlesPageSchema;
-    filterArticlesForm?: FilterArticlesSchema;
     articleDetailsPage?: ArticleDetailsPageSchema;
 }
 

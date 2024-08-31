@@ -1,31 +1,43 @@
-import { FC, memo, useCallback } from 'react';
+import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 import {
     ArticleSortType, ArticleTypes, ArticleView,
 } from '@/entities/Article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
-import {
-    FilterArticles,
-    filterArticlesSliceActions,
-    selectArticleOrderType,
-    selectArticleSearch,
-    selectArticleSortType,
-    selectArticleType,
-} from '@/features/FilterArticles';
 import { SortingOrder } from '@/shared/types/filterTypes';
 import { useDebouncing } from '@/shared/lib/hooks/useDebouncing';
-import { fetchArticles } from '../../model/services/fetchArticles/fetchArticles';
-import { articlesPageActions } from '../../model/slice/articlesPageSlice';
+import { HStack, VStack } from '@/shared/ui/Stack';
+import { ArticleSortSelector } from '@/features/ArticleSortSelector';
+import { ArticleViewSwitcher } from '@/features/ArticleViewSwitcher';
+import { AppInput } from '@/shared/ui/AppInput';
+import { ArticleTabsSelector } from '@/features/ArticleTabsSelector';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { selectArticleView } from '../../model/selectors/selectArticleView/selectArticleView';
+import { articlesPageActions } from '../../model/slice/articlesPageSlice';
+import { fetchArticles } from '../../model/services/fetchArticles/fetchArticles';
+import { selectArticleSortType } from '../../model/selectors/selectArticleSortType/selectArticleSortType';
+import { selectArticleOrderType } from '../../model/selectors/selectArticleOrderType/selectArticleOrderType';
+import { selectArticleSearch } from '../../model/selectors/selectArticleSearch/selectArticleSearch';
+import { selectArticleType } from '../../model/selectors/selectArticleType/selectArticleType';
+import cln from './ArticlesPageFilters.module.scss';
 
-const ArticlesPageFilters: FC = memo(() => {
+interface ArticlesPageFiltersProps {
+    className?: string;
+}
+
+const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
+    const { className } = props;
+
     const dispatch = useAppDispatch();
     const articleView = useSelector(selectArticleView);
     const articleSortType = useSelector(selectArticleSortType);
     const articleOrderType = useSelector(selectArticleOrderType);
     const articleSearch = useSelector(selectArticleSearch);
     const articleType = useSelector(selectArticleType);
+
+    const { t } = useTranslation('articles');
 
     const fetchCallback = useCallback(() => {
         dispatch(fetchArticles({ page: 1, replace: true }));
@@ -38,38 +50,53 @@ const ArticlesPageFilters: FC = memo(() => {
     }, [dispatch]);
 
     const onHandleSearchChange = useCallback((value: string) => {
-        dispatch(filterArticlesSliceActions.setSearch(value));
+        dispatch(articlesPageActions.setSearch(value));
         debouncedClb();
     }, [dispatch, debouncedClb]);
 
     const onHandleSortSelect = useCallback((value: ArticleSortType) => {
-        dispatch(filterArticlesSliceActions.setSort(value));
+        dispatch(articlesPageActions.setSort(value));
         dispatch(fetchArticles({ page: 1, replace: true }));
     }, [dispatch]);
 
     const onHandleOrderSelect = useCallback((value: SortingOrder) => {
-        dispatch(filterArticlesSliceActions.setOrder(value));
+        dispatch(articlesPageActions.setOrder(value));
         dispatch(fetchArticles({ page: 1, replace: true }));
     }, [dispatch]);
 
     const onHandleTypeSelect = useCallback((value: ArticleTypes) => {
-        dispatch(filterArticlesSliceActions.setType(value));
+        dispatch(articlesPageActions.setType(value));
         dispatch(fetchArticles({ page: 1, replace: true }));
     }, [dispatch]);
 
     return (
-        <FilterArticles
-            onHandleOrderSelect={onHandleOrderSelect}
-            onHandleSearchChange={onHandleSearchChange}
-            onHandleSortSelect={onHandleSortSelect}
-            onViewChangeHandler={onViewChangeHandler}
-            onHandleTypeSelect={onHandleTypeSelect}
-            articleOrderType={articleOrderType}
-            articleSortType={articleSortType}
-            articleSearch={articleSearch}
-            articleView={articleView}
-            articleType={articleType}
-        />
+        <VStack
+            max
+            className={classNames(cln.FilterArticles, {}, [className])}
+        >
+            <HStack justify='spaceBetween' className={cln.sortWrapper}>
+                <ArticleSortSelector
+                    order={articleOrderType}
+                    sortType={articleSortType}
+                    onHandleSortSelect={onHandleSortSelect}
+                    onHandleOrderSelect={onHandleOrderSelect}
+                />
+                <ArticleViewSwitcher view={articleView} onChange={onViewChangeHandler} />
+            </HStack>
+
+            <AppInput
+                autoFocus
+                placeholder={t('article_search')}
+                value={articleSearch}
+                onChange={onHandleSearchChange}
+                className={cln.searchInput}
+            />
+            <ArticleTabsSelector
+                className={cln.articleTabs}
+                value={articleType}
+                onTabSelect={onHandleTypeSelect}
+            />
+        </VStack>
     );
 });
 

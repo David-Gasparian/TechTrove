@@ -1,15 +1,14 @@
-import { memo } from 'react';
+import { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { ArticleTypes } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Tabs } from '@/shared/ui/Tabs';
-import { getArticleTabs } from '../../model/lib/filterArticlesLib';
 
 interface ArticleTabsSelectorProps {
-className?: string;
-value: ArticleTypes;
-onTabSelect: (value: ArticleTypes) => void;
+    className?: string;
+    value: ArticleTypes;
+    onTabSelect: (value: ArticleTypes) => void;
 }
 
 export const ArticleTabsSelector = memo((props: ArticleTabsSelectorProps) => {
@@ -21,7 +20,24 @@ export const ArticleTabsSelector = memo((props: ArticleTabsSelectorProps) => {
 
     const { t } = useTranslation('articles');
 
-    const srticleTabs = getArticleTabs(t);
+    const srticleTabs = useMemo(() => [
+        {
+            value: ArticleTypes.ALL,
+            content: t('article_all'),
+        },
+        {
+            value: ArticleTypes.IT,
+            content: t('article_it'),
+        },
+        {
+            value: ArticleTypes.ECONOMICS,
+            content: t('article_economics'),
+        },
+        {
+            value: ArticleTypes.SCIENCE,
+            content: t('article_science'),
+        },
+    ], [t]);
 
     return (
         <div

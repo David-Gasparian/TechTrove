@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { ThunkApi } from '@/app/provider/storeProvider';
-import { filterArticlesSliceActions } from '@/features/FilterArticles';
 import { ArticleSortType, ArticleTypes } from '@/entities/Article';
 import { SortingOrder } from '@/shared/types/filterTypes';
 import { articlesPageActions } from '../../slice/articlesPageSlice';
@@ -21,16 +20,16 @@ export const initArticlesPage = createAsyncThunk<void, URLSearchParams, ThunkApi
             const searchFromUrl = searchParams.get('search');
 
             if (sortFromUrl) {
-                dispatch(filterArticlesSliceActions.setSort(sortFromUrl));
+                dispatch(articlesPageActions.setSort(sortFromUrl));
             }
             if (orderFromUrl) {
-                dispatch(filterArticlesSliceActions.setOrder(orderFromUrl));
+                dispatch(articlesPageActions.setOrder(orderFromUrl));
             }
             if (searchFromUrl) {
-                dispatch(filterArticlesSliceActions.setSearch(searchFromUrl));
+                dispatch(articlesPageActions.setSearch(searchFromUrl));
             }
             if (typeFromUrl) {
-                dispatch(filterArticlesSliceActions.setType(typeFromUrl));
+                dispatch(articlesPageActions.setType(typeFromUrl));
             }
 
             if (!inited) {

@@ -2,14 +2,12 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { ThunkApi } from '@/app/provider/storeProvider';
 import { Article, ArticleTypes } from '@/entities/Article';
-import {
-    selectArticleOrderType,
-    selectArticleSearch,
-    selectArticleSortType,
-    selectArticleType,
-} from '@/features/FilterArticles';
 import { addQueryParams } from '@/shared/lib/url/addQueryParams';
 import { selectArticlesLimit } from '../../selectors/selectArticlesLimit/selectArticlesLimit';
+import { selectArticleOrderType } from '../../selectors/selectArticleOrderType/selectArticleOrderType';
+import { selectArticleSortType } from '../../selectors/selectArticleSortType/selectArticleSortType';
+import { selectArticleSearch } from '../../selectors/selectArticleSearch/selectArticleSearch';
+import { selectArticleType } from '../../selectors/selectArticleType/selectArticleType';
 
 interface fetchArticlesProps {
     page: number;
