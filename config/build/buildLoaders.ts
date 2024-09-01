@@ -5,8 +5,8 @@ import { getBabelLoader } from './loaders/babelLoader';
 import { getCssLoader } from './loaders/cssLoader';
 
 export const buildLoaders = ({ isDev }: buildOptions): RuleSetRule[] => {
-    const codeBabelLoader = getBabelLoader({ isTsx: false });
-    const tsxCodeBabelLoader = getBabelLoader({ isTsx: true });
+    const codeBabelLoader = getBabelLoader({ isTsx: false, isDev });
+    const tsxCodeBabelLoader = getBabelLoader({ isTsx: true, isDev });
 
     const svgLoader = {
         test: /\.svg$/i,
