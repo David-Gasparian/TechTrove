@@ -15,7 +15,7 @@ import { AppInput } from '@/shared/ui/AppInput';
 import { ArticleTabsSelector } from '@/features/ArticleTabsSelector';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { selectArticleView } from '../../model/selectors/selectArticleView/selectArticleView';
-import { articlesPageActions } from '../../model/slice/articlesPageSlice';
+import { useArticlesPageActions } from '../../model/slice/articlesPageSlice';
 import { fetchArticles } from '../../model/services/fetchArticles/fetchArticles';
 import { selectArticleSortType } from '../../model/selectors/selectArticleSortType/selectArticleSortType';
 import { selectArticleOrderType } from '../../model/selectors/selectArticleOrderType/selectArticleOrderType';
@@ -37,6 +37,10 @@ const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
     const articleSearch = useSelector(selectArticleSearch);
     const articleType = useSelector(selectArticleType);
 
+    const {
+        setView, setSearch, setSort, setOrder, setType,
+    } = useArticlesPageActions();
+
     const { t } = useTranslation('articles');
 
     const fetchCallback = useCallback(() => {
@@ -46,26 +50,26 @@ const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
     const debouncedClb = useDebouncing(fetchCallback, 400);
 
     const onViewChangeHandler = useCallback((view: ArticleView) => {
-        dispatch(articlesPageActions.setView(view));
-    }, [dispatch]);
+        setView(view);
+    }, []);
 
     const onHandleSearchChange = useCallback((value: string) => {
-        dispatch(articlesPageActions.setSearch(value));
+        setSearch(value);
         debouncedClb();
-    }, [dispatch, debouncedClb]);
+    }, [debouncedClb]);
 
     const onHandleSortSelect = useCallback((value: ArticleSortType) => {
-        dispatch(articlesPageActions.setSort(value));
+        setSort(value);
         dispatch(fetchArticles({ page: 1, replace: true }));
     }, [dispatch]);
 
     const onHandleOrderSelect = useCallback((value: SortingOrder) => {
-        dispatch(articlesPageActions.setOrder(value));
+        setOrder(value);
         dispatch(fetchArticles({ page: 1, replace: true }));
     }, [dispatch]);
 
     const onHandleTypeSelect = useCallback((value: ArticleTypes) => {
-        dispatch(articlesPageActions.setType(value));
+        setType(value);
         dispatch(fetchArticles({ page: 1, replace: true }));
     }, [dispatch]);
 

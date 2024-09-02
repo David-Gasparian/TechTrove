@@ -1,3 +1,6 @@
 import { StateSchema } from '@/app/provider/storeProvider';
+import { buildSelector } from '@/shared/lib/store/buildSelector';
 
-export const selectArticleLoading = (state: StateSchema) => state?.article?.isLoading;
+export const [useArticleLoading, selectArticleLoading] = buildSelector(
+    (state: StateSchema) => state?.article?.isLoading,
+);

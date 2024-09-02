@@ -1,6 +1,5 @@
 import { memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
@@ -13,16 +12,16 @@ import { Avatar } from '@/shared/ui/Avatar';
 import { Icon } from '@/shared/ui/Icon';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import CalendarIcon from '@/shared/assets/icons/calendar.svg';
-import { selectArticleLoading } from '../../model/selectors/selectIsLoading/selectArticleLoading';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
-import { selectArticleData } from '../../model/selectors/selectArticleData/selectArticleData';
-import { selectArticleError } from '../../model/selectors/selectArticleError/selectArticleError';
 import { ArticleBlock } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { ArticleBlockTypes } from '../../model/consts/consts';
+import { useArticleLoading } from '../../model/selectors/selectIsLoading/selectArticleLoading';
+import { useArticleData } from '../../model/selectors/selectArticleData/selectArticleData';
+import { useArticleError } from '../../model/selectors/selectArticleError/selectArticleError';
 import cln from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
@@ -39,9 +38,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     const { t } = useTranslation('articles');
     const dispatch = useAppDispatch();
 
-    const articleData = useSelector(selectArticleData);
-    const articleError = useSelector(selectArticleError);
-    const isLoading = useSelector(selectArticleLoading);
+    const articleData = useArticleData();
+    const articleError = useArticleError();
+    const isLoading = useArticleLoading();
 
     useAsyncReducer(asyncReducersList, { removeAfterUnmount: true });
 

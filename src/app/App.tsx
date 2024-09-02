@@ -1,15 +1,15 @@
 import { FC, Suspense, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Navbar } from '@/widgets/Navbar';
 import { SideBar } from '@/widgets/SideBar';
-import { selectUserInited, userActions } from '@/entities/User';
+import { userActions, useUserInited } from '@/entities/User';
 import { AppRoute } from './provider/route';
 
 export const App: FC = () => {
     const dispatch = useDispatch();
-    const _inited = useSelector(selectUserInited);
+    const _inited = useUserInited();
 
     useEffect(() => {
         dispatch(userActions.initAuthUser());
