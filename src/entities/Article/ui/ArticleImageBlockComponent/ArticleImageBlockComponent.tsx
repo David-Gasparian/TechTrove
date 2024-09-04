@@ -1,6 +1,7 @@
 import { memo } from 'react';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { AppImage } from '@/shared/ui/AppImage';
 import { ArticleImageBlock } from '../../model/types/article';
 import cln from './ArticleImageBlockComponent.module.scss';
 
@@ -18,7 +19,7 @@ export const ArticleImageBlockComponent = memo((props: ArticleImageBlockProps) =
         >
             {block.src && (
                 <div>
-                    <img src={block.src} alt="article-iamge" />
+                    <AppImage src={block.src} alt="article-iamge" />
                     {block.title && <div className={cln.title}>{block.title}</div>}
                 </div>
             )}

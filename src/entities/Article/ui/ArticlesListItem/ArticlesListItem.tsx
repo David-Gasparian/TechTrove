@@ -11,6 +11,8 @@ import Eye from '@/shared/assets/icons/eye.svg';
 import { useHover } from '@/shared/lib/hooks/useHover';
 import { AppLink } from '@/shared/ui/AppLink';
 import { getRouteArticleDetails } from '@/shared/consts/router';
+import { AppImage } from '@/shared/ui/AppImage';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import {
     Article, ArticleTextBlock,
 } from '../../model/types/article';
@@ -72,7 +74,12 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
                 </div>
                 {types}
                 <div className={cln.imageWrapper}>
-                    <img className={cln.image} src={img} alt={title} />
+                    <AppImage
+                        fallback={<Skeleton width="100%" height={200} />}
+                        className={cln.image}
+                        src={img}
+                        alt={title}
+                    />
                 </div>
                 <ArticleTextBlockComponent
                     className={cln.block}
@@ -102,7 +109,12 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
                 className={classNames(cln.ArticlesListItem, { [cln.cardHover]: isHover }, [className, cln[view]])}
             >
                 <div className={cln.imageWrapper}>
-                    <img className={cln.image} src={img} alt={title} />
+                    <AppImage
+                        fallback={<Skeleton width="100%" height={300} />}
+                        className={cln.image}
+                        src={img}
+                        alt={title}
+                    />
                     {isHover && <Text className={cln.createdDate} text={createdAt} />}
                 </div>
                 <div className={cln.infoWrapper}>
