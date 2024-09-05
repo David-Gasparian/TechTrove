@@ -21,7 +21,7 @@ const ProfilePage: FC = memo(() => {
     }
 
     return (
-        <Page>
+        <Page data-testid='ProfilePage'>
             <EditableProfileCard profileId={profileId} />
         </Page>
     );

@@ -5,7 +5,7 @@ import { ArticleSortType } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { SortingOrder } from '@/shared/types/filterTypes';
 import { Select } from '@/shared/ui/Select';
-import { OptionItem } from '@/shared/types/types';
+import { OptionItem } from '@/shared/types/select';
 import cln from './ArticleSortSelector.module.scss';
 
 interface ArticleSortSelectorProps {

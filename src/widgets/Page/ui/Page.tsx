@@ -11,13 +11,14 @@ import { useLocation } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll';
+import { TestProps } from '@/shared/types/tests';
 import { useInitEffect } from '@/shared/lib/hooks/useInitEffect';
 import { useThrottling } from '@/shared/lib/hooks/useThrottling';
 import { StateSchema } from '@/app/provider/storeProvider';
 import { saveScrollPositionActions, selectScrollByPath } from '@/features/SaveScrollPosition';
 import cln from './Page.module.scss';
 
-interface PageProps extends HTMLAttributes<HTMLDivElement> {
+interface PageProps extends HTMLAttributes<HTMLDivElement>, TestProps {
     className?: string;
     children: ReactNode;
     onScrollToEnd?: () => void;
@@ -30,6 +31,7 @@ export const Page = (props: PageProps) => {
         children,
         onScrollToEnd,
         isScrollSave = false,
+        'data-testid': dataTestid = 'Page',
     } = props;
 
     const dispatch = useAppDispatch();
@@ -53,6 +55,7 @@ export const Page = (props: PageProps) => {
 
     return (
         <main
+            data-testid={dataTestid}
             onScroll={onScrollHandler}
             ref={wrapperRef}
             {...props}
