@@ -1,17 +1,17 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from '@/shared/consts/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import ArticlesInfinityList from './ArticlesInfinityList';
+import ArticleInfiniteList from './ArticleInfiniteList';
 
 export default {
-    title: 'pages/ArticlesInfinityList',
-    component: ArticlesInfinityList,
+    title: 'pages/ArticleInfiniteList',
+    component: ArticleInfiniteList,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof ArticlesInfinityList>;
+} as ComponentMeta<typeof ArticleInfiniteList>;
 
-const Template: ComponentStory<typeof ArticlesInfinityList> = (args) => <ArticlesInfinityList {...args} />;
+const Template: ComponentStory<typeof ArticleInfiniteList> = (args) => <ArticleInfiniteList {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {};

@@ -8,7 +8,7 @@ import { articlesSelectors } from '../../model/slice/articlesPageSlice';
 import { selectArticleView } from '../../model/selectors/selectArticleView/selectArticleView';
 import { selectArticlesLoading } from '../../model/selectors/selectArticlesLoading/selectArticlesLoading';
 
-const ArticlesInfinityList: FC = memo(() => {
+const ArticleInfiniteList: FC = memo(() => {
     const articleView = useSelector(selectArticleView);
     const loading = useSelector(selectArticlesLoading);
     const articles = useSelector(articlesSelectors.selectAll);
@@ -18,4 +18,4 @@ const ArticlesInfinityList: FC = memo(() => {
     );
 });
 
-export default ArticlesInfinityList;
+export default ArticleInfiniteList;
