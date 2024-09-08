@@ -32,18 +32,9 @@ jobs:
       - name: build production project
         run: npm run build:prod
         if: always()
-      - name: build storybook
-        run: npm run storybook:build
-        if: always()
       - name: unit testing
         if: always()
         run: npm run test:unit
-      - name: Generate HTML report
-        run: npm run test:ui:report
-        if: always()
-      - name: move loki
-        run: mv .loki reports/
-        if: always()
       - name: Setup Pages
         uses: actions/configure-pages@v2
         if: always()
