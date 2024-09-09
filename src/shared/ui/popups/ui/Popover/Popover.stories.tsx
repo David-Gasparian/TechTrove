@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { DropdownDirection } from '@/shared/types/ui';
-import { HStack } from '@/shared/ui/Stack';
+import { HStack } from '../../../Stack';
 import { Popover } from './Popover';
 
 export default {

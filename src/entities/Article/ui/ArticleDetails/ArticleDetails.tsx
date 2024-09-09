@@ -12,6 +12,7 @@ import { Avatar } from '@/shared/ui/Avatar';
 import { Icon } from '@/shared/ui/Icon';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import CalendarIcon from '@/shared/assets/icons/calendar.svg';
+import { useArticleData } from '../../model/selectors/selectArticleData/selectArticleData';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { ArticleBlock } from '../../model/types/article';
@@ -20,7 +21,6 @@ import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/Articl
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { ArticleBlockTypes } from '../../model/consts/consts';
 import { useArticleLoading } from '../../model/selectors/selectIsLoading/selectArticleLoading';
-import { useArticleData } from '../../model/selectors/selectArticleData/selectArticleData';
 import { useArticleError } from '../../model/selectors/selectArticleError/selectArticleError';
 import cln from './ArticleDetails.module.scss';
 
