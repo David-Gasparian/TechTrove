@@ -31,7 +31,7 @@ const ArticlesPage: FC = memo(() => {
     };
 
     return (
-        <Page isScrollSave onScrollToEnd={onScrollToEnd}>
+        <Page data-testid='ArticlesPage' isScrollSave onScrollToEnd={onScrollToEnd}>
             <VStack gap={32} max>
                 <ArticlesPageFilters />
                 <ArticleInfiniteList />
