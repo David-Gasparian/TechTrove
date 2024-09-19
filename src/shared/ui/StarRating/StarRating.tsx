@@ -52,10 +52,12 @@ export const StarRating = memo((props: StarRatingProps) => {
                     SVG={StarIcon}
                     key={starNumber}
                     width={size}
+                    data-testid={`StarRating.${starNumber}`}
                     height={size}
                     onMouseLeave={onLeave}
                     onMouseEnter={onHover(starNumber)}
                     onClick={onClick(starNumber)}
+                    data-selected={currentStarsCount >= starNumber}
                 />
             ))}
         </div>

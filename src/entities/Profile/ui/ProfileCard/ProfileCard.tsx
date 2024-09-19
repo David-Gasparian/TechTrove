@@ -95,7 +95,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
 
             <VStack max gap={16}>
                 <AppInput
-                    data-testid='name-input'
+                    data-testid='ProfileCard.firstname'
                     autoFocus={!readOnly}
                     readOnly={readOnly}
                     placeholder={t('name')}
@@ -103,6 +103,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
                     onChange={onHandleChangeName}
                 />
                 <AppInput
+                    data-testid='ProfileCard.lastname'
                     readOnly={readOnly}
                     placeholder={t('lastname')}
                     value={profileData?.lastname}

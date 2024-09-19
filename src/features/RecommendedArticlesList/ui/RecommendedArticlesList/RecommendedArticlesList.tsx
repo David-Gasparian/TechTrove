@@ -21,7 +21,10 @@ export const RecommendedArticlesList = memo((props: RecommendedArticlesListProps
     }
 
     return (
-        <div className={classNames('', {}, [className])}>
+        <div
+            data-testid="ArticleRecommendationsList"
+            className={classNames('', {}, [className])}
+        >
             <Text title={t('articles_recommendations')} />
             <ArticlesList
                 target="_blank"

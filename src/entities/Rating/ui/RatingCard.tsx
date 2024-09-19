@@ -61,12 +61,18 @@ export const RatingCard = memo((props: RatingProps) => {
     const modalContent = (
         <>
             <Text title={feedbackTitle} size={TextSize.S} />
-            <AppInput value={feedback} onChange={setFeedback} placeholder={t('your_feedback')} />
+            <AppInput
+                value={feedback}
+                data-testid='RatingCard.Input'
+                onChange={setFeedback}
+                placeholder={t('your_feedback')}
+            />
         </>
     );
 
     return (
         <Card
+            data-testid="RatingCard"
             fullWidth
             className={classNames('', {}, [className])}
         >
@@ -82,7 +88,11 @@ export const RatingCard = memo((props: RatingProps) => {
                             <AppButton onClick={onHandleCancel} theme={AppButtonTheme.OUTLINED_RED}>
                                 {t('cancel')}
                             </AppButton>
-                            <AppButton onClick={onHandleAccept} theme={AppButtonTheme.OUTLINED}>
+                            <AppButton
+                                data-testid="RatingCard.Send"
+                                onClick={onHandleAccept}
+                                theme={AppButtonTheme.OUTLINED}
+                            >
                                 {t('send')}
                             </AppButton>
                         </HStack>

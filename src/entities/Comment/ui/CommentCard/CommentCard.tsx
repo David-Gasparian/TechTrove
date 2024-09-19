@@ -47,6 +47,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
 
     return (
         <div
+            data-testid="CommentCard.Content"
             className={classNames(cln.CommentCard, {}, [className])}
         >
             <AppLink to={getRouteProfile(user.id)} className={cln.topBlock}>

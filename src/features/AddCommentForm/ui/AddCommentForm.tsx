@@ -32,10 +32,11 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
     return (
 
         <div
+            data-testid="AddCommentForm"
             className={classNames(cln.AddCommentForm, {}, [className])}
         >
             <AppInput
-                data-testid='commentText'
+                data-testid='AddCommentForm.Input'
                 placeholder={t('article_enter_comment_text')}
                 value={text}
                 onChange={onChangeHandler}
@@ -43,7 +44,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
             />
 
             <AppButton
-                data-testid='cancelBtn'
+                data-testid='AddCommentForm.Button'
                 className={cln.cancel}
                 onClick={onClickHandler}
             >

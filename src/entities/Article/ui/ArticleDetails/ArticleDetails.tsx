@@ -101,6 +101,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
     return (
         <div
+            data-testid="ArticleDetails.Info"
             className={classNames(cln.articleDetails, {}, [className])}
         >
             {articleData?.img && (

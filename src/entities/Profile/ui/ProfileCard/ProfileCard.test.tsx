@@ -11,7 +11,7 @@ describe('ProfileCard', () => {
             <ProfileCard />,
         );
         expect(screen.getByTestId('profile-card')).toBeInTheDocument();
-        expect(screen.getByTestId('name-input')).toBeInTheDocument();
+        expect(screen.getByTestId('ProfileCard.firstname')).toBeInTheDocument();
         expect(screen.queryByTestId('error')).toBeNull();
         expect(screen.queryByTestId('loading')).toBeNull();
     });
@@ -74,7 +74,7 @@ describe('ProfileCard', () => {
             />,
         );
 
-        const nameInput = screen.getByTestId('name-input');
+        const nameInput = screen.getByTestId('ProfileCard.firstname');
 
         fireEvent.change(nameInput, { target: { value: 'test' } });
 

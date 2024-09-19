@@ -48,6 +48,7 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
     return (
         <div
             className={classNames('', {}, [className, cln[view]])}
+            data-testid='ArticleList'
         >
             {
                 articles
