@@ -1,5 +1,5 @@
 let currentArticleId = '';
-describe('User navigates to the article page', () => {
+describe('User visits the article page', () => {
     beforeEach(() => {
         cy.login();
         cy.createArticle().then((article) => {
@@ -10,7 +10,7 @@ describe('User navigates to the article page', () => {
     afterEach(() => {
         cy.removeArticle(currentArticleId);
     });
-    it('And sees the article content', () => {
+    it('And sees the content of the article', () => {
         cy.getByTestId('ArticleDetails.Info').should('exist');
     });
     it('And sees the list of recommendations', () => {
@@ -22,7 +22,14 @@ describe('User navigates to the article page', () => {
         cy.addComment('text');
         cy.getByTestId('CommentCard.Content').should('have.length', 1);
     });
-    it('And rates the article', () => {
+    it('And gives a rating', () => {
+        cy.getByTestId('ArticleDetails.Info');
+        cy.getByTestId('RatingCard').scrollIntoView();
+        cy.setRate(4, 'feedback');
+        cy.get('[data-selected=true]').should('have.length', 4);
+    });
+    it('And gives a rating (example with stubs on fixtures)', () => {
+        cy.intercept('GET', '**/articles/*', { fixture: 'article-details.json' });
         cy.getByTestId('ArticleDetails.Info');
         cy.getByTestId('RatingCard').scrollIntoView();
         cy.setRate(4, 'feedback');
