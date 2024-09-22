@@ -50,8 +50,11 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
     if (error) {
         return (
             <div
-                className={classNames(cln.ProfileCard, {}, [className, cln.error])}
-                data-testid='error'
+                className={classNames(cln.ProfileCard, {}, [
+                    className,
+                    cln.error,
+                ])}
+                data-testid="error"
             >
                 <Text
                     title={t('something_went_wrong')}
@@ -66,8 +69,11 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
     if (isLoading) {
         return (
             <div
-                className={classNames(cln.ProfileCard, {}, [className, cln.loading])}
-                data-testid='loading'
+                className={classNames(cln.ProfileCard, {}, [
+                    className,
+                    cln.loading,
+                ])}
+                data-testid="loading"
             >
                 <Loader />
             </div>
@@ -77,25 +83,17 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
     return (
         <div
             className={classNames(cln.ProfileCard, {}, [className])}
-            data-testid='profile-card'
+            data-testid="profile-card"
         >
             {profileData?.avatar && (
-                <HStack
-                    max
-                    justify='center'
-                    testId='avatarWrapper'
-                >
-                    <Avatar
-                        src={profileData?.avatar}
-                        size={100}
-                        alt="avatar"
-                    />
+                <HStack max justify="center" testId="avatarWrapper">
+                    <Avatar src={profileData?.avatar} size={100} alt="avatar" />
                 </HStack>
             )}
 
             <VStack max gap={16}>
                 <AppInput
-                    data-testid='ProfileCard.firstname'
+                    data-testid="ProfileCard.firstname"
                     autoFocus={!readOnly}
                     readOnly={readOnly}
                     placeholder={t('name')}
@@ -103,7 +101,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
                     onChange={onHandleChangeName}
                 />
                 <AppInput
-                    data-testid='ProfileCard.lastname'
+                    data-testid="ProfileCard.lastname"
                     readOnly={readOnly}
                     placeholder={t('lastname')}
                     value={profileData?.lastname}

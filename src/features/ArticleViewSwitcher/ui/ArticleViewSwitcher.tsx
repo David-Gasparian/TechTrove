@@ -27,11 +27,7 @@ const articleViews: ArticleViews[] = [
 ];
 
 export const ArticleViewSwitcher = memo((props: ArticleViewSwitcherProps) => {
-    const {
-        className,
-        onChange,
-        view,
-    } = props;
+    const { className, onChange, view } = props;
 
     const onViewChangeHandler = (view: ArticleView) => () => {
         onChange?.(view);
@@ -41,21 +37,21 @@ export const ArticleViewSwitcher = memo((props: ArticleViewSwitcherProps) => {
         <AppButton
             onClick={onViewChangeHandler(articleView.view)}
             key={articleView.view}
-            data-testid='loginBtn'
+            data-testid="loginBtn"
             theme={AppButtonTheme.CLEAR}
             className={cln.loginBtn}
         >
             <Icon
-                className={classNames(cln.viewSmallIcon, { [cln.selected]: view === articleView.view })}
+                className={classNames(cln.viewSmallIcon, {
+                    [cln.selected]: view === articleView.view,
+                })}
                 SVG={articleView.icon}
             />
         </AppButton>
     );
 
     return (
-        <div
-            className={classNames(cln.ArticleViewSwitcher, {}, [className])}
-        >
+        <div className={classNames(cln.ArticleViewSwitcher, {}, [className])}>
             {articleViews.map(renderViews)}
         </div>
     );

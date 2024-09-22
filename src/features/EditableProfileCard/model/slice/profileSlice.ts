@@ -25,7 +25,10 @@ const profileSlice = createSlice({
             state.form = state.data;
             state.validateErrors = undefined;
         },
-        updatePfofile: (state, { payload }: PayloadAction<DeepPartial<Profile>>) => {
+        updatePfofile: (
+            state,
+            { payload }: PayloadAction<DeepPartial<Profile>>,
+        ) => {
             state.form = {
                 ...state.form,
                 ...payload,

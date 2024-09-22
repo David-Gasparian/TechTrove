@@ -10,23 +10,34 @@ export default {
         direction: {
             control: {
                 type: 'select',
-                options: ['top left', 'top right', 'bottom left', 'bottom right'],
+                options: [
+                    'top left',
+                    'top right',
+                    'bottom left',
+                    'bottom right',
+                ],
             },
         },
     },
     decorators: [
         (Story) => (
             <HStack>
-                <div style={{ padding: 150 }}><Story /></div>
+                <div style={{ padding: 150 }}>
+                    <Story />
+                </div>
             </HStack>
         ),
     ],
 } as ComponentMeta<typeof Popover>;
 
-const Template: ComponentStory<typeof Popover> = (args) => <Popover {...args} />;
+const Template: ComponentStory<typeof Popover> = (args) => (
+    <Popover {...args} />
+);
 
-const trigger = <button type='button'>Open Popover</button>;
-const children = <div style={{ width: 130, paddingTop: 5 }}>Popover Content</div>;
+const trigger = <button type="button">Open Popover</button>;
+const children = (
+    <div style={{ width: 130, paddingTop: 5 }}>Popover Content</div>
+);
 
 export const Default = Template.bind({});
 Default.args = {

@@ -7,21 +7,22 @@ interface fetchArticleByIdProps {
     id: string;
 }
 
-export const fetchArticleById = createAsyncThunk<Article, fetchArticleByIdProps, ThunkApi<string>>(
-    'article/fetchArticleById',
-    async (data, thunkAPI) => {
-        const { extra, rejectWithValue } = thunkAPI;
+export const fetchArticleById = createAsyncThunk<
+    Article,
+    fetchArticleByIdProps,
+    ThunkApi<string>
+>('article/fetchArticleById', async (data, thunkAPI) => {
+    const { extra, rejectWithValue } = thunkAPI;
 
-        try {
-            const result = await extra.api.get<Article>(`articles/${data.id}`);
+    try {
+        const result = await extra.api.get<Article>(`articles/${data.id}`);
 
-            if (!result.data) {
-                throw new Error();
-            }
-
-            return result.data;
-        } catch (e) {
-            return rejectWithValue('error');
+        if (!result.data) {
+            throw new Error();
         }
-    },
-);
+
+        return result.data;
+    } catch (e) {
+        return rejectWithValue('error');
+    }
+});

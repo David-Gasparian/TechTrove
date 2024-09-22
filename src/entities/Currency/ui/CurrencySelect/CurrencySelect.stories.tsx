@@ -10,12 +10,12 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-    args: {
-
-    },
+    args: {},
 } as ComponentMeta<typeof CurrencySelect>;
 
-const Template: ComponentStory<typeof CurrencySelect> = (args) => <CurrencySelect {...args} />;
+const Template: ComponentStory<typeof CurrencySelect> = (args) => (
+    <CurrencySelect {...args} />
+);
 
 export const Light = Template.bind({});
 Light.args = {

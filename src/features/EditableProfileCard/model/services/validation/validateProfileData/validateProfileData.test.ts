@@ -14,26 +14,30 @@ const profileData: DeepPartial<Profile> = {
 
 describe('validateProfileData', () => {
     test('with correct data', () => {
-        expect(validateProfileData({ ...profileData as Profile })).toEqual([]);
+        expect(validateProfileData({ ...(profileData as Profile) })).toEqual(
+            [],
+        );
     });
 
     test('with incorrect age', () => {
-        expect(validateProfileData({ ...profileData as Profile, age: 0 })).toEqual([ValidateProfileCodes.INCORRECT_AGE]);
+        expect(
+            validateProfileData({ ...(profileData as Profile), age: 0 }),
+        ).toEqual([ValidateProfileCodes.INCORRECT_AGE]);
     });
 
     test('with incorrect data', () => {
-        expect(validateProfileData({
-            ...profileData as Profile,
-            first: '',
-            age: 0,
-            username: '',
-        })).toEqual(
-            [
-                ValidateProfileCodes.INCORRECT_USER_DATA,
-                ValidateProfileCodes.INCORRECT_AGE,
-                ValidateProfileCodes.INCORRECT_USER_NAME,
-            ],
-        );
+        expect(
+            validateProfileData({
+                ...(profileData as Profile),
+                first: '',
+                age: 0,
+                username: '',
+            }),
+        ).toEqual([
+            ValidateProfileCodes.INCORRECT_USER_DATA,
+            ValidateProfileCodes.INCORRECT_AGE,
+            ValidateProfileCodes.INCORRECT_USER_NAME,
+        ]);
     });
 
     test('with empty profile', () => {

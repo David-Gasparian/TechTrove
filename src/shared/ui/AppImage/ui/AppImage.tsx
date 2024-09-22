@@ -1,5 +1,9 @@
 import {
-    ImgHTMLAttributes, memo, ReactElement, useLayoutEffect, useState,
+    ImgHTMLAttributes,
+    memo,
+    ReactElement,
+    useLayoutEffect,
+    useState,
 } from 'react';
 
 interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
@@ -44,6 +48,12 @@ export const AppImage = memo((props: AppImageProps) => {
     }
 
     return (
-        <img data-testid={dataTestid} className={className} src={src} alt={alt} {...restProps} />
+        <img
+            data-testid={dataTestid}
+            className={className}
+            src={src}
+            alt={alt}
+            {...restProps}
+        />
     );
 });

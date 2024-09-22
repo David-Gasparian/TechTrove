@@ -14,49 +14,34 @@ interface CommentsListProps {
 }
 
 export const CommentsList = memo((props: CommentsListProps) => {
-    const {
-        className,
-        comments = [],
-        isLoading = false,
-    } = props;
+    const { className, comments = [], isLoading = false } = props;
 
     const { t } = useTranslation('articles');
 
     if (isLoading) {
         return (
-            <div
-                className={classNames(cln.CommentsList, {}, [className])}
-            >
-                <CommentCard
-                    isLoading
-                    className={cln.commentCard}
-                />
-                <CommentCard
-                    isLoading
-                    className={cln.commentCard}
-                />
-                <CommentCard
-                    isLoading
-                    className={cln.commentCard}
-                />
+            <div className={classNames(cln.CommentsList, {}, [className])}>
+                <CommentCard isLoading className={cln.commentCard} />
+                <CommentCard isLoading className={cln.commentCard} />
+                <CommentCard isLoading className={cln.commentCard} />
             </div>
         );
     }
 
     return (
-        <div
-            className={classNames(cln.CommentsList, {}, [className])}
-        >
-            {
-                comments.length ? comments.map((comment) => (
+        <div className={classNames(cln.CommentsList, {}, [className])}>
+            {comments.length ? (
+                comments.map((comment) => (
                     <CommentCard
                         key={comment.id}
                         comment={comment}
                         isLoading={isLoading}
                         className={cln.commentCard}
                     />
-                )) : <Text text={t('article_comments_is_empty')} />
-            }
+                ))
+            ) : (
+                <Text text={t('article_comments_is_empty')} />
+            )}
         </div>
     );
 });

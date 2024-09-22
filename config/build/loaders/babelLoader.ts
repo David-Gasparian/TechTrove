@@ -24,12 +24,13 @@ export const getBabelLoader = ({ isTsx, isDev }: BabelLoaderProps) => {
                         },
                     ],
                     '@babel/plugin-transform-runtime',
-                    isTsx && isProd && [
-                        babelRemovePropsPlugin,
-                        {
-                            props: ['data-testid'],
-                        },
-                    ],
+                    isTsx &&
+                        isProd && [
+                            babelRemovePropsPlugin,
+                            {
+                                props: ['data-testid'],
+                            },
+                        ],
                 ].filter(Boolean),
             },
         },

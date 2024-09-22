@@ -6,7 +6,7 @@ export interface Profile {
     first: string;
     lastname: string;
     age: number;
-    currency: Currency,
+    currency: Currency;
     country: Country;
     city: string;
     username: string;

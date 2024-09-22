@@ -27,7 +27,7 @@ type UseHoverResult = [boolean, HoverEvents];
  *   {isHovered ? 'Hovered!' : 'Not hovered'}
  * </div>
  */
-export const useHover = ():UseHoverResult => {
+export const useHover = (): UseHoverResult => {
     const [isHover, setIsHover] = useState(false);
 
     const onMouseEnter = useCallback(() => {
@@ -42,8 +42,10 @@ export const useHover = ():UseHoverResult => {
         () => [
             isHover,
             {
-                onMouseEnter, onMouseLeave,
-            }],
+                onMouseEnter,
+                onMouseLeave,
+            },
+        ],
         [isHover, onMouseEnter, onMouseLeave],
     );
 };

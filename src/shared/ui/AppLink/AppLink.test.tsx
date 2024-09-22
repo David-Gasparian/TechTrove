@@ -11,12 +11,20 @@ describe('AppLink', () => {
 
     test('check prop className', () => {
         const className = 'className';
-        componentRender(<AppLink className={className} to="/">Test</AppLink>);
+        componentRender(
+            <AppLink className={className} to="/">
+                Test
+            </AppLink>,
+        );
         expect(screen.getByText('Test')).toHaveClass(className);
     });
 
     test('check prop theme', () => {
-        componentRender(<AppLink theme={APPLinkTheme.RED} to="/">Test</AppLink>);
+        componentRender(
+            <AppLink theme={APPLinkTheme.RED} to="/">
+                Test
+            </AppLink>,
+        );
         expect(screen.getByText('Test')).toHaveClass(APPLinkTheme.RED);
     });
 

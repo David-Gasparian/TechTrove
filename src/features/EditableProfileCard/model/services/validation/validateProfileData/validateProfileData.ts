@@ -2,14 +2,14 @@ import { Profile } from '@/entities/Profile';
 import { ValidateProfileCodes } from '../../../../model/consts/consts';
 import { validateUserAge } from '../validateUserAge/validateUserAge';
 
-export const validateProfileData = (profile?: Profile): ValidateProfileCodes[] => {
+export const validateProfileData = (
+    profile?: Profile,
+): ValidateProfileCodes[] => {
     if (!profile) {
         return [ValidateProfileCodes.NO_DATA];
     }
 
-    const {
-        age, avatar, city, first, username, lastname,
-    } = profile;
+    const { age, avatar, city, first, username, lastname } = profile;
 
     const errors: ValidateProfileCodes[] = [];
 

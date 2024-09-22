@@ -1,5 +1,8 @@
 import { ScrollPositionSchema } from '../types/scrollPositionSchema';
-import { saveScrollPositionActions, saveScrollPositionReducer } from './saveScrollPositionSlice';
+import {
+    saveScrollPositionActions,
+    saveScrollPositionReducer,
+} from './saveScrollPositionSlice';
 
 describe('saveScrollPositionSlice', () => {
     test('set readOnly', () => {
@@ -13,19 +16,23 @@ describe('saveScrollPositionSlice', () => {
         };
 
         const state: DeepPartial<ScrollPositionSchema> = {
-            scroll: { },
+            scroll: {},
         };
 
-        expect(saveScrollPositionReducer(
-            state as ScrollPositionSchema,
-            saveScrollPositionActions.setScroll({ path, position }),
-        )).toEqual(returnResult);
+        expect(
+            saveScrollPositionReducer(
+                state as ScrollPositionSchema,
+                saveScrollPositionActions.setScroll({ path, position }),
+            ),
+        ).toEqual(returnResult);
     });
 
     test('check empty state', () => {
         const returnResult: DeepPartial<ScrollPositionSchema> = {
             scroll: {},
         };
-        expect(saveScrollPositionReducer(undefined, { type: '' })).toEqual(returnResult);
+        expect(saveScrollPositionReducer(undefined, { type: '' })).toEqual(
+            returnResult,
+        );
     });
 });

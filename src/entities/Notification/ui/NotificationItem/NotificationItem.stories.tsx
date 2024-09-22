@@ -9,7 +9,9 @@ export default {
     component: NotificationItem,
 } as ComponentMeta<typeof NotificationItem>;
 
-const Template: ComponentStory<typeof NotificationItem> = (args) => <NotificationItem {...args} />;
+const Template: ComponentStory<typeof NotificationItem> = (args) => (
+    <NotificationItem {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {
@@ -29,9 +31,7 @@ WithLink.args = {
 };
 
 export const Dark = Template.bind({});
-Dark.decorators = [
-    ThemeDecorator(Theme.Dark),
-];
+Dark.decorators = [ThemeDecorator(Theme.Dark)];
 Dark.args = {
     notification: {
         title: 'Custom Styled Notification',

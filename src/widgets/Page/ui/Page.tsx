@@ -15,7 +15,10 @@ import { TestProps } from '@/shared/types/tests';
 import { useInitEffect } from '@/shared/lib/hooks/useInitEffect';
 import { useThrottling } from '@/shared/lib/hooks/useThrottling';
 import { StateSchema } from '@/app/provider/storeProvider';
-import { saveScrollPositionActions, selectScrollByPath } from '@/features/SaveScrollPosition';
+import {
+    saveScrollPositionActions,
+    selectScrollByPath,
+} from '@/features/SaveScrollPosition';
 import cln from './Page.module.scss';
 
 interface PageProps extends HTMLAttributes<HTMLDivElement>, TestProps {
@@ -38,7 +41,9 @@ export const Page = (props: PageProps) => {
     const location = useLocation();
     const targetRef = useRef() as MutableRefObject<HTMLDivElement>;
     const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
-    const scrollPosition = useSelector((state: StateSchema) => selectScrollByPath(state, location.pathname));
+    const scrollPosition = useSelector((state: StateSchema) =>
+        selectScrollByPath(state, location.pathname),
+    );
 
     useInfiniteScroll({ targetRef, wrapperRef, clb: onScrollToEnd });
 
@@ -50,7 +55,12 @@ export const Page = (props: PageProps) => {
         if (!isScrollSave) return;
 
         const { scrollTop } = e.currentTarget;
-        dispatch(saveScrollPositionActions.setScroll({ path: location.pathname, position: scrollTop }));
+        dispatch(
+            saveScrollPositionActions.setScroll({
+                path: location.pathname,
+                position: scrollTop,
+            }),
+        );
     }, 500);
 
     return (

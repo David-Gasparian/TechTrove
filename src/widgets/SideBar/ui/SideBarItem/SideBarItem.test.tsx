@@ -34,16 +34,13 @@ describe('SideBarItem', () => {
             authOnly: true,
         };
 
-        componentRender(
-            <SideBarItem item={item} />,
-            {
-                initialValue: {
-                    user: {
-                        authData: undefined,
-                    },
+        componentRender(<SideBarItem item={item} />, {
+            initialValue: {
+                user: {
+                    authData: undefined,
                 },
             },
-        );
+        });
 
         expect(screen.queryByTestId('sidebar-item')).toBeNull();
     });

@@ -1,6 +1,4 @@
-import {
-    memo, useCallback, useState,
-} from 'react';
+import { memo, useCallback, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 
 import { Popover } from '@/shared/ui/popups';

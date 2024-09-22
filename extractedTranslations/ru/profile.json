@@ -1,15 +1,15 @@
 {
-  "PROFILE_NOT_FOUND": "PROFILE_NOT_FOUND",
-  "age": "age",
-  "avatar": "avatar",
-  "cancel": "cancel",
-  "city": "city",
-  "edit": "edit",
-  "lastname": "lastname",
-  "name": "name",
-  "profile": "profile",
-  "refresh_the_page": "refresh_the_page",
-  "save": "save",
-  "something_went_wrong": "something_went_wrong",
-  "username": "username"
+    "PROFILE_NOT_FOUND": "PROFILE_NOT_FOUND",
+    "age": "age",
+    "avatar": "avatar",
+    "cancel": "cancel",
+    "city": "city",
+    "edit": "edit",
+    "lastname": "lastname",
+    "name": "name",
+    "profile": "profile",
+    "refresh_the_page": "refresh_the_page",
+    "save": "save",
+    "something_went_wrong": "something_went_wrong",
+    "username": "username"
 }

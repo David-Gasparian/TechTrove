@@ -7,15 +7,12 @@ import { AppInput } from '@/shared/ui/AppInput';
 import cln from './AddCommentForm.module.scss';
 
 export interface AddCommentFormProps {
-className?: string;
-onSendComment: (text: string) => void;
+    className?: string;
+    onSendComment: (text: string) => void;
 }
 
 const AddCommentForm = memo((props: AddCommentFormProps) => {
-    const {
-        className,
-        onSendComment,
-    } = props;
+    const { className, onSendComment } = props;
     const { t } = useTranslation('articles');
 
     const [text, setText] = useState('');
@@ -30,13 +27,12 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
     }, [onSendComment, text]);
 
     return (
-
         <div
             data-testid="AddCommentForm"
             className={classNames(cln.AddCommentForm, {}, [className])}
         >
             <AppInput
-                data-testid='AddCommentForm.Input'
+                data-testid="AddCommentForm.Input"
                 placeholder={t('article_enter_comment_text')}
                 value={text}
                 onChange={onChangeHandler}
@@ -44,7 +40,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
             />
 
             <AppButton
-                data-testid='AddCommentForm.Button'
+                data-testid="AddCommentForm.Button"
                 className={cln.cancel}
                 onClick={onClickHandler}
             >

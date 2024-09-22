@@ -20,7 +20,10 @@ Light.args = {
     children: (
         <div>
             <h2>Drawer Content</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                nec odio. Praesent libero. Sed cursus ante dapibus diam.
+            </p>
         </div>
     ),
 };
@@ -32,7 +35,10 @@ Dark.args = {
     children: (
         <div>
             <h2>Drawer Content</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                nec odio. Praesent libero. Sed cursus ante dapibus diam.
+            </p>
         </div>
     ),
 };

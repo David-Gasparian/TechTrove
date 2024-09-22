@@ -20,7 +20,7 @@ export const LangSwitcher = memo((props: LangSwitcherProps) => {
 
     return (
         <AppButton
-            data-testid='langSwitcher'
+            data-testid="langSwitcher"
             theme={AppButtonTheme.CLEAR}
             onClick={toggleLanguage}
             className={classNames('', {}, [className])}

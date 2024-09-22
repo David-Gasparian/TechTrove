@@ -50,12 +50,13 @@ export const TestProvider = (props: TestProviderProps) => {
 
     return (
         <MemoryRouter initialEntries={[path]}>
-            <StoreProvider asyncReducers={asyncReducer} initialValue={initialValue}>
+            <StoreProvider
+                asyncReducers={asyncReducer}
+                initialValue={initialValue}
+            >
                 <I18nextProvider i18n={i18n}>
                     <ThemeProvider initialTheme={theme}>
-                        <div className={`App ${theme}`}>
-                            {children}
-                        </div>
+                        <div className={`App ${theme}`}>{children}</div>
                     </ThemeProvider>
                 </I18nextProvider>
             </StoreProvider>
@@ -80,6 +81,7 @@ export const TestProvider = (props: TestProviderProps) => {
  *   theme: Theme.DARK,
  * });
  */
-export const componentRender = (component: ReactNode, options: ComponentRenderOptions = {}) => render(
-    <TestProvider options={options}>{component}</TestProvider>,
-);
+export const componentRender = (
+    component: ReactNode,
+    options: ComponentRenderOptions = {},
+) => render(<TestProvider options={options}>{component}</TestProvider>);

@@ -13,7 +13,9 @@ export default {
     },
 } as ComponentMeta<typeof ArticleDetails>;
 
-const Template: ComponentStory<typeof ArticleDetails> = (args) => <ArticleDetails {...args} />;
+const Template: ComponentStory<typeof ArticleDetails> = (args) => (
+    <ArticleDetails {...args} />
+);
 
 const article = {
     id: '1',
@@ -22,9 +24,7 @@ const article = {
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
     createdAt: '26.02.2022',
-    type: [
-        ArticleTypes.IT,
-    ],
+    type: [ArticleTypes.IT],
     blocks: [
         {
             id: '1',
@@ -88,33 +88,39 @@ const article = {
 };
 
 export const Normal = Template.bind({});
-Normal.decorators = [StoreDecorator({
-    article: {
-        data: article,
-    },
-})];
+Normal.decorators = [
+    StoreDecorator({
+        article: {
+            data: article,
+        },
+    }),
+];
 Normal.args = {
     id: '1',
 };
 
 export const Error = Template.bind({});
-Error.decorators = [StoreDecorator({
-    article: {
-        data: undefined,
-        error: 'article not found',
-    },
-})];
+Error.decorators = [
+    StoreDecorator({
+        article: {
+            data: undefined,
+            error: 'article not found',
+        },
+    }),
+];
 Error.args = {
     id: '2',
 };
 
 export const Loading = Template.bind({});
-Loading.decorators = [StoreDecorator({
-    article: {
-        data: undefined,
-        isLoading: true,
-    },
-})];
+Loading.decorators = [
+    StoreDecorator({
+        article: {
+            data: undefined,
+            isLoading: true,
+        },
+    }),
+];
 Loading.args = {
     id: '1',
 };

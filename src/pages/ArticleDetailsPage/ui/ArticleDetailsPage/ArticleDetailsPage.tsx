@@ -4,7 +4,10 @@ import { useParams } from 'react-router-dom';
 
 import { ArticleDetails } from '@/entities/Article';
 import { Text } from '@/shared/ui/Text';
-import { AsyncReducersList, useAsyncReducer } from '@/shared/lib/hooks/useAsyncReducer';
+import {
+    AsyncReducersList,
+    useAsyncReducer,
+} from '@/shared/lib/hooks/useAsyncReducer';
 import { RecommendedArticlesList } from '@/features/RecommendedArticlesList';
 import { ArticleRating } from '@/features/ArticleRating';
 import { Page } from '@/widgets/Page';
@@ -19,14 +22,17 @@ const asyncReducersList: AsyncReducersList = {
 
 const ArticleDetailsPage: FC = memo(() => {
     const { t } = useTranslation('articles');
-    const { id } = useParams<{id: string}>();
+    const { id } = useParams<{ id: string }>();
 
     useAsyncReducer(asyncReducersList, { removeAfterUnmount: true });
 
     if (!id) {
         return (
             <Page className={cln.articleNotFound}>
-                <Text className={cln.commentsTitle} title={t('article_not_found')} />
+                <Text
+                    className={cln.commentsTitle}
+                    title={t('article_not_found')}
+                />
             </Page>
         );
     }

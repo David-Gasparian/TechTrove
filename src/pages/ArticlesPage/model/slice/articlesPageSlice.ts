@@ -2,7 +2,10 @@ import { createEntityAdapter, PayloadAction } from '@reduxjs/toolkit';
 
 import { StateSchema } from '@/app/provider/storeProvider';
 import {
-    Article, ArticleSortType, ArticleTypes, ArticleView,
+    Article,
+    ArticleSortType,
+    ArticleTypes,
+    ArticleView,
 } from '@/entities/Article';
 import { VIEW_LOCAL_STORAGE_KEY } from '@/shared/consts/localStorage';
 import { articleViewStorage } from '@/shared/lib/storage/adapters/articleViewAdapter';
@@ -42,7 +45,9 @@ const articlesPageSlice = buildSlice({
             articleViewStorage.setView(VIEW_LOCAL_STORAGE_KEY, action.payload);
         },
         initState: (state) => {
-            const view = articleViewStorage.getView(VIEW_LOCAL_STORAGE_KEY) as ArticleView;
+            const view = articleViewStorage.getView(
+                VIEW_LOCAL_STORAGE_KEY,
+            ) as ArticleView;
             state.view = view;
             state.limit = view === ArticleView.SMALL ? 9 : 4;
             state._inited = true;

@@ -7,9 +7,7 @@ import { ProfileCard } from './ProfileCard';
 
 describe('ProfileCard', () => {
     test('check elements', () => {
-        render(
-            <ProfileCard />,
-        );
+        render(<ProfileCard />);
         expect(screen.getByTestId('profile-card')).toBeInTheDocument();
         expect(screen.getByTestId('ProfileCard.firstname')).toBeInTheDocument();
         expect(screen.queryByTestId('error')).toBeNull();
@@ -17,21 +15,13 @@ describe('ProfileCard', () => {
     });
 
     test('check error prop', () => {
-        render(
-            <ProfileCard
-                error='error'
-            />,
-        );
+        render(<ProfileCard error="error" />);
         expect(screen.getByTestId('error')).toBeInTheDocument();
         expect(screen.queryByTestId('profile-card')).toBeNull();
     });
 
     test('check isLoading prop', () => {
-        render(
-            <ProfileCard
-                isLoading
-            />,
-        );
+        render(<ProfileCard isLoading />);
         expect(screen.getByTestId('loading')).toBeInTheDocument();
         expect(screen.queryByTestId('profile-card')).toBeNull();
     });
@@ -49,18 +39,10 @@ describe('ProfileCard', () => {
             avatar: 'avatar',
         };
 
-        const wrapper = render(
-            <ProfileCard
-                profileData={data}
-            />,
-        );
+        const wrapper = render(<ProfileCard profileData={data} />);
         expect(screen.getByTestId('avatarWrapper')).toBeInTheDocument();
 
-        wrapper.rerender(
-            <ProfileCard
-                profileData={{ ...data, avatar: '' }}
-            />,
-        );
+        wrapper.rerender(<ProfileCard profileData={{ ...data, avatar: '' }} />);
 
         expect(screen.queryByTestId('avatarWrapper')).toBeNull();
     });
@@ -68,11 +50,7 @@ describe('ProfileCard', () => {
     test('check changeName prop', () => {
         const mockFn = jest.fn();
 
-        componentRender(
-            <ProfileCard
-                onHandleChangeName={mockFn}
-            />,
-        );
+        componentRender(<ProfileCard onHandleChangeName={mockFn} />);
 
         const nameInput = screen.getByTestId('ProfileCard.firstname');
 

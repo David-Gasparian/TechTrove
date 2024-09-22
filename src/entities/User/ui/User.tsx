@@ -9,16 +9,10 @@ interface UserProps {
 
 const User = memo((props: UserProps) => {
     const { t } = useTranslation('');
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     return (
-        <div
-            className={classNames('User', {}, [className])}
-        >
-            {t('User')}
-        </div>
+        <div className={classNames('User', {}, [className])}>{t('User')}</div>
     );
 });
 

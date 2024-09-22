@@ -7,10 +7,7 @@ import {
     ThunkApi,
 } from './config/stateSchema';
 
-export {
-    StoreProvider,
-    createReduxStore,
-};
+export { StoreProvider, createReduxStore };
 
 export type {
     StateSchema,

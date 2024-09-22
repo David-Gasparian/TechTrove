@@ -50,27 +50,25 @@ export const Text = memo((props: TextProps) => {
 
     return (
         <div
-            data-testid='textWrapper'
-            className={classNames(cln.Text, {}, [className, cln[theme], cln[align], cln[size]])}
+            data-testid="textWrapper"
+            className={classNames(cln.Text, {}, [
+                className,
+                cln[theme],
+                cln[align],
+                cln[size],
+            ])}
         >
             {title && (
-                <HeaderTag
-                    data-testid='title'
-                    className={cln.title}
-                >
+                <HeaderTag data-testid="title" className={cln.title}>
                     {title}
                 </HeaderTag>
             )}
 
             {text && (
-                <p
-                    data-testid='text'
-                    className={cln.text}
-                >
+                <p data-testid="text" className={cln.text}>
                     {text}
                 </p>
             )}
-
         </div>
     );
 });

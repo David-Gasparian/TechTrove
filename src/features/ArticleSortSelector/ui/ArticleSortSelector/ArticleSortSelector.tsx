@@ -28,36 +28,40 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
     const { t: tTranslation } = useTranslation('translation');
     const { t: tArticles } = useTranslation('articles');
 
-    const sortOption = useMemo<OptionItem<ArticleSortType>[]>(() => [
-        {
-            value: ArticleSortType.TITLE,
-            content: tArticles('article_title'),
-        },
-        {
-            value: ArticleSortType.CREATED,
-            content: tArticles('article_createdAt'),
-        },
-        {
-            value: ArticleSortType.VIEWS,
-            content: tArticles('article_views'),
-        },
-    ], [tArticles]);
+    const sortOption = useMemo<OptionItem<ArticleSortType>[]>(
+        () => [
+            {
+                value: ArticleSortType.TITLE,
+                content: tArticles('article_title'),
+            },
+            {
+                value: ArticleSortType.CREATED,
+                content: tArticles('article_createdAt'),
+            },
+            {
+                value: ArticleSortType.VIEWS,
+                content: tArticles('article_views'),
+            },
+        ],
+        [tArticles],
+    );
 
-    const orderOptions = useMemo<OptionItem<SortingOrder>[]>(() => [
-        {
-            value: SortingOrder.ASC,
-            content: tTranslation('by_asc'),
-        },
-        {
-            value: SortingOrder.DESC,
-            content: tTranslation('by_desc'),
-        },
-    ], [tTranslation]);
+    const orderOptions = useMemo<OptionItem<SortingOrder>[]>(
+        () => [
+            {
+                value: SortingOrder.ASC,
+                content: tTranslation('by_asc'),
+            },
+            {
+                value: SortingOrder.DESC,
+                content: tTranslation('by_desc'),
+            },
+        ],
+        [tTranslation],
+    );
 
     return (
-        <div
-            className={classNames(cln.ArticleSortSelector, {}, [className])}
-        >
+        <div className={classNames(cln.ArticleSortSelector, {}, [className])}>
             <Select
                 className={cln.sortBy}
                 value={sortType}

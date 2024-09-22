@@ -10,37 +10,36 @@ interface AddCommentForArticleProps {
     text: string;
 }
 
-export const AddCommentForArticle = createAsyncThunk<Comment[], AddCommentForArticleProps, ThunkApi<string>>(
-    'article/AddCommentForArticle',
-    async (data, thunkAPI) => {
-        const {
-            extra, rejectWithValue, getState, dispatch,
-        } = thunkAPI;
-        const { text } = data;
+export const AddCommentForArticle = createAsyncThunk<
+    Comment[],
+    AddCommentForArticleProps,
+    ThunkApi<string>
+>('article/AddCommentForArticle', async (data, thunkAPI) => {
+    const { extra, rejectWithValue, getState, dispatch } = thunkAPI;
+    const { text } = data;
 
-        const article = selectArticleData(getState());
-        const user = selectAuthData(getState());
+    const article = selectArticleData(getState());
+    const user = selectAuthData(getState());
 
-        if (!article || !user || !text) {
-            return rejectWithValue('error');
+    if (!article || !user || !text) {
+        return rejectWithValue('error');
+    }
+
+    try {
+        const result = await extra.api.post<Comment[]>('comments', {
+            text,
+            articleId: article.id,
+            userId: user.id,
+        });
+
+        if (!result.data) {
+            throw new Error();
         }
 
-        try {
-            const result = await extra.api.post<Comment[]>('comments', {
-                text,
-                articleId: article.id,
-                userId: user.id,
-            });
+        dispatch(fetchCommentsByArticleId({ id: article.id }));
 
-            if (!result.data) {
-                throw new Error();
-            }
-
-            dispatch(fetchCommentsByArticleId({ id: article.id }));
-
-            return result.data;
-        } catch (e) {
-            return rejectWithValue('error');
-        }
-    },
-);
+        return result.data;
+    } catch (e) {
+        return rejectWithValue('error');
+    }
+});

@@ -1,15 +1,11 @@
-import {
-    memo, useCallback, useState,
-} from 'react';
+import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppButton, AppButtonTheme } from '@/shared/ui/AppButton';
 import { LoginModal } from '@/features/AuthByUserName';
-import {
-    selectAuthData,
-} from '@/entities/User';
+import { selectAuthData } from '@/entities/User';
 import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/NotificationButton';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
@@ -59,10 +55,7 @@ export const Navbar = memo((props: NavbarProps) => {
                 {t('login')}
             </AppButton>
             {isAuthModalOpen && (
-                <LoginModal
-                    isOpen={isAuthModalOpen}
-                    onClose={onCloseModal}
-                />
+                <LoginModal isOpen={isAuthModalOpen} onClose={onCloseModal} />
             )}
         </header>
     );

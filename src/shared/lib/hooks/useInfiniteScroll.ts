@@ -28,7 +28,11 @@ interface useInfiniteScrollOptions {
  *   },
  * });
  */
-export const useInfiniteScroll = ({ targetRef, wrapperRef, clb }: useInfiniteScrollOptions) => {
+export const useInfiniteScroll = ({
+    targetRef,
+    wrapperRef,
+    clb,
+}: useInfiniteScrollOptions) => {
     useEffect(() => {
         if (!clb) {
             return;

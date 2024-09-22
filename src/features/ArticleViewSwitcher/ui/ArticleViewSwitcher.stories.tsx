@@ -12,7 +12,9 @@ export default {
     },
 } as ComponentMeta<typeof ArticleViewSwitcher>;
 
-const Template: ComponentStory<typeof ArticleViewSwitcher> = (args) => <ArticleViewSwitcher {...args} />;
+const Template: ComponentStory<typeof ArticleViewSwitcher> = (args) => (
+    <ArticleViewSwitcher {...args} />
+);
 
 export const Light = Template.bind({});
 Light.args = {
@@ -20,9 +22,7 @@ Light.args = {
 };
 
 export const Dark = Template.bind({});
-Dark.decorators = [
-    ThemeDecorator(Theme.Dark),
-];
+Dark.decorators = [ThemeDecorator(Theme.Dark)];
 Dark.args = {
     view: ArticleView.SMALL,
 };

@@ -11,26 +11,23 @@ interface TabsProps<T extends string> {
 }
 
 export const Tabs = <T extends string>(props: TabsProps<T>) => {
-    const {
-        className,
-        value,
-        tabs,
-        onTabClick,
-    } = props;
+    const { className, value, tabs, onTabClick } = props;
 
     const onHandleTabClick = (tab: string) => () => {
         onTabClick?.(tab as T);
     };
 
     return (
-        <div
-            className={classNames(cln.Tabs, {}, [className])}
-        >
+        <div className={classNames(cln.Tabs, {}, [className])}>
             {tabs.map((tab) => (
                 <Card
                     key={tab.value}
                     onClick={onHandleTabClick(tab.value)}
-                    theme={value === tab.value ? CardTheme.NORMAL : CardTheme.OUTLINED}
+                    theme={
+                        value === tab.value
+                            ? CardTheme.NORMAL
+                            : CardTheme.OUTLINED
+                    }
                 >
                     {tab.content}
                 </Card>

@@ -11,12 +11,7 @@ interface LoaderProps {
 }
 
 export const Skeleton = memo((props: LoaderProps) => {
-    const {
-        className,
-        width,
-        height,
-        border,
-    } = props;
+    const { className, width, height, border } = props;
 
     const style: CSSProperties = {
         width,

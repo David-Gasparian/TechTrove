@@ -7,13 +7,11 @@ import { Page } from '@/widgets/Page';
 
 const ArticleEditorPage = memo(() => {
     const { t } = useTranslation('articles');
-    const { id } = useParams<{id: string}>();
+    const { id } = useParams<{ id: string }>();
     const isCreate = !id;
 
     return (
-        <Page
-            className={classNames('', {})}
-        >
+        <Page className={classNames('', {})}>
             {isCreate ? t('articles_create') : t('articles_edit')}
         </Page>
     );

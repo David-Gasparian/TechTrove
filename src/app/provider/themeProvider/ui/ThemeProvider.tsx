@@ -5,25 +5,25 @@ import { themeStorage } from '@/shared/lib/storage/adapters/themeAdapter';
 import { Theme } from '@/shared/consts/theme';
 import { ThemeContext } from '@/shared/lib/context/ThemeContext';
 
-const defaultTheme = themeStorage
-    .getTheme(THEME_LOCAL_STORAGE_KEY) as Theme || Theme.LIGHT;
+const defaultTheme =
+    (themeStorage.getTheme(THEME_LOCAL_STORAGE_KEY) as Theme) || Theme.LIGHT;
 
- interface ThemeProviderProps {
+interface ThemeProviderProps {
     initialTheme?: Theme;
- }
+}
 
 export const ThemeProvider: FC<ThemeProviderProps> = (props) => {
-    const {
-        children,
-        initialTheme,
-    } = props;
+    const { children, initialTheme } = props;
 
     const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme);
 
-    const defaultProps = useMemo(() => ({
-        theme,
-        setTheme,
-    }), [theme]);
+    const defaultProps = useMemo(
+        () => ({
+            theme,
+            setTheme,
+        }),
+        [theme],
+    );
 
     return (
         <ThemeContext.Provider value={defaultProps}>

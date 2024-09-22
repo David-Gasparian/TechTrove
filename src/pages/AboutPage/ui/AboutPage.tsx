@@ -6,11 +6,7 @@ import { Page } from '@/widgets/Page';
 const AboutPage: FC = memo(() => {
     const { t } = useTranslation('about');
 
-    return (
-        <Page data-testid='AboutPage'>
-            {t('about')}
-        </Page>
-    );
+    return <Page data-testid="AboutPage">{t('about')}</Page>;
 });
 
 export default AboutPage;

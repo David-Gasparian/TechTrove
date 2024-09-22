@@ -2,11 +2,15 @@ import { Reducer } from '@reduxjs/toolkit';
 import { useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 
-import { ReduxStoreWithManager, StateSchema, StateSchemaKeys } from '@/app/provider/storeProvider';
+import {
+    ReduxStoreWithManager,
+    StateSchema,
+    StateSchemaKeys,
+} from '@/app/provider/storeProvider';
 
 export type AsyncReducersList = {
     [name in StateSchemaKeys]?: Reducer<NonNullable<StateSchema[name]>>;
-}
+};
 
 type ReducerLineEntity = [StateSchemaKeys, Reducer];
 
@@ -27,7 +31,10 @@ interface Options {
  *     { removeAfterUnmount: true }
  * );
  */
-export const useAsyncReducer = (reducers: AsyncReducersList, options?: Options) => {
+export const useAsyncReducer = (
+    reducers: AsyncReducersList,
+    options?: Options,
+) => {
     const dispatch = useDispatch();
     const store = useStore() as ReduxStoreWithManager;
 

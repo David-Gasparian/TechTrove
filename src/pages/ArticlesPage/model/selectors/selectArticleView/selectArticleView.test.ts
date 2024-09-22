@@ -9,7 +9,9 @@ describe('selectArticleView', () => {
                 view: ArticleView.BIG,
             },
         };
-        expect(selectArticleView(state as StateSchema)).toEqual(ArticleView.BIG);
+        expect(selectArticleView(state as StateSchema)).toEqual(
+            ArticleView.BIG,
+        );
     });
 
     test('should return SMALL', () => {

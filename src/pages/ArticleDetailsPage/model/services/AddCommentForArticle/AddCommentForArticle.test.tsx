@@ -26,10 +26,7 @@ describe('AddCommentForArticle', () => {
             },
         };
 
-        const thunk = new TestAsyncThunk(
-            AddCommentForArticle,
-            state,
-        );
+        const thunk = new TestAsyncThunk(AddCommentForArticle, state);
 
         thunk.api.post.mockReturnValue(Promise.resolve({ data: commnet }));
         const result = await thunk.callThunk({ text: 'test' });
@@ -41,10 +38,7 @@ describe('AddCommentForArticle', () => {
     });
 
     test('server error', async () => {
-        const thunk = new TestAsyncThunk(
-            AddCommentForArticle,
-            state,
-        );
+        const thunk = new TestAsyncThunk(AddCommentForArticle, state);
         thunk.api.post.mockReturnValue(Promise.resolve({ status: 401 }));
         const result = await thunk.callThunk({ text: 'test' });
 

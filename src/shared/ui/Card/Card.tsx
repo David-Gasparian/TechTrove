@@ -1,8 +1,4 @@
-import {
-    HTMLAttributes,
-    memo,
-    ReactNode,
-} from 'react';
+import { HTMLAttributes, memo, ReactNode } from 'react';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cln from './Card.module.scss';
@@ -20,15 +16,16 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const Card = memo((props: CardProps) => {
-    const {
-        className,
-        children,
-        theme = CardTheme.NORMAL,
-        fullWidth,
-    } = props;
+    const { className, children, theme = CardTheme.NORMAL, fullWidth } = props;
 
     return (
-        <div {...props} className={classNames(cln.Card, { [cln.fullWidth]: fullWidth }, [className, cln[theme]])}>
+        <div
+            {...props}
+            className={classNames(cln.Card, { [cln.fullWidth]: fullWidth }, [
+                className,
+                cln[theme],
+            ])}
+        >
             {children}
         </div>
     );

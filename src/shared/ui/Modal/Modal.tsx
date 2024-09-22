@@ -14,15 +14,13 @@ interface ModalProps {
 }
 
 export const Modal: FC<ModalProps> = (props) => {
-    const {
-        className,
-        children,
+    const { className, children, isOpen, onClose, lazy } = props;
+
+    const { close, isClosing, isMounted } = useModal({
+        animationDelay: 300,
         isOpen,
         onClose,
-        lazy,
-    } = props;
-
-    const { close, isClosing, isMounted } = useModal({ animationDelay: 300, isOpen, onClose });
+    });
 
     if (lazy && !isMounted) {
         return null;
@@ -36,14 +34,11 @@ export const Modal: FC<ModalProps> = (props) => {
     return (
         <Portal>
             <div
-                data-testid='modal'
+                data-testid="modal"
                 className={classNames(cln.Modal, mode, [className])}
             >
-                <Overlay data-testid='overlay' onClick={close} />
-                <div
-                    data-testid='content'
-                    className={cln.content}
-                >
+                <Overlay data-testid="overlay" onClick={close} />
+                <div data-testid="content" className={cln.content}>
                     {children}
                 </div>
             </div>

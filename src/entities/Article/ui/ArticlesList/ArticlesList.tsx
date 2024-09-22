@@ -22,45 +22,38 @@ const getSkeletons = (view: ArticleView) => {
     const articleListForSkeleton = new Array(isBig ? 3 : 6).fill(1);
 
     return articleListForSkeleton.map((_: number, inedx: number) => (
-        <ArticlesListItemSkeleton
-            key={inedx.toString()}
-            view={view}
-        />
+        <ArticlesListItemSkeleton key={inedx.toString()} view={view} />
     ));
 };
 
 export const ArticlesList = memo((props: ArticlesListProps) => {
     const {
-        className, view = ArticleView.SMALL, articles, isLoading, target,
+        className,
+        view = ArticleView.SMALL,
+        articles,
+        isLoading,
+        target,
     } = props;
 
     const { t } = useTranslation('articles');
 
     if (!isLoading && !articles.length) {
-        return (
-            <Text
-                className={cln.emptyText}
-                text={(t('articles_empty'))}
-            />
-        );
+        return <Text className={cln.emptyText} text={t('articles_empty')} />;
     }
 
     return (
         <div
             className={classNames('', {}, [className, cln[view]])}
-            data-testid='ArticleList'
+            data-testid="ArticleList"
         >
-            {
-                articles
-                    .map((article) => (
-                        <ArticlesListItem
-                            article={article}
-                            key={article.id}
-                            view={view}
-                            target={target}
-                        />
-                    ))
-            }
+            {articles.map((article) => (
+                <ArticlesListItem
+                    article={article}
+                    key={article.id}
+                    view={view}
+                    target={target}
+                />
+            ))}
             {isLoading && getSkeletons(view)}
         </div>
     );

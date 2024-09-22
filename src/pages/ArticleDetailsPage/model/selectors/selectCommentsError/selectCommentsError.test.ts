@@ -11,7 +11,6 @@ describe('selectCommentsError', () => {
                     error: errorText,
                 },
             },
-
         };
         expect(selectCommentsError(state as StateSchema)).toEqual(errorText);
     });

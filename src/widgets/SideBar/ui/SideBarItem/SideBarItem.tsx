@@ -15,11 +15,7 @@ interface SideBarItemProps {
 }
 
 export const SideBarItem = memo((props: SideBarItemProps) => {
-    const {
-        className,
-        collapsed,
-        item,
-    } = props;
+    const { className, collapsed, item } = props;
 
     const { t } = useTranslation(item.text);
     const isAuth = useSelector(selectAuthData);
@@ -30,12 +26,10 @@ export const SideBarItem = memo((props: SideBarItemProps) => {
 
     return (
         <AppLink
-            data-testid='sidebar-item'
-            className={classNames(
-                cln.item,
-                { [cln.collapsed]: collapsed },
-                [className],
-            )}
+            data-testid="sidebar-item"
+            className={classNames(cln.item, { [cln.collapsed]: collapsed }, [
+                className,
+            ])}
             to={item.path}
         >
             <item.Icon className={cln.icon} />

@@ -40,9 +40,7 @@ describe('Text', () => {
     });
 
     test('check align prop', () => {
-        render(<Text
-            align={TextALign.CENTER}
-        />);
+        render(<Text align={TextALign.CENTER} />);
         expect(screen.getByTestId('textWrapper')).toHaveClass(TextALign.CENTER);
     });
 

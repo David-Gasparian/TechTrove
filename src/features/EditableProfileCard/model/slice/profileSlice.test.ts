@@ -9,7 +9,12 @@ describe('profileSlice', () => {
             readOnly: true,
         };
 
-        expect(profileReducer(returnResult as ProfileSchema, profileActions.setreadOnly(true))).toEqual({ readOnly: true });
+        expect(
+            profileReducer(
+                returnResult as ProfileSchema,
+                profileActions.setreadOnly(true),
+            ),
+        ).toEqual({ readOnly: true });
     });
 
     test('cancel changed fields', () => {
@@ -23,7 +28,9 @@ describe('profileSlice', () => {
             form: { first: 'first', lastname: 'lastname' },
         };
 
-        expect(profileReducer(state as ProfileSchema, profileActions.clearForm())).toEqual(result);
+        expect(
+            profileReducer(state as ProfileSchema, profileActions.clearForm()),
+        ).toEqual(result);
     });
 
     test('update profile', () => {
@@ -35,10 +42,15 @@ describe('profileSlice', () => {
             form: { first: 'new firstName', lastname: 'new lastName' },
         };
 
-        expect(profileReducer(
-            state as ProfileSchema,
-            profileActions.updatePfofile({ first: 'new firstName', lastname: 'new lastName' }),
-        )).toEqual(result);
+        expect(
+            profileReducer(
+                state as ProfileSchema,
+                profileActions.updatePfofile({
+                    first: 'new firstName',
+                    lastname: 'new lastName',
+                }),
+            ),
+        ).toEqual(result);
     });
 
     test('update Profile extraReducer panding', () => {
@@ -52,10 +64,9 @@ describe('profileSlice', () => {
             isLoading: true,
         };
 
-        expect(profileReducer(
-            state as ProfileSchema,
-            updateProfileData.pending,
-        )).toEqual(result);
+        expect(
+            profileReducer(state as ProfileSchema, updateProfileData.pending),
+        ).toEqual(result);
     });
 
     test('update Profile extraReducer fulfilled', () => {
@@ -78,9 +89,11 @@ describe('profileSlice', () => {
             readOnly: true,
         };
 
-        expect(profileReducer(
-            state as ProfileSchema,
-            updateProfileData.fulfilled(data as Profile, ''),
-        )).toEqual(result);
+        expect(
+            profileReducer(
+                state as ProfileSchema,
+                updateProfileData.fulfilled(data as Profile, ''),
+            ),
+        ).toEqual(result);
     });
 });

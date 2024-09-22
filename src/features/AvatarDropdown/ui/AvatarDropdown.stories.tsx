@@ -11,14 +11,18 @@ export default {
     decorators: [
         (Story) => (
             <HStack>
-                <div style={{ padding: 150 }}><Story /></div>
+                <div style={{ padding: 150 }}>
+                    <Story />
+                </div>
                 ,
             </HStack>
         ),
     ],
 } as ComponentMeta<typeof AvatarDropdown>;
 
-const Template: ComponentStory<typeof AvatarDropdown> = (args) => <AvatarDropdown {...args} />;
+const Template: ComponentStory<typeof AvatarDropdown> = (args) => (
+    <AvatarDropdown {...args} />
+);
 
 export const Default = Template.bind({});
 Default.decorators = [

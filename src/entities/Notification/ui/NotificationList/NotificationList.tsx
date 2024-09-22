@@ -11,9 +11,7 @@ interface NotificationListProps {
 }
 
 export const NotificationList = memo((props: NotificationListProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     const { data: notifications, isLoading, refetch } = useFetchNotifications();
 
@@ -27,10 +25,7 @@ export const NotificationList = memo((props: NotificationListProps) => {
 
     if (isLoading) {
         return (
-            <VStack
-                gap={8}
-                className={classNames('', {}, [className])}
-            >
+            <VStack gap={8} className={classNames('', {}, [className])}>
                 <Skeleton width="100%" height={80} border="10px" />
                 <Skeleton width="100%" height={80} border="10px" />
                 <Skeleton width="100%" height={80} border="10px" />
@@ -43,11 +38,10 @@ export const NotificationList = memo((props: NotificationListProps) => {
     }
 
     return (
-        <VStack
-            gap={8}
-            className={classNames('', {}, [className])}
-        >
-            {notifications.map((item) => <NotificationItem key={item.id} notification={item} />)}
+        <VStack gap={8} className={classNames('', {}, [className])}>
+            {notifications.map((item) => (
+                <NotificationItem key={item.id} notification={item} />
+            ))}
         </VStack>
     );
 });

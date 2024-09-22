@@ -1,15 +1,15 @@
 {
-  "language": "руский",
-  "short_language": "РУ",
-  "something_went_wrong": "Что-то пошло не так",
-  "refresh_page": "Обновить страницу",
-  "throw_error": "Выбросить ошибку",
-  "currency": "Валюта",
-  "country": "Страна",
-  "by_asc": "По возрастанию",
-  "by_desc": "По убыванию",
-  "cancel": "отменить",
-  "send": "отправить",
-  "your_feedback": "ваш отзыв",
-  "thank_you_for_the_feedback": "Спасибо за оценку!"
+    "language": "руский",
+    "short_language": "РУ",
+    "something_went_wrong": "Что-то пошло не так",
+    "refresh_page": "Обновить страницу",
+    "throw_error": "Выбросить ошибку",
+    "currency": "Валюта",
+    "country": "Страна",
+    "by_asc": "По возрастанию",
+    "by_desc": "По убыванию",
+    "cancel": "отменить",
+    "send": "отправить",
+    "your_feedback": "ваш отзыв",
+    "thank_you_for_the_feedback": "Спасибо за оценку!"
 }

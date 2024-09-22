@@ -8,7 +8,10 @@ type Align = 'start' | 'end' | 'center';
 type Direction = 'row' | 'column';
 type Gap = 4 | 8 | 16 | 32;
 
-type DivProps = DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+type DivProps = DetailedHTMLProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+>;
 
 export interface FlexProps extends DivProps {
     className?: string;
@@ -44,7 +47,6 @@ const flexGap: Record<Gap, string> = {
     8: cln.gap8,
     16: cln.gap16,
     32: cln.gap32,
-
 };
 
 export const Flex = (props: FlexProps) => {

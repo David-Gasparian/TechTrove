@@ -13,10 +13,7 @@ export interface ArticleRatingProps {
 }
 
 const ArticleRating = memo((props: ArticleRatingProps) => {
-    const {
-        className,
-        articleId,
-    } = props;
+    const { className, articleId } = props;
 
     const { t } = useTranslation('articles');
     const authData = useSelector(selectAuthData);
@@ -28,26 +25,35 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
         userId: userId ?? '',
     });
 
-    const onHandleRateArticle = useCallback((rate: number, feedback?: string) => {
-        try {
-            rateArticle({
-                articleId,
-                userId: userId ?? '',
-                rate,
-                feedback,
-            });
-        } catch (e) {
-            console.log('error ->', e);
-        }
-    }, [rateArticle, articleId, userId]);
+    const onHandleRateArticle = useCallback(
+        (rate: number, feedback?: string) => {
+            try {
+                rateArticle({
+                    articleId,
+                    userId: userId ?? '',
+                    rate,
+                    feedback,
+                });
+            } catch (e) {
+                console.log('error ->', e);
+            }
+        },
+        [rateArticle, articleId, userId],
+    );
 
-    const onHandleCancel = useCallback((rate: number) => {
-        onHandleRateArticle(rate);
-    }, [onHandleRateArticle]);
+    const onHandleCancel = useCallback(
+        (rate: number) => {
+            onHandleRateArticle(rate);
+        },
+        [onHandleRateArticle],
+    );
 
-    const onHandleAccept = useCallback((rate: number, feedback?: string) => {
-        onHandleRateArticle(rate, feedback);
-    }, [onHandleRateArticle]);
+    const onHandleAccept = useCallback(
+        (rate: number, feedback?: string) => {
+            onHandleRateArticle(rate, feedback);
+        },
+        [onHandleRateArticle],
+    );
 
     if (isLoading) {
         return <Skeleton width="100%" height={120} />;
@@ -56,9 +62,7 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
     const rating = data?.[0];
 
     return (
-        <div
-            className={className}
-        >
+        <div className={className}>
             <RatingCard
                 cancel={onHandleCancel}
                 accept={onHandleAccept}

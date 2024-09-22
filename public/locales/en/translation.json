@@ -1,15 +1,15 @@
 {
-  "language": "english",
-  "short_language": "EN",
-  "something_went_wrong": "Something went wrong",
-  "refresh_page": "Refresh page",
-  "throw_error": "Throw error",
-  "currency": "Currency",
-  "country": "Country",
-  "by_asc": "asc",
-  "by_desc": "desc",
-  "cancel": "cancel",
-  "send": "send",
-  "your_feedback": "your feedback.",
-  "thank_you_for_the_feedback": "Thank you for the feedback!"
+    "language": "english",
+    "short_language": "EN",
+    "something_went_wrong": "Something went wrong",
+    "refresh_page": "Refresh page",
+    "throw_error": "Throw error",
+    "currency": "Currency",
+    "country": "Country",
+    "by_asc": "asc",
+    "by_desc": "desc",
+    "cancel": "cancel",
+    "send": "send",
+    "your_feedback": "your feedback.",
+    "thank_you_for_the_feedback": "Thank you for the feedback!"
 }

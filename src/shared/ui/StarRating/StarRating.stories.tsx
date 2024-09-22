@@ -5,11 +5,17 @@ export default {
     title: 'shared/StarRating',
     component: StarRating,
     decorators: [
-        (Story) => <div style={{ padding: 50 }}><Story /></div>,
+        (Story) => (
+            <div style={{ padding: 50 }}>
+                <Story />
+            </div>
+        ),
     ],
 } as Meta;
 
-const Template: ComponentStory<typeof StarRating> = (args) => <StarRating {...args} />;
+const Template: ComponentStory<typeof StarRating> = (args) => (
+    <StarRating {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {

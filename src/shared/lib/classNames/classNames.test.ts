@@ -16,7 +16,9 @@ describe('classNames', () => {
 
     test('with mode undefined', () => {
         const expected = 'main class_3';
-        expect(classNames('main', { class2: false }, ['class_3'])).toBe(expected);
+        expect(classNames('main', { class2: false }, ['class_3'])).toBe(
+            expected,
+        );
     });
 
     test('only additional', () => {

@@ -7,7 +7,7 @@ import cln from './AppLink.module.scss';
 export enum APPLinkTheme {
     PRIMARY = 'primary',
     SECONDARY = 'secondary',
-    RED = 'red'
+    RED = 'red',
 }
 
 interface AppLinkProps extends LinkProps {

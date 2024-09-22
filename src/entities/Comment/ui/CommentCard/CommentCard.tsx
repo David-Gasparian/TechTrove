@@ -18,19 +18,22 @@ interface CommentCardProps {
 const avatarSize = 30;
 
 export const CommentCard = memo((props: CommentCardProps) => {
-    const {
-        className,
-        isLoading,
-        comment,
-    } = props;
+    const { className, isLoading, comment } = props;
 
     if (isLoading) {
         return (
             <div
-                className={classNames(cln.CommentCard, {}, [className, cln.loading])}
+                className={classNames(cln.CommentCard, {}, [
+                    className,
+                    cln.loading,
+                ])}
             >
                 <div className={cln.topBlock}>
-                    <Skeleton width={avatarSize} height={avatarSize} border="50%" />
+                    <Skeleton
+                        width={avatarSize}
+                        height={avatarSize}
+                        border="50%"
+                    />
                     <Skeleton className={cln.title} width={150} height={15} />
                 </div>
                 <Skeleton className={cln.text} width="100%" height={20} />
@@ -52,21 +55,11 @@ export const CommentCard = memo((props: CommentCardProps) => {
         >
             <AppLink to={getRouteProfile(user.id)} className={cln.topBlock}>
                 {avatar && (
-                    <Avatar
-                        src={avatar}
-                        size={avatarSize}
-                        alt="avatar"
-                    />
+                    <Avatar src={avatar} size={avatarSize} alt="avatar" />
                 )}
-                <Text
-                    className={cln.title}
-                    title={username}
-                />
+                <Text className={cln.title} title={username} />
             </AppLink>
-            <Text
-                className={cln.text}
-                text={text}
-            />
+            <Text className={cln.text} text={text} />
         </div>
     );
 });

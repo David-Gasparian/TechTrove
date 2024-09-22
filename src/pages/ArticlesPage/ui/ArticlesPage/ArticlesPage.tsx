@@ -1,7 +1,10 @@
 import { FC, memo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-import { AsyncReducersList, useAsyncReducer } from '@/shared/lib/hooks/useAsyncReducer';
+import {
+    AsyncReducersList,
+    useAsyncReducer,
+} from '@/shared/lib/hooks/useAsyncReducer';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useInitEffect } from '@/shared/lib/hooks/useInitEffect';
 import { VStack } from '@/shared/ui/Stack';
@@ -31,7 +34,11 @@ const ArticlesPage: FC = memo(() => {
     };
 
     return (
-        <Page data-testid='ArticlesPage' isScrollSave onScrollToEnd={onScrollToEnd}>
+        <Page
+            data-testid="ArticlesPage"
+            isScrollSave
+            onScrollToEnd={onScrollToEnd}
+        >
             <VStack gap={32} max>
                 <ArticlesPageFilters />
                 <ArticleInfiniteList />

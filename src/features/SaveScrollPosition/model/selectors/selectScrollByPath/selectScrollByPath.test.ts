@@ -13,7 +13,9 @@ describe('selectScrollByPath', () => {
                 },
             },
         };
-        expect(selectScrollByPath(state as StateSchema, path)).toEqual(position);
+        expect(selectScrollByPath(state as StateSchema, path)).toEqual(
+            position,
+        );
     });
 
     test('should return 0 if scroll is empty', () => {

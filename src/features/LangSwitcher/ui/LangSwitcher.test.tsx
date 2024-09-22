@@ -19,12 +19,16 @@ describe('LangSwitcher', () => {
 
     test('with short', () => {
         componentRender(<LangSwitcher short />);
-        expect(screen.getByTestId('langSwitcher').textContent).toEqual('short_language');
+        expect(screen.getByTestId('langSwitcher').textContent).toEqual(
+            'short_language',
+        );
     });
 
     test('with long', () => {
         componentRender(<LangSwitcher short={false} />);
-        expect(screen.getByTestId('langSwitcher').textContent).toEqual('language');
+        expect(screen.getByTestId('langSwitcher').textContent).toEqual(
+            'language',
+        );
     });
 
     test('check unmount', () => {

@@ -2,9 +2,7 @@ import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
-import {
-    ArticleSortType, ArticleTypes, ArticleView,
-} from '@/entities/Article';
+import { ArticleSortType, ArticleTypes, ArticleView } from '@/entities/Article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { SortingOrder } from '@/shared/types/filterTypes';
 import { useDebouncing } from '@/shared/lib/hooks/useDebouncing';
@@ -37,9 +35,8 @@ const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
     const articleSearch = useSelector(selectArticleSearch);
     const articleType = useSelector(selectArticleType);
 
-    const {
-        setView, setSearch, setSort, setOrder, setType,
-    } = useArticlesPageActions();
+    const { setView, setSearch, setSort, setOrder, setType } =
+        useArticlesPageActions();
 
     const { t } = useTranslation('articles');
 
@@ -53,39 +50,51 @@ const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
         setView(view);
     }, []);
 
-    const onHandleSearchChange = useCallback((value: string) => {
-        setSearch(value);
-        debouncedClb();
-    }, [debouncedClb]);
+    const onHandleSearchChange = useCallback(
+        (value: string) => {
+            setSearch(value);
+            debouncedClb();
+        },
+        [debouncedClb],
+    );
 
-    const onHandleSortSelect = useCallback((value: ArticleSortType) => {
-        setSort(value);
-        dispatch(fetchArticles({ page: 1, replace: true }));
-    }, [dispatch]);
+    const onHandleSortSelect = useCallback(
+        (value: ArticleSortType) => {
+            setSort(value);
+            dispatch(fetchArticles({ page: 1, replace: true }));
+        },
+        [dispatch],
+    );
 
-    const onHandleOrderSelect = useCallback((value: SortingOrder) => {
-        setOrder(value);
-        dispatch(fetchArticles({ page: 1, replace: true }));
-    }, [dispatch]);
+    const onHandleOrderSelect = useCallback(
+        (value: SortingOrder) => {
+            setOrder(value);
+            dispatch(fetchArticles({ page: 1, replace: true }));
+        },
+        [dispatch],
+    );
 
-    const onHandleTypeSelect = useCallback((value: ArticleTypes) => {
-        setType(value);
-        dispatch(fetchArticles({ page: 1, replace: true }));
-    }, [dispatch]);
+    const onHandleTypeSelect = useCallback(
+        (value: ArticleTypes) => {
+            setType(value);
+            dispatch(fetchArticles({ page: 1, replace: true }));
+        },
+        [dispatch],
+    );
 
     return (
-        <VStack
-            max
-            className={classNames(cln.FilterArticles, {}, [className])}
-        >
-            <HStack justify='spaceBetween' className={cln.sortWrapper}>
+        <VStack max className={classNames(cln.FilterArticles, {}, [className])}>
+            <HStack justify="spaceBetween" className={cln.sortWrapper}>
                 <ArticleSortSelector
                     order={articleOrderType}
                     sortType={articleSortType}
                     onHandleSortSelect={onHandleSortSelect}
                     onHandleOrderSelect={onHandleOrderSelect}
                 />
-                <ArticleViewSwitcher view={articleView} onChange={onViewChangeHandler} />
+                <ArticleViewSwitcher
+                    view={articleView}
+                    onChange={onViewChangeHandler}
+                />
             </HStack>
 
             <AppInput

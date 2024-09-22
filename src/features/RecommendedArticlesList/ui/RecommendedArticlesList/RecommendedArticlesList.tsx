@@ -10,26 +10,29 @@ interface RecommendedArticlesListProps {
     className?: string;
 }
 
-export const RecommendedArticlesList = memo((props: RecommendedArticlesListProps) => {
-    const { className } = props;
-    const { t } = useTranslation('articles');
+export const RecommendedArticlesList = memo(
+    (props: RecommendedArticlesListProps) => {
+        const { className } = props;
+        const { t } = useTranslation('articles');
 
-    const { data: articles, error, isLoading } = useFetchRecommendationArticle(3);
+        const {
+            data: articles,
+            error,
+            isLoading,
+        } = useFetchRecommendationArticle(3);
 
-    if (error || isLoading || !articles) {
-        return null;
-    }
+        if (error || isLoading || !articles) {
+            return null;
+        }
 
-    return (
-        <div
-            data-testid="ArticleRecommendationsList"
-            className={classNames('', {}, [className])}
-        >
-            <Text title={t('articles_recommendations')} />
-            <ArticlesList
-                target="_blank"
-                articles={articles}
-            />
-        </div>
-    );
-});
+        return (
+            <div
+                data-testid="ArticleRecommendationsList"
+                className={classNames('', {}, [className])}
+            >
+                <Text title={t('articles_recommendations')} />
+                <ArticlesList target="_blank" articles={articles} />
+            </div>
+        );
+    },
+);

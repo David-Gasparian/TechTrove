@@ -3,11 +3,12 @@ import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
-import { AsyncReducersList, useAsyncReducer } from '@/shared/lib/hooks/useAsyncReducer';
-import { Skeleton } from '@/shared/ui/Skeleton';
 import {
-    Text, TextALign, TextSize, TextTheme,
-} from '@/shared/ui/Text';
+    AsyncReducersList,
+    useAsyncReducer,
+} from '@/shared/lib/hooks/useAsyncReducer';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { Text, TextALign, TextSize, TextTheme } from '@/shared/ui/Text';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Icon } from '@/shared/ui/Icon';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
@@ -52,30 +53,45 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
     const renderBlock = useCallback((block: ArticleBlock) => {
         switch (block.type) {
-        case ArticleBlockTypes.CODE:
-            return (
-                <ArticleCodeBlockComponent className={cln.block} key={block.id} block={block} />
-            );
-        case ArticleBlockTypes.IMAGE:
-            return (
-                <ArticleImageBlockComponent className={cln.block} key={block.id} block={block} />
-            );
-        case ArticleBlockTypes.TEXT:
-            return (
-                <ArticleTextBlockComponent className={cln.block} key={block.id} block={block} />
-            );
-        default:
-            return null;
+            case ArticleBlockTypes.CODE:
+                return (
+                    <ArticleCodeBlockComponent
+                        className={cln.block}
+                        key={block.id}
+                        block={block}
+                    />
+                );
+            case ArticleBlockTypes.IMAGE:
+                return (
+                    <ArticleImageBlockComponent
+                        className={cln.block}
+                        key={block.id}
+                        block={block}
+                    />
+                );
+            case ArticleBlockTypes.TEXT:
+                return (
+                    <ArticleTextBlockComponent
+                        className={cln.block}
+                        key={block.id}
+                        block={block}
+                    />
+                );
+            default:
+                return null;
         }
     }, []);
 
     if (isLoading) {
         return (
-            <div
-                className={classNames(cln.articleDetails, {}, [className])}
-            >
+            <div className={classNames(cln.articleDetails, {}, [className])}>
                 <div className={cln.avatarWrapper}>
-                    <Skeleton className={cln.avatar} width={200} height={200} border="50%" />
+                    <Skeleton
+                        className={cln.avatar}
+                        width={200}
+                        height={200}
+                        border="50%"
+                    />
                 </div>
                 <Skeleton className={cln.title} width={670} height={31} />
                 <Skeleton className={cln.title} width={400} height={31} />
@@ -89,11 +105,13 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
     if (articleError) {
         return (
-            <div
-                className={classNames(cln.articleDetails, {}, [className])}
-            >
+            <div className={classNames(cln.articleDetails, {}, [className])}>
                 <div className={cln.error}>
-                    <Text align={TextALign.CENTER} theme={TextTheme.ERROR} text={t('article_error')} />
+                    <Text
+                        align={TextALign.CENTER}
+                        theme={TextTheme.ERROR}
+                        text={t('article_error')}
+                    />
                 </div>
             </div>
         );
@@ -111,7 +129,12 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                     </div>
                 </div>
             )}
-            <Text className={cln.title} size={TextSize.L} title={articleData?.title} text={articleData?.subtitle} />
+            <Text
+                className={cln.title}
+                size={TextSize.L}
+                title={articleData?.title}
+                text={articleData?.subtitle}
+            />
             <div className={cln.views}>
                 <Icon SVG={EyeIcon} />
                 <Text className={cln.text} text={String(articleData?.views)} />

@@ -14,7 +14,9 @@ export default {
     },
 } as ComponentMeta<typeof ProfilePage>;
 
-const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...args} />;
+const Template: ComponentStory<typeof ProfilePage> = (args) => (
+    <ProfilePage {...args} />
+);
 
 const data = {
     first: 'David',
@@ -27,11 +29,13 @@ const data = {
 };
 
 export const Light = Template.bind({});
-Light.decorators = [StoreDecorator({
-    profile: {
-        data,
-    },
-})];
+Light.decorators = [
+    StoreDecorator({
+        profile: {
+            data,
+        },
+    }),
+];
 Light.args = {};
 
 export const Dark = Template.bind({});

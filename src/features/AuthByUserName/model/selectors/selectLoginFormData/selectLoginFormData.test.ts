@@ -13,6 +13,8 @@ describe('selectAuthData', () => {
         const state: DeepPartial<StateSchema> = {
             loginForm: loginFormData,
         };
-        expect(selectLoginFormData(state as StateSchema)).toEqual(loginFormData);
+        expect(selectLoginFormData(state as StateSchema)).toEqual(
+            loginFormData,
+        );
     });
 });

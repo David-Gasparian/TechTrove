@@ -10,19 +10,21 @@ interface ArticleImageBlockProps {
     block: ArticleImageBlock;
 }
 
-export const ArticleImageBlockComponent = memo((props: ArticleImageBlockProps) => {
-    const { className, block } = props;
+export const ArticleImageBlockComponent = memo(
+    (props: ArticleImageBlockProps) => {
+        const { className, block } = props;
 
-    return (
-        <div
-            className={classNames(cln.articleImageBlock, {}, [className])}
-        >
-            {block.src && (
-                <div>
-                    <AppImage src={block.src} alt="article-iamge" />
-                    {block.title && <div className={cln.title}>{block.title}</div>}
-                </div>
-            )}
-        </div>
-    );
-});
+        return (
+            <div className={classNames(cln.articleImageBlock, {}, [className])}>
+                {block.src && (
+                    <div>
+                        <AppImage src={block.src} alt="article-iamge" />
+                        {block.title && (
+                            <div className={cln.title}>{block.title}</div>
+                        )}
+                    </div>
+                )}
+            </div>
+        );
+    },
+);

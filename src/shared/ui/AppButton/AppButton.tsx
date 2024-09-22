@@ -52,7 +52,11 @@ export const AppButton = memo((props: AppButtonProps) => {
             data-testid={dataTestid}
             type="button"
             disabled={disabled}
-            className={classNames(cln.AppButton, mode, [className, cln[theme], cln[size]])}
+            className={classNames(cln.AppButton, mode, [
+                className,
+                cln[theme],
+                cln[size],
+            ])}
             {...otherProps}
         >
             {children}

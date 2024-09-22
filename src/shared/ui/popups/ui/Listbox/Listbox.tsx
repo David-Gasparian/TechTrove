@@ -42,14 +42,17 @@ export const Listbox = (props: ListBoxProps) => {
 
     return (
         <HStack style={{ opacity: 0.3 }} gap={4} align="center">
-            {label
-                && (
-                    <span
-                        className={classNames(cls.span, { [cls.disabled]: readonly }, [className])}
-                    >
-                        {`${label}>`}
-                    </span>
-                )}
+            {label && (
+                <span
+                    className={classNames(
+                        cls.span,
+                        { [cls.disabled]: readonly },
+                        [className],
+                    )}
+                >
+                    {`${label}>`}
+                </span>
+            )}
             <HListBox
                 disabled={readonly}
                 as="div"
@@ -57,12 +60,17 @@ export const Listbox = (props: ListBoxProps) => {
                 value={value}
                 onChange={onChange}
             >
-                <HListBox.Button as='div' className={popupCls.trigger}>
-                    <AppButton disabled={readonly} theme={AppButtonTheme.OUTLINED}>
+                <HListBox.Button as="div" className={popupCls.trigger}>
+                    <AppButton
+                        disabled={readonly}
+                        theme={AppButtonTheme.OUTLINED}
+                    >
                         {value ?? defaultValue}
                     </AppButton>
                 </HListBox.Button>
-                <HListBox.Options className={classNames(cls.options, {}, optionsClasses)}>
+                <HListBox.Options
+                    className={classNames(cls.options, {}, optionsClasses)}
+                >
                     {items?.map((item) => (
                         <HListBox.Option
                             key={item.value}
@@ -72,13 +80,10 @@ export const Listbox = (props: ListBoxProps) => {
                         >
                             {({ active, selected }) => (
                                 <div
-                                    className={classNames(
-                                        cls.item,
-                                        {
-                                            [popupCls.active]: active,
-                                            [popupCls.disabled]: item.disabled,
-                                        },
-                                    )}
+                                    className={classNames(cls.item, {
+                                        [popupCls.active]: active,
+                                        [popupCls.disabled]: item.disabled,
+                                    })}
                                 >
                                     {selected && '!!!'}
                                     {item.content}

@@ -10,14 +10,14 @@ interface ArticleCodeBlockProps {
     block: ArticleCodeBlock;
 }
 
-export const ArticleCodeBlockComponent = memo((props: ArticleCodeBlockProps) => {
-    const { className, block } = props;
+export const ArticleCodeBlockComponent = memo(
+    (props: ArticleCodeBlockProps) => {
+        const { className, block } = props;
 
-    return (
-        <div
-            className={classNames(cln.articleCodeBlock, {}, [className])}
-        >
-            <Code text={block.code} />
-        </div>
-    );
-});
+        return (
+            <div className={classNames(cln.articleCodeBlock, {}, [className])}>
+                <Code text={block.code} />
+            </div>
+        );
+    },
+);

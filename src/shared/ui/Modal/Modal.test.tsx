@@ -1,6 +1,4 @@
-import {
-    act, fireEvent, render, screen,
-} from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import { Modal } from './Modal';
 
 describe('Modal', () => {
@@ -31,7 +29,11 @@ describe('Modal', () => {
         jest.useFakeTimers();
         const mockFunc = jest.fn();
 
-        render(<Modal onClose={mockFunc} isOpen>Test</Modal>);
+        render(
+            <Modal onClose={mockFunc} isOpen>
+                Test
+            </Modal>,
+        );
 
         const overlay = screen.getByTestId('overlay');
 
@@ -70,7 +72,11 @@ describe('Modal', () => {
     });
 
     test('check lazy prop', () => {
-        render(<Modal isOpen={false} lazy>text</Modal>);
+        render(
+            <Modal isOpen={false} lazy>
+                text
+            </Modal>,
+        );
         expect(screen.queryByTestId('modal')).toBeNull();
     });
 

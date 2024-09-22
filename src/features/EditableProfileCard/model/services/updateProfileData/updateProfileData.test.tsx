@@ -24,14 +24,11 @@ describe('updateProfileData', () => {
             age: 22,
         };
 
-        const thunk = new TestAsyncThunk(
-            updateProfileData,
-            {
-                profile: {
-                    form: data,
-                },
+        const thunk = new TestAsyncThunk(updateProfileData, {
+            profile: {
+                form: data,
             },
-        );
+        });
         thunk.api.put.mockReturnValue(Promise.resolve({ data: profile }));
         const result = await thunk.callThunk();
 
@@ -42,31 +39,28 @@ describe('updateProfileData', () => {
     });
 
     test('validation error', async () => {
-        const thunk = new TestAsyncThunk(
-            updateProfileData,
-            {
-                profile: {
-                    form: { ...data, lastname: '', age: 0 },
-                },
+        const thunk = new TestAsyncThunk(updateProfileData, {
+            profile: {
+                form: { ...data, lastname: '', age: 0 },
             },
-        );
+        });
         const result = await thunk.callThunk();
 
         expect(thunk.dispatch).toHaveBeenCalledTimes(2);
         expect(thunk.api.put).not.toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('rejected');
-        expect(result.payload).toEqual([ValidateProfileCodes.INCORRECT_USER_DATA, ValidateProfileCodes.INCORRECT_AGE]);
+        expect(result.payload).toEqual([
+            ValidateProfileCodes.INCORRECT_USER_DATA,
+            ValidateProfileCodes.INCORRECT_AGE,
+        ]);
     });
 
     test('server error', async () => {
-        const thunk = new TestAsyncThunk(
-            updateProfileData,
-            {
-                profile: {
-                    form: data,
-                },
+        const thunk = new TestAsyncThunk(updateProfileData, {
+            profile: {
+                form: data,
             },
-        );
+        });
         thunk.api.put.mockReturnValue(Promise.resolve({ status: 401 }));
         const result = await thunk.callThunk();
 

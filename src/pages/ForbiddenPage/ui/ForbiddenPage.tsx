@@ -6,11 +6,7 @@ import { Page } from '@/widgets/Page';
 const ForbiddenPage: FC = memo(() => {
     const { t } = useTranslation('forbidden');
 
-    return (
-        <Page data-testid='ForbiddenPage'>
-            {t('title')}
-        </Page>
-    );
+    return <Page data-testid="ForbiddenPage">{t('title')}</Page>;
 });
 
 export default ForbiddenPage;

@@ -2,7 +2,11 @@ import { memo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppButton, AppButtonSize, AppButtonTheme } from '@/shared/ui/AppButton';
+import {
+    AppButton,
+    AppButtonSize,
+    AppButtonTheme,
+} from '@/shared/ui/AppButton';
 import { VStack } from '@/shared/ui/Stack';
 import { LangSwitcher } from '@/features/LangSwitcher';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
@@ -27,12 +31,10 @@ export const SideBar = memo((props: SideBarProps) => {
 
     return (
         <aside
-            className={classNames(
-                cln.SideBar,
-                { [cln.collapsed]: collapsed },
-                [className],
-            )}
-            data-testid='sideBar'
+            className={classNames(cln.SideBar, { [cln.collapsed]: collapsed }, [
+                className,
+            ])}
+            data-testid="sideBar"
         >
             <VStack role="navigation" className={cln.items} gap={8}>
                 {sidebarItemsList.map((item) => (
@@ -44,7 +46,7 @@ export const SideBar = memo((props: SideBarProps) => {
                 ))}
             </VStack>
             <AppButton
-                data-testid='toggleButton'
+                data-testid="toggleButton"
                 type="button"
                 onClick={toggleCollapsed}
                 className={cln.toggleButton}

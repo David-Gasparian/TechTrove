@@ -6,7 +6,10 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppButton, AppButtonTheme } from '@/shared/ui/AppButton';
 import { AppInput } from '@/shared/ui/AppInput';
 import { Text, TextTheme } from '@/shared/ui/Text';
-import { AsyncReducersList, useAsyncReducer } from '@/shared/lib/hooks/useAsyncReducer';
+import {
+    AsyncReducersList,
+    useAsyncReducer,
+} from '@/shared/lib/hooks/useAsyncReducer';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { selectUserPassword } from '../../model/selectors/selectUserPassword/selectUserPassword';
 import { selectUserName } from '../../model/selectors/selectUserName/selectUserName';
@@ -26,10 +29,7 @@ const asyncReducersList: AsyncReducersList = {
 };
 
 const LoginForm = memo((props: LoginFormProps) => {
-    const {
-        className,
-        onCloseModal,
-    } = props;
+    const { className, onCloseModal } = props;
 
     const { t } = useTranslation('navbar');
     const dispatch = useAppDispatch();
@@ -40,13 +40,19 @@ const LoginForm = memo((props: LoginFormProps) => {
 
     useAsyncReducer(asyncReducersList, { removeAfterUnmount: true });
 
-    const onHandleChangeUserName = useCallback((value: string) => {
-        dispatch(loginActions.setUserName(value));
-    }, [dispatch]);
+    const onHandleChangeUserName = useCallback(
+        (value: string) => {
+            dispatch(loginActions.setUserName(value));
+        },
+        [dispatch],
+    );
 
-    const onHandleChangeUserPassword = useCallback((value: string) => {
-        dispatch(loginActions.setUserPassword(value));
-    }, [dispatch]);
+    const onHandleChangeUserPassword = useCallback(
+        (value: string) => {
+            dispatch(loginActions.setUserPassword(value));
+        },
+        [dispatch],
+    );
 
     const onHandleLoginClick = useCallback(async () => {
         const result = await dispatch(authByUserName({ password, username }));
@@ -57,19 +63,19 @@ const LoginForm = memo((props: LoginFormProps) => {
 
     return (
         <div
-            data-testid='loginForm'
+            data-testid="loginForm"
             className={classNames(cln.LoginForm, {}, [className])}
         >
             <Text title={t('form_authorization')} />
             {error && (
                 <Text
-                    data-testid='errorText'
+                    data-testid="errorText"
                     theme={TextTheme.ERROR}
                     text={t(error)}
                 />
             )}
             <AppInput
-                data-testid='userName'
+                data-testid="userName"
                 autoFocus
                 placeholder={t('username')}
                 value={username}
@@ -78,7 +84,7 @@ const LoginForm = memo((props: LoginFormProps) => {
                 type="text"
             />
             <AppInput
-                data-testid='password'
+                data-testid="password"
                 placeholder={t('password')}
                 value={password}
                 onChange={onHandleChangeUserPassword}
@@ -87,7 +93,7 @@ const LoginForm = memo((props: LoginFormProps) => {
             />
             <AppButton
                 disabled={isLoading}
-                data-testid='loginBtn'
+                data-testid="loginBtn"
                 theme={AppButtonTheme.OUTLINED}
                 className={cln.loginBtn}
                 onClick={onHandleLoginClick}

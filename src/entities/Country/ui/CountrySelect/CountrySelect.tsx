@@ -21,21 +21,14 @@ const options = [
 export const CountrySelect = memo((props: CountrySelectProps) => {
     const { t } = useTranslation('');
 
-    const {
-        className,
-        readOnly,
-        onChange,
-        value,
-    } = props;
+    const { className, readOnly, onChange, value } = props;
 
     const onHandleCountryChange = (value: string) => {
         onChange?.(value as Country);
     };
 
     return (
-        <div
-            className={classNames('', {}, [className])}
-        >
+        <div className={classNames('', {}, [className])}>
             <Select
                 value={value}
                 readOnly={readOnly}

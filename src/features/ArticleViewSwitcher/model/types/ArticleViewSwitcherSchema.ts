@@ -5,6 +5,6 @@ export interface ArticleViewSwitcherSchema {
 }
 
 export interface ArticleViews {
-    icon: React.VFC<React.SVGProps<SVGSVGElement>>,
+    icon: React.VFC<React.SVGProps<SVGSVGElement>>;
     view: ArticleView;
 }

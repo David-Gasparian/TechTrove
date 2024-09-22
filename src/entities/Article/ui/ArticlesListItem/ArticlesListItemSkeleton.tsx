@@ -17,24 +17,42 @@ export const ArticlesListItemSkeleton = memo((props: ArticlesListItemProps) => {
     if (view === ArticleView.BIG) {
         return (
             <Card
-                className={classNames(cln.ArticlesListItem, {}, [className, cln[view]])}
+                className={classNames(cln.ArticlesListItem, {}, [
+                    className,
+                    cln[view],
+                ])}
             >
                 <div className={cln.header}>
                     <div className={cln.userInfo}>
                         <Skeleton border="50%" width={30} height={30} />
-                        <Skeleton className={cln.userName} width={50} height={15} />
+                        <Skeleton
+                            className={cln.userName}
+                            width={50}
+                            height={15}
+                        />
                     </div>
                 </div>
                 <Skeleton className={cln.types} width={200} height={25} />
-                <Skeleton className={cln.imageWrapper} width="100%" height={200} />
-                <Skeleton className={cln.imageWrapper} width="100%" height={25} />
+                <Skeleton
+                    className={cln.imageWrapper}
+                    width="100%"
+                    height={200}
+                />
+                <Skeleton
+                    className={cln.imageWrapper}
+                    width="100%"
+                    height={25}
+                />
             </Card>
         );
     }
 
     return (
         <Card
-            className={classNames(cln.ArticlesListItem, {}, [className, cln[view]])}
+            className={classNames(cln.ArticlesListItem, {}, [
+                className,
+                cln[view],
+            ])}
         >
             <Skeleton className={cln.imageWrapper} width="100%" height={200} />
             <div className={cln.infoWrapper}>

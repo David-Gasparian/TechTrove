@@ -15,7 +15,10 @@ export const NotFound = memo((props: NotFoundProps) => {
     const { t } = useTranslation('main');
 
     return (
-        <Page data-testid='NotFound' className={classNames(cln.notFound, {}, [className])}>
+        <Page
+            data-testid="NotFound"
+            className={classNames(cln.notFound, {}, [className])}
+        >
             {t('not_found')}
         </Page>
     );

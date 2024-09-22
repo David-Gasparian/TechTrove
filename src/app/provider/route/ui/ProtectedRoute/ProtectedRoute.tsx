@@ -11,7 +11,9 @@ export const ProtectedRoute: FC = (props) => {
     const isAuth = useSelector(selectAuthData);
 
     if (!isAuth) {
-        return <Navigate to={getRouteMain()} state={{ form: location }} replace />;
+        return (
+            <Navigate to={getRouteMain()} state={{ form: location }} replace />
+        );
     }
 
     return children as ReactElement;

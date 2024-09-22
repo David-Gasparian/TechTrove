@@ -15,10 +15,12 @@ describe('articleDetailsSlice', () => {
             isLoading: true,
         };
 
-        expect(articleDetailsReducer(
-            state as ArticleDetailsSchema,
-            fetchArticleById.pending,
-        )).toEqual(result);
+        expect(
+            articleDetailsReducer(
+                state as ArticleDetailsSchema,
+                fetchArticleById.pending,
+            ),
+        ).toEqual(result);
     });
 
     test('fetch article extraReducer fulfilled', () => {
@@ -33,7 +35,6 @@ describe('articleDetailsSlice', () => {
             title: 'title',
             subtitle: 'subtitle',
             img: 'img',
-
         };
 
         const result: DeepPartial<ArticleDetailsSchema> = {
@@ -42,9 +43,11 @@ describe('articleDetailsSlice', () => {
             data,
         };
 
-        expect(articleDetailsReducer(
-            state as ArticleDetailsSchema,
-            fetchArticleById.fulfilled(data as Article, '', { id: '1' }),
-        )).toEqual(result);
+        expect(
+            articleDetailsReducer(
+                state as ArticleDetailsSchema,
+                fetchArticleById.fulfilled(data as Article, '', { id: '1' }),
+            ),
+        ).toEqual(result);
     });
 });

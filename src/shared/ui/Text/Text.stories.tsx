@@ -2,9 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Theme } from '@/shared/consts/theme';
 import { ThemeDecorator } from '../../config/storybook/ThemeDecorator';
-import {
-    Text, TextALign, TextSize, TextTheme,
-} from './Text';
+import { Text, TextALign, TextSize, TextTheme } from './Text';
 
 export default {
     title: 'shared/Text',

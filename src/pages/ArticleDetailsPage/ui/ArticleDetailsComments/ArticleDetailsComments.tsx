@@ -32,9 +32,12 @@ const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) => {
         dispatch(fetchCommentsByArticleId({ id }));
     });
 
-    const onSendComment = useCallback((text: string) => {
-        dispatch(AddCommentForArticle({ text }));
-    }, [dispatch]);
+    const onSendComment = useCallback(
+        (text: string) => {
+            dispatch(AddCommentForArticle({ text }));
+        },
+        [dispatch],
+    );
 
     return (
         <VStack gap={8} max>

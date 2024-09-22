@@ -13,9 +13,7 @@ import { AppLink } from '@/shared/ui/AppLink';
 import { getRouteArticleDetails } from '@/shared/consts/router';
 import { AppImage } from '@/shared/ui/AppImage';
 import { Skeleton } from '@/shared/ui/Skeleton';
-import {
-    Article, ArticleTextBlock,
-} from '../../model/types/article';
+import { Article, ArticleTextBlock } from '../../model/types/article';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { ArticleBlockTypes, ArticleView } from '../../model/consts/consts';
 import cln from './ArticlesListItem.module.scss';
@@ -28,20 +26,9 @@ interface ArticlesListItemProps {
 }
 
 export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
-    const {
-        className, article, view = ArticleView.SMALL, target,
-    } = props;
+    const { className, article, view = ArticleView.SMALL, target } = props;
 
-    const {
-        title,
-        img,
-        views,
-        createdAt,
-        type,
-        user,
-        id,
-        blocks,
-    } = article;
+    const { title, img, views, createdAt, type, user, id, blocks } = article;
 
     const [isHover, bindHover] = useHover();
     const { t } = useTranslation('articles');
@@ -55,20 +42,21 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
     );
 
     if (view === ArticleView.BIG) {
-        const textBlock = blocks.find((block) => block.type === ArticleBlockTypes.TEXT) as ArticleTextBlock;
+        const textBlock = blocks.find(
+            (block) => block.type === ArticleBlockTypes.TEXT,
+        ) as ArticleTextBlock;
 
         return (
             <Card
-                data-testid='ArticleListItem'
-                className={classNames(cln.ArticlesListItem, {}, [className, cln[view]])}
+                data-testid="ArticleListItem"
+                className={classNames(cln.ArticlesListItem, {}, [
+                    className,
+                    cln[view],
+                ])}
             >
                 <div className={cln.header}>
                     <div className={cln.userInfo}>
-                        <Avatar
-                            src={user.avatar}
-                            size={30}
-                            alt="avatar"
-                        />
+                        <Avatar src={user.avatar} size={30} alt="avatar" />
                         <Text className={cln.userName} text={user.username} />
                     </div>
                     <Text className={cln.createdDate} text={createdAt} />
@@ -99,16 +87,19 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
                     {viewsBlock}
                 </div>
             </Card>
-
         );
     }
 
     return (
         <AppLink target={target} to={getRouteArticleDetails(id)}>
             <Card
-                data-testid='ArticleListItem'
+                data-testid="ArticleListItem"
                 {...bindHover}
-                className={classNames(cln.ArticlesListItem, { [cln.cardHover]: isHover }, [className, cln[view]])}
+                className={classNames(
+                    cln.ArticlesListItem,
+                    { [cln.cardHover]: isHover },
+                    [className, cln[view]],
+                )}
             >
                 <div className={cln.imageWrapper}>
                     <AppImage
@@ -117,7 +108,9 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
                         src={img}
                         alt={title}
                     />
-                    {isHover && <Text className={cln.createdDate} text={createdAt} />}
+                    {isHover && (
+                        <Text className={cln.createdDate} text={createdAt} />
+                    )}
                 </div>
                 <div className={cln.infoWrapper}>
                     {types}

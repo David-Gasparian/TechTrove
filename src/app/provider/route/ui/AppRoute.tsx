@@ -9,32 +9,28 @@ import { RequireRoles } from './RequireRoles/RequireRoles';
 
 export const AppRoute = memo(() => {
     const renderWithRoutes = (route: NewRouteProps) => {
-        const element = route.authOnly
-            ? (
-                <ProtectedRoute>
-                    <RequireRoles routeRoles={route.roles}>
-                        {route.element}
-                    </RequireRoles>
-                </ProtectedRoute>
-            )
-            : route.element;
+        const element = route.authOnly ? (
+            <ProtectedRoute>
+                <RequireRoles routeRoles={route.roles}>
+                    {route.element}
+                </RequireRoles>
+            </ProtectedRoute>
+        ) : (
+            route.element
+        );
 
         return (
             <Route
                 key={route.path}
                 path={route.path}
-                element={(
-                    <Suspense fallback={<PageLoader />}>
-                        {element}
-                    </Suspense>
-                )}
+                element={
+                    <Suspense fallback={<PageLoader />}>{element}</Suspense>
+                }
             />
         );
     };
 
     return (
-        <Routes>
-            {Object.values(appRoutesConfig).map(renderWithRoutes)}
-        </Routes>
+        <Routes>{Object.values(appRoutesConfig).map(renderWithRoutes)}</Routes>
     );
 });

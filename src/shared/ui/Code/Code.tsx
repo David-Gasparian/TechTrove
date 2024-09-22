@@ -13,10 +13,7 @@ interface IconProps {
 }
 
 export const Code = memo((props: IconProps) => {
-    const {
-        className,
-        text,
-    } = props;
+    const { className, text } = props;
 
     const [copied, setCopied] = useState(false);
 
@@ -34,24 +31,24 @@ export const Code = memo((props: IconProps) => {
     };
 
     return (
-        <pre
-            className={classNames(cln.Code, {}, [className])}
-        >
-            {
-                copied ? (
-                    <AppButton theme={AppButtonTheme.CLEAR} className={cln.copyIcon}>
-                        <Icon SVG={SuccessIcon} />
-                    </AppButton>
-                )
-                    : (
-                        <AppButton onClick={onHandleCopy} theme={AppButtonTheme.CLEAR} className={cln.copyIcon}>
-                            <Icon SVG={CopyIcon} />
-                        </AppButton>
-                    )
-            }
-            <code>
-                {text}
-            </code>
+        <pre className={classNames(cln.Code, {}, [className])}>
+            {copied ? (
+                <AppButton
+                    theme={AppButtonTheme.CLEAR}
+                    className={cln.copyIcon}
+                >
+                    <Icon SVG={SuccessIcon} />
+                </AppButton>
+            ) : (
+                <AppButton
+                    onClick={onHandleCopy}
+                    theme={AppButtonTheme.CLEAR}
+                    className={cln.copyIcon}
+                >
+                    <Icon SVG={CopyIcon} />
+                </AppButton>
+            )}
+            <code>{text}</code>
         </pre>
     );
 });

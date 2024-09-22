@@ -1,6 +1,4 @@
-import {
-    fireEvent, render, screen,
-} from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { AppInput } from './AppInput';
 
 describe('AppInput', () => {
@@ -23,13 +21,13 @@ describe('AppInput', () => {
     });
 
     test('check prop type', () => {
-        render(<AppInput type='text' />);
+        render(<AppInput type="text" />);
 
         expect(screen.getByTestId('input')).toHaveAttribute('type', 'text');
     });
 
     test('check prop value', () => {
-        render(<AppInput value='text' />);
+        render(<AppInput value="text" />);
 
         expect(screen.getByTestId('input')).toHaveValue('text');
     });
@@ -49,7 +47,7 @@ describe('AppInput', () => {
     });
 
     test('check prop placeholder', () => {
-        const wrapper = render(<AppInput placeholder='placeholder' />);
+        const wrapper = render(<AppInput placeholder="placeholder" />);
         expect(screen.getByText(/placeholder/i)).toBeInTheDocument();
 
         wrapper.rerender(<AppInput />);

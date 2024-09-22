@@ -13,14 +13,18 @@ export default {
     },
 } as ComponentMeta<typeof SideBar>;
 
-const Template: ComponentStory<typeof SideBar> = (args) => <SideBar {...args} />;
+const Template: ComponentStory<typeof SideBar> = (args) => (
+    <SideBar {...args} />
+);
 
 export const Light = Template.bind({});
-Light.decorators = [StoreDecorator({
-    user: {
-        authData: {},
-    },
-})];
+Light.decorators = [
+    StoreDecorator({
+        user: {
+            authData: {},
+        },
+    }),
+];
 Light.args = {};
 
 export const Dark = Template.bind({});

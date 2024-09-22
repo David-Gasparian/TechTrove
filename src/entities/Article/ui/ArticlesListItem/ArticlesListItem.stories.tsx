@@ -16,12 +16,7 @@ const article = {
         username: 'User',
         id: '1',
     },
-    type: [
-        'IT',
-        'Test',
-        '2 Test',
-        '3 Test',
-    ],
+    type: ['IT', 'Test', '2 Test', '3 Test'],
     blocks: [
         {
             id: '1',
@@ -92,7 +87,9 @@ export default {
     },
 } as ComponentMeta<typeof ArticlesListItem>;
 
-const Template: ComponentStory<typeof ArticlesListItem> = (args) => <ArticlesListItem {...args} />;
+const Template: ComponentStory<typeof ArticlesListItem> = (args) => (
+    <ArticlesListItem {...args} />
+);
 
 export const Small = Template.bind({});
 Small.args = {
@@ -100,9 +97,7 @@ Small.args = {
 };
 
 export const SmallDark = Template.bind({});
-SmallDark.decorators = [
-    ThemeDecorator(Theme.Dark),
-];
+SmallDark.decorators = [ThemeDecorator(Theme.Dark)];
 SmallDark.args = {
     article,
 };
@@ -114,9 +109,7 @@ Big.args = {
 };
 
 export const BigDark = Template.bind({});
-BigDark.decorators = [
-    ThemeDecorator(Theme.Dark),
-];
+BigDark.decorators = [ThemeDecorator(Theme.Dark)];
 BigDark.args = {
     article,
     view: ArticleView.BIG,

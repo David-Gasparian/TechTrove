@@ -13,7 +13,9 @@ describe('userSlice', () => {
             authData: user,
         };
 
-        expect(userReducer({ authData: undefined }, userActions.setAuthUser(user))).toEqual(returnResult);
+        expect(
+            userReducer({ authData: undefined }, userActions.setAuthUser(user)),
+        ).toEqual(returnResult);
     });
 
     test('init auth user', () => {
@@ -28,7 +30,9 @@ describe('userSlice', () => {
 
         userStorage.setUser(USER_LOCAL_STORAGE_KEY, JSON.stringify(user));
 
-        expect(userReducer({ authData: undefined }, userActions.initAuthUser())).toEqual(result);
+        expect(
+            userReducer({ authData: undefined }, userActions.initAuthUser()),
+        ).toEqual(result);
     });
 
     test('logout', () => {
@@ -39,6 +43,8 @@ describe('userSlice', () => {
             },
         };
 
-        expect(userReducer(state, userActions.logout())).toEqual({ authData: undefined });
+        expect(userReducer(state, userActions.logout())).toEqual({
+            authData: undefined,
+        });
     });
 });

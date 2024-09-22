@@ -21,21 +21,14 @@ const options = [
 export const CurrencySelect = memo((props: CurrencySelectProps) => {
     const { t } = useTranslation('');
 
-    const {
-        className,
-        readOnly,
-        onChange,
-        value,
-    } = props;
+    const { className, readOnly, onChange, value } = props;
 
     const onHandleCurrencyChange = (value: string) => {
         onChange?.(value as Currency);
     };
 
     return (
-        <div
-            className={classNames('', {}, [className])}
-        >
+        <div className={classNames('', {}, [className])}>
             <Listbox
                 className={className}
                 value={value}

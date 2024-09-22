@@ -7,25 +7,26 @@ interface fetchProfileDataProps {
     id?: string;
 }
 
-export const fetchProfileData = createAsyncThunk<Profile, fetchProfileDataProps, ThunkApi<string>>(
-    'profile/fetchProfileData',
-    async (data, thunkAPI) => {
-        const { extra, rejectWithValue } = thunkAPI;
+export const fetchProfileData = createAsyncThunk<
+    Profile,
+    fetchProfileDataProps,
+    ThunkApi<string>
+>('profile/fetchProfileData', async (data, thunkAPI) => {
+    const { extra, rejectWithValue } = thunkAPI;
 
-        if (!data.id) {
-            return rejectWithValue('error');
+    if (!data.id) {
+        return rejectWithValue('error');
+    }
+
+    try {
+        const result = await extra.api.get<Profile>(`profile/${data.id}`);
+
+        if (!result.data) {
+            throw new Error();
         }
 
-        try {
-            const result = await extra.api.get<Profile>(`profile/${data.id}`);
-
-            if (!result.data) {
-                throw new Error();
-            }
-
-            return result.data;
-        } catch (e) {
-            return rejectWithValue('error');
-        }
-    },
-);
+        return result.data;
+    } catch (e) {
+        return rejectWithValue('error');
+    }
+});

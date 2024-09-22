@@ -17,12 +17,14 @@ const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
 export const Light = Template.bind({});
 Light.args = {
     isOpen: true,
-    children: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, totam provident minima ipsa saepe voluptates, laudantium veniam at quis odit aspernatur repellendus accusamus culpa impedit nam et quisquam maiores corrupti.',
+    children:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, totam provident minima ipsa saepe voluptates, laudantium veniam at quis odit aspernatur repellendus accusamus culpa impedit nam et quisquam maiores corrupti.',
 };
 
 export const Dark = Template.bind({});
 Dark.decorators = [ThemeDecorator(Theme.Dark)];
 Dark.args = {
     isOpen: true,
-    children: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, totam provident minima ipsa saepe voluptates, laudantium veniam at quis odit aspernatur repellendus accusamus culpa impedit nam et quisquam maiores corrupti.',
+    children:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, totam provident minima ipsa saepe voluptates, laudantium veniam at quis odit aspernatur repellendus accusamus culpa impedit nam et quisquam maiores corrupti.',
 };

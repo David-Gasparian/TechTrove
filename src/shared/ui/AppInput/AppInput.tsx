@@ -11,7 +11,10 @@ import {
 import { classNames, Mode } from '@/shared/lib/classNames/classNames';
 import cln from './AppInput.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>;
+type HTMLInputProps = Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    'value' | 'onChange' | 'readOnly'
+>;
 
 interface AppInputProps extends HTMLInputProps {
     className?: string;
@@ -70,18 +73,16 @@ export const AppInput = memo((props: AppInputProps) => {
 
     return (
         <div
-            data-testid='inputWrapper'
+            data-testid="inputWrapper"
             className={classNames(cln.inputWrapper, mode, [className])}
         >
             {placeholder && (
-                <div className={cln.placeholder}>
-                    {`${placeholder}>`}
-                </div>
+                <div className={cln.placeholder}>{`${placeholder}>`}</div>
             )}
             <div className={cln.curetWrapper}>
                 <input
                     readOnly={readOnly}
-                    data-testid='input'
+                    data-testid="input"
                     ref={inputRef}
                     type={type}
                     onFocus={onFocus}
@@ -93,7 +94,7 @@ export const AppInput = memo((props: AppInputProps) => {
                 />
                 {showCuret && (
                     <span
-                        data-testid='curet'
+                        data-testid="curet"
                         style={{ left: `${curetPosition * 10}px` }}
                         className={cln.curet}
                     />

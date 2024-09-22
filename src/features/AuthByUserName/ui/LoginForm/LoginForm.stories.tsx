@@ -13,15 +13,19 @@ export default {
     },
 } as ComponentMeta<typeof LoginForm>;
 
-const Template: ComponentStory<typeof LoginForm> = (args) => <LoginForm {...args} />;
+const Template: ComponentStory<typeof LoginForm> = (args) => (
+    <LoginForm {...args} />
+);
 
 export const Light = Template.bind({});
-Light.decorators = [StoreDecorator({
-    loginForm: {
-        password: 'password',
-        username: 'username',
-    },
-})];
+Light.decorators = [
+    StoreDecorator({
+        loginForm: {
+            password: 'password',
+            username: 'username',
+        },
+    }),
+];
 Light.args = {};
 
 export const Dark = Template.bind({});

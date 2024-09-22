@@ -11,7 +11,9 @@ export default {
     },
 } as ComponentMeta<typeof NotFound>;
 
-const Template: ComponentStory<typeof NotFound> = (args) => <NotFound {...args} />;
+const Template: ComponentStory<typeof NotFound> = (args) => (
+    <NotFound {...args} />
+);
 
 export const Light = Template.bind({});
 Light.args = {};

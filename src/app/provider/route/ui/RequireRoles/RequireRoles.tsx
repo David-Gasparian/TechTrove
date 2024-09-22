@@ -23,7 +23,13 @@ export const RequireRoles: FC<RequireRolesProps> = (props) => {
     }, [userRoles, routeRoles]);
 
     if (!hasRequiredRoles) {
-        return <Navigate to={getRouteForbidden()} state={{ form: location }} replace />;
+        return (
+            <Navigate
+                to={getRouteForbidden()}
+                state={{ form: location }}
+                replace
+            />
+        );
     }
 
     return children as ReactElement;
