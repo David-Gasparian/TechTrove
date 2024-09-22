@@ -6,47 +6,80 @@ import { MemoryRouter } from 'react-router-dom';
 
 import { StateSchema, StoreProvider } from '@/app/provider/storeProvider';
 import i18n from '@/shared/config/i18n/testI18n';
+import { ThemeProvider } from '@/app/provider/themeProvider';
+import { Theme } from '@/shared/consts/theme';
+import '@/app/styles/index.scss';
 
 /**
- * Options for the `componentRender` function used in testing.
+ * Configuration options for rendering a component during tests.
  *
  * @interface ComponentRenderOptions
- * @property {string} [path='/'] - Initial route for MemoryRouter.
- * @property {DeepPartial<StateSchema>} [initialValue] - Initial Redux state for the test.
- * @property {DeepPartial<ReducersMapObject<StateSchema>>} [asyncReducer] - Async reducers for the Redux store in the test.
+ * @property {string} [path='/'] - Initial route path for MemoryRouter.
+ * @property {DeepPartial<StateSchema>} [initialValue] - Initial state for the Redux store during the test.
+ * @property {DeepPartial<ReducersMapObject<StateSchema>>} [asyncReducer] - Any async reducers to be used in the Redux store for the test.
+ * @property {Theme} [theme=Theme.LIGHT] - Initial theme (light or dark) to be applied during the test.
  */
 interface ComponentRenderOptions {
     path?: string;
     initialValue?: DeepPartial<StateSchema>;
     asyncReducer?: DeepPartial<ReducersMapObject<StateSchema>>;
+    theme?: Theme;
+}
+
+interface TestProviderProps {
+    children: ReactNode;
+    options?: ComponentRenderOptions;
 }
 
 /**
- * Renders a React component with routing, state management, and i18n for testing.
+ * A utility component to wrap a given component with providers for Redux store,
+ * i18n, theme, and routing. This ensures that all necessary contexts are
+ * available when rendering a component in testing environments.
  *
- * @param {ReactNode} component - The component to render in tests.
- * @param {ComponentRenderOptions} [options={}] - Configuration options for the test render.
- * @returns {RenderResult} - The result of the render, useful for testing.
- *
- * @example
- * componentRender(<MyComponent />, { path: '/my-path', initialValue: { user: { name: 'John' } }, asyncReducer: { profile: profileReducer } });
+ * @param {TestProviderProps} props - The component's children and options for test configuration.
+ * @returns {JSX.Element} - The component wrapped in necessary providers for testing.
  */
-export const componentRender = (component: ReactNode, options: ComponentRenderOptions = {}) => {
+export const TestProvider = (props: TestProviderProps) => {
+    const { children, options = {} } = props;
     const {
         path = '/',
         initialValue,
+        theme = Theme.LIGHT,
         asyncReducer,
     } = options;
 
     return (
-        render(
-            <MemoryRouter initialEntries={[path]}>
-                <StoreProvider asyncReducers={asyncReducer} initialValue={initialValue}>
-                    <I18nextProvider i18n={i18n}>
-                        {component}
-                    </I18nextProvider>
-                </StoreProvider>
-            </MemoryRouter>,
-        )
+        <MemoryRouter initialEntries={[path]}>
+            <StoreProvider asyncReducers={asyncReducer} initialValue={initialValue}>
+                <I18nextProvider i18n={i18n}>
+                    <ThemeProvider initialTheme={theme}>
+                        <div className={`App ${theme}`}>
+                            {children}
+                        </div>
+                    </ThemeProvider>
+                </I18nextProvider>
+            </StoreProvider>
+        </MemoryRouter>
     );
 };
+
+/**
+ * Renders a React component within a testing environment configured with routing,
+ * Redux state management, i18n, and theming. This function is designed to simplify
+ * test setups that require these contexts to be initialized.
+ *
+ * @param {ReactNode} component - The component to be rendered during the test.
+ * @param {ComponentRenderOptions} [options={}] - Optional settings such as initial route path, Redux state, async reducers, and theme.
+ * @returns {RenderResult} - The result of the render, which can be used to query or interact with the rendered component in the test.
+ *
+ * @example
+ * componentRender(<MyComponent />, {
+ *   path: '/my-path',
+ *   initialValue: { user: { name: 'John' } },
+ *   asyncReducer: { profile: profileReducer },
+ *   theme: Theme.DARK,
+ * });
+ */
+export const componentRender = (component: ReactNode, options: ComponentRenderOptions = {}) => render(
+    <TestProvider options={options}>{component}</TestProvider>,
+);
