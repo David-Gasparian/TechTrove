@@ -11,6 +11,7 @@ import {
 import { RecommendedArticlesList } from '@/features/RecommendedArticlesList';
 import { ArticleRating } from '@/features/ArticleRating';
 import { Page } from '@/widgets/Page';
+import { getFeatureFlag } from '@/shared/lib/features';
 import { articleDetailsPageSlice } from '../../model/slice';
 import ArticleDetailsPageHeader from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import ArticleDetailsComments from '../ArticleDetailsComments/ArticleDetailsComments';
@@ -23,6 +24,7 @@ const asyncReducersList: AsyncReducersList = {
 const ArticleDetailsPage: FC = memo(() => {
     const { t } = useTranslation('articles');
     const { id } = useParams<{ id: string }>();
+    const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
 
     useAsyncReducer(asyncReducersList, { removeAfterUnmount: true });
 
@@ -42,7 +44,7 @@ const ArticleDetailsPage: FC = memo(() => {
             <div>
                 <ArticleDetailsPageHeader id={id} />
                 <ArticleDetails id={id} />
-                <ArticleRating articleId={id} />
+                {isArticleRatingEnabled && <ArticleRating articleId={id} />}
                 <RecommendedArticlesList />
                 <ArticleDetailsComments id={id} />
             </div>
