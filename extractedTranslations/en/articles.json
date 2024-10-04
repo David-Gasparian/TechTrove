@@ -1,4 +1,5 @@
 {
+  "Article rating will appear soon": "",
   "article_all": "article_all",
   "article_comments_is_empty": "article_comments_is_empty",
   "article_economics": "article_economics",
@@ -11,6 +12,7 @@
   "article_science": "article_science",
   "article_search": "article_search",
   "article_send": "article_send",
+  "articles_article_rating_will_appear_soon": "",
   "articles_comments": "articles_comments",
   "articles_create": "articles_create",
   "articles_edit": "articles_edit",

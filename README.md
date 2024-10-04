@@ -177,6 +177,24 @@ For asynchronous reducer loading (to avoid bundling them all together), [useAsyn
 
 ---
 
+### Working with feature flags
+
+The use of feature flags is allowed only through the toggleFeatures helper.
+
+It takes an object with options:
+
+{ 
+    name: the name of the feature flag,
+    on: a function that will be executed when the feature is turned ON,
+    off: a function that will be executed when the feature is turned OFF
+}
+
+To automatically remove a feature, use the remove-feature.ts script,
+which accepts 2 arguments:
+1. The name of the feature flag to be removed
+2. The state (on/off)
+
+---
 ## Entities
 
 -   [Article](/src/entities/Article)
