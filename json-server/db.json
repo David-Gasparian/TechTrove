@@ -691,6 +691,9 @@
             "username": "admin",
             "password": "123",
             "roles": ["ADMIN", "MANAGER"],
+            "jsonSettings": {
+                "theme": ""
+            },
             "features": {
                 "isArticleRatingEnabled": true
             },
@@ -701,6 +704,9 @@
             "username": "user",
             "password": "123",
             "roles": ["USER"],
+            "jsonSettings": {
+                "theme": "app_green"
+            },
             "features": {
                 "isArticleRatingEnabled": false
             },
@@ -711,6 +717,9 @@
             "username": "testuser",
             "password": "123",
             "roles": ["ADMIN"],
+            "jsonSettings": {
+                "theme": ""
+            },
             "features": {
                 "isArticleRatingEnabled": false
             },
