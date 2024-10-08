@@ -17,7 +17,7 @@
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: var(--inverted-bg-color);
+    background: var(--inverted-bg-color, black);
     margin: -4px 0 0 -4px;
 }
 

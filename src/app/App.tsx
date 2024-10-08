@@ -4,7 +4,9 @@ import { useDispatch } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Navbar } from '@/widgets/Navbar';
 import { SideBar } from '@/widgets/SideBar';
-import { userActions, useUserInited } from '@/entities/User';
+import { initAuthData, useUserInited } from '@/entities/User';
+import { PageLoader } from '@/widgets/PageLoader';
+import { HStack } from '@/shared/ui/Stack';
 import { AppRoute } from './provider/route';
 
 export const App: FC = () => {
@@ -12,8 +14,21 @@ export const App: FC = () => {
     const _inited = useUserInited();
 
     useEffect(() => {
-        dispatch(userActions.initAuthUser());
+        dispatch(initAuthData());
     }, [dispatch]);
+
+    if (!_inited) {
+        return (
+            <HStack
+                max
+                align="center"
+                justify="center"
+                className={classNames('App', {}, [])}
+            >
+                <PageLoader />
+            </HStack>
+        );
+    }
 
     return (
         <div className={classNames('App', {}, [])}>
