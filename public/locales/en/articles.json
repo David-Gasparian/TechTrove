@@ -25,5 +25,7 @@
     "articles_create": "create",
     "rate_this_article": "Rate this article",
     "feedback_title": "Did you like this article? Your feedback will help us improve.",
-    "articles_article_rating_will_appear_soon": "Article rating will appear soon"
+    "articles_article_rating_will_appear_soon": "Article rating will appear soon",
+    "articles_welcome_to_the_articles+_page": "Welcome to the articles page",
+    "articles_here_you_can_search_and_browse_articles_on_various_topics": "Here you can search and browse articles on various topics."
 }

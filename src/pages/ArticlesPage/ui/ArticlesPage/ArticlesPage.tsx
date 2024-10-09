@@ -9,6 +9,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useInitEffect } from '@/shared/lib/hooks/useInitEffect';
 import { VStack } from '@/shared/ui/Stack';
 import { Page } from '@/widgets/Page';
+import { ArticlePageGreeting } from '@/features/ArticlePageGreeting';
 import { articlesPageReducer } from '../../model/slice/articlesPageSlice';
 import { fetchNextArticles } from '../../model/services/fetchNextArticles/fetchNextArticles';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
@@ -42,6 +43,7 @@ const ArticlesPage: FC = memo(() => {
             <VStack gap={32} max>
                 <ArticlesPageFilters />
                 <ArticleInfiniteList />
+                <ArticlePageGreeting />
             </VStack>
         </Page>
     );
