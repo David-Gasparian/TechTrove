@@ -11,7 +11,7 @@ import {
 import { RecommendedArticlesList } from '@/features/RecommendedArticlesList';
 import { ArticleRating } from '@/features/ArticleRating';
 import { Page } from '@/widgets/Page';
-import { toggleFeatures } from '@/shared/lib/features';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { Card } from '@/shared/ui/Card';
 import { articleDetailsPageSlice } from '../../model/slice';
 import ArticleDetailsPageHeader from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
@@ -39,18 +39,20 @@ const ArticleDetailsPage: FC = memo(() => {
         );
     }
 
-    const articleRatingCard = toggleFeatures({
-        name: 'isArticleRatingEnabled',
-        on: () => <ArticleRating articleId={id} />,
-        off: () => <Card>{t('articles_article_rating_will_appear_soon')}</Card>,
-    });
-
     return (
         <Page>
             <div>
                 <ArticleDetailsPageHeader id={id} />
                 <ArticleDetails id={id} />
-                {articleRatingCard}
+                <ToggleFeatures
+                    feature="isArticleRatingEnabled"
+                    off={
+                        <Card>
+                            {t('articles_article_rating_will_appear_soon')}
+                        </Card>
+                    }
+                    on={<ArticleRating articleId={id} />}
+                />
                 <RecommendedArticlesList />
                 <ArticleDetailsComments id={id} />
             </div>
