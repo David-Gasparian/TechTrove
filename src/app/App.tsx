@@ -7,11 +7,15 @@ import { SideBar } from '@/widgets/SideBar';
 import { initAuthData, useUserInited } from '@/entities/User';
 import { PageLoader } from '@/widgets/PageLoader';
 import { HStack } from '@/shared/ui/Stack';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { MainLayout } from '@/shared/layouts/MainLayout';
+import { useTheme } from '@/shared/lib/hooks/useTheme';
 import { AppRoute } from './provider/route';
 
 export const App: FC = () => {
     const dispatch = useDispatch();
     const _inited = useUserInited();
+    const { theme } = useTheme();
 
     useEffect(() => {
         dispatch(initAuthData());
@@ -31,14 +35,30 @@ export const App: FC = () => {
     }
 
     return (
-        <div className={classNames('App', {}, [])}>
-            <Suspense fallback="">
-                <Navbar />
-                <div className="main-content">
-                    <SideBar />
-                    {_inited && <AppRoute />}
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            off={
+                <div className={classNames('App', {}, [theme])}>
+                    <Suspense fallback="">
+                        <Navbar />
+                        <div className="main-content">
+                            <SideBar />
+                            <AppRoute />
+                        </div>
+                    </Suspense>
                 </div>
-            </Suspense>
-        </div>
+            }
+            on={
+                <div className={classNames('App_redesigned', {}, [theme])}>
+                    <Suspense fallback="">
+                        <MainLayout
+                            header={<Navbar />}
+                            content={<AppRoute />}
+                            sidebar={<SideBar />}
+                        />
+                    </Suspense>
+                </div>
+            }
+        />
     );
 };

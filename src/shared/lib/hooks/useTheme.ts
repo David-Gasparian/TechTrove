@@ -35,9 +35,9 @@ export const useTheme = (): UseThemeResult => {
                 newTheme = Theme.Dark;
                 break;
             case Theme.Dark:
-                newTheme = Theme.GREEN;
+                newTheme = Theme.ORANGE;
                 break;
-            case Theme.GREEN:
+            case Theme.ORANGE:
                 newTheme = Theme.LIGHT;
                 break;
             default:

@@ -5,9 +5,13 @@
     position: relative;
     display: flex;
     align-items: center;
+}
 
-    .rightPart {
-        position: absolute;
-        right: 20px;
-    }
+.NavbarRedesigned {
+    padding: 16px;
+}
+
+.rightPart {
+    position: absolute;
+    right: 20px;
 }

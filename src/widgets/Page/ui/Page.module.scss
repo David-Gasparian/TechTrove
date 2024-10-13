@@ -10,6 +10,10 @@
     width: calc(100% - var(--sidebar-width) - var(--global-horizontal-padding));
 }
 
+.PageRedesigned {
+    overflow-y: auto;
+}
+
 .trigger {
     height: 30px;
 }

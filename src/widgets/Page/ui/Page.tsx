@@ -19,6 +19,7 @@ import {
     saveScrollPositionActions,
     selectScrollByPath,
 } from '@/features/SaveScrollPosition';
+import { toggleFeatures } from '@/shared/lib/features';
 import cln from './Page.module.scss';
 
 interface PageProps extends HTMLAttributes<HTMLDivElement>, TestProps {
@@ -69,7 +70,15 @@ export const Page = (props: PageProps) => {
             onScroll={onScrollHandler}
             ref={wrapperRef}
             {...props}
-            className={classNames(cln.Page, {}, [className])}
+            className={classNames(
+                toggleFeatures({
+                    name: 'isAppRedesigned',
+                    on: () => cln.PageRedesigned,
+                    off: () => cln.Page,
+                }),
+                {},
+                [className],
+            )}
         >
             {children}
             <div className={cln.trigger} ref={targetRef} />
