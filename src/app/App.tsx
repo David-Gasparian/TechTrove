@@ -6,7 +6,7 @@ import { Navbar } from '@/widgets/Navbar';
 import { SideBar } from '@/widgets/SideBar';
 import { initAuthData, useUserInited } from '@/entities/User';
 import { PageLoader } from '@/widgets/PageLoader';
-import { HStack } from '@/shared/ui/Stack';
+import { HStack } from '@/shared/ui/deprecated/Stack';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layouts/MainLayout';
 import { useTheme } from '@/shared/lib/hooks/useTheme';

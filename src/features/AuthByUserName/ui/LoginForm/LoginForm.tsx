@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppButton, AppButtonTheme } from '@/shared/ui/AppButton';
-import { AppInput } from '@/shared/ui/AppInput';
-import { Text, TextTheme } from '@/shared/ui/Text';
+import { AppButton, AppButtonTheme } from '@/shared/ui/deprecated/AppButton';
+import { AppInput } from '@/shared/ui/deprecated/AppInput';
+import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
 import {
     AsyncReducersList,
     useAsyncReducer,

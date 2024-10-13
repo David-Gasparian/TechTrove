@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Listbox } from '@/shared/ui/popups';
+import { Listbox } from '@/shared/ui/deprecated/popups';
 import { Currency } from '../../medel/consts/consts';
 
 interface CurrencySelectProps {

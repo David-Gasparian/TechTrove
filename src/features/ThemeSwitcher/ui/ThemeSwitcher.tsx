@@ -1,13 +1,13 @@
 import { memo } from 'react';
 
 import LightTheme from '@/shared/assets/icons/theme-light.svg';
-import { AppButton, AppButtonTheme } from '@/shared/ui/AppButton';
+import { AppButton, AppButtonTheme } from '@/shared/ui/deprecated/AppButton';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTheme } from '@/shared/lib/hooks/useTheme';
 import { Theme } from '@/shared/consts/theme';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { saveJsonSettings } from '@/entities/User';
-import { Icon } from '@/shared/ui/Icon';
+import { Icon } from '@/shared/ui/deprecated/Icon';
 
 interface ThemeSwitcherProps {
     className?: string;

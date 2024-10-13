@@ -3,10 +3,10 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppButton, AppButtonTheme } from '@/shared/ui/AppButton';
+import { AppButton, AppButtonTheme } from '@/shared/ui/deprecated/AppButton';
 import { LoginModal } from '@/features/AuthByUserName';
 import { selectAuthData } from '@/entities/User';
-import { HStack } from '@/shared/ui/Stack';
+import { HStack } from '@/shared/ui/deprecated/Stack';
 import { NotificationButton } from '@/features/NotificationButton';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { toggleFeatures } from '@/shared/lib/features';

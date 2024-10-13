@@ -2,13 +2,13 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text, TextALign, TextTheme } from '@/shared/ui/Text';
-import { AppInput } from '@/shared/ui/AppInput';
-import { Loader } from '@/shared/ui/Loader';
-import { Avatar } from '@/shared/ui/Avatar';
+import { Text, TextALign, TextTheme } from '@/shared/ui/deprecated/Text';
+import { AppInput } from '@/shared/ui/deprecated/AppInput';
+import { Loader } from '@/shared/ui/deprecated/Loader';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { Currency, CurrencySelect } from '@/entities/Currency';
 import { Country, CountrySelect } from '@/entities/Country';
-import { HStack, VStack } from '@/shared/ui/Stack';
+import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
 import { Profile } from '../../model/types/profileSchema';
 import cln from './ProfileCard.module.scss';
 

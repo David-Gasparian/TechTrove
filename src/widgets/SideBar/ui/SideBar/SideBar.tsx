@@ -2,7 +2,7 @@ import { memo, useState } from 'react';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { AppLogo } from '@/shared/ui/AppLogo';
+import { AppLogo } from '@/shared/ui/deprecated/AppLogo';
 import { DeprecatedSideBar } from '../DeprecatedSideBar/DeprecatedSideBar';
 import cln from './SideBar.module.scss';
 

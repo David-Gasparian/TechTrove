@@ -7,10 +7,15 @@ import {
     AsyncReducersList,
     useAsyncReducer,
 } from '@/shared/lib/hooks/useAsyncReducer';
-import { Skeleton } from '@/shared/ui/Skeleton';
-import { Text, TextALign, TextSize, TextTheme } from '@/shared/ui/Text';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Icon } from '@/shared/ui/Icon';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import {
+    Text,
+    TextALign,
+    TextSize,
+    TextTheme,
+} from '@/shared/ui/deprecated/Text';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { Icon } from '@/shared/ui/deprecated/Icon';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import CalendarIcon from '@/shared/assets/icons/calendar.svg';
 import { useArticleData } from '../../model/selectors/selectArticleData/selectArticleData';

@@ -1,7 +1,7 @@
 import { memo } from 'react';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppImage } from '@/shared/ui/AppImage';
+import { AppImage } from '@/shared/ui/deprecated/AppImage';
 import { ArticleImageBlock } from '../../model/types/article';
 import cln from './ArticleImageBlockComponent.module.scss';
 

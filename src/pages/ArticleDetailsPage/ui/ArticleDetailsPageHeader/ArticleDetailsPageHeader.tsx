@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import { AppButton, AppButtonTheme } from '@/shared/ui/AppButton';
+import { AppButton, AppButtonTheme } from '@/shared/ui/deprecated/AppButton';
 import {
     getRouteArticleCreate,
     getRouteArticleEdit,

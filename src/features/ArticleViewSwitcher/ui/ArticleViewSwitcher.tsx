@@ -1,8 +1,8 @@
 import { memo } from 'react';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Icon } from '@/shared/ui/Icon';
-import { AppButton, AppButtonTheme } from '@/shared/ui/AppButton';
+import { Icon } from '@/shared/ui/deprecated/Icon';
+import { AppButton, AppButtonTheme } from '@/shared/ui/deprecated/AppButton';
 import ViewSmall from '@/shared/assets/icons/viewSmall.svg';
 import ViewBig from '@/shared/assets/icons/viewBig.svg';
 import { ArticleView } from '@/entities/Article';

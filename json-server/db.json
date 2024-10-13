@@ -707,7 +707,7 @@
             "password": "123",
             "roles": ["USER"],
             "jsonSettings": {
-                "theme": "app_green",
+                "theme": "app_orange",
                 "isArticlePageWasOpen": true
             },
             "features": {
